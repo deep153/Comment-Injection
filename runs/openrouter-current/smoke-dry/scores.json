@@ -1,0 +1,13 @@
+{
+  "by_family": [],
+  "by_model": [],
+  "by_model_family": [],
+  "by_model_family_defense_attack": [],
+  "totals": {
+    "completed_responses": 0,
+    "parsed_responses": 0,
+    "requests": 384,
+    "responses": 0,
+    "unparseable_verdicts": 0
+  }
+}

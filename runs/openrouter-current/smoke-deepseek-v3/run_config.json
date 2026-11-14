@@ -1,0 +1,8 @@
+{
+  "dataset_root": "/Users/deep-gandhi/Desktop/projects/comment-injection/rust-vuln-dataset",
+  "manifest": "runs/openrouter-current/manifest.jsonl",
+  "max_source_chars": 120000,
+  "models": {
+    "deepseek_v4_pro": "deepseek/deepseek-v4-pro"
+  }
+}

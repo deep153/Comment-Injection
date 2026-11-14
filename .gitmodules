@@ -1,0 +1,4 @@
+[submodule "rust-vuln-dataset"]
+	path = rust-vuln-dataset
+	url = https://github.com/locainin/rust-vuln-dataset.git
+

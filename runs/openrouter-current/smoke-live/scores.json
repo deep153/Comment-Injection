@@ -1,0 +1,979 @@
+{
+  "by_family": [
+    {
+      "accuracy": {
+        "count": 3,
+        "n": 8,
+        "rate": 0.375
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "halurust",
+      "parse_success": {
+        "count": 8,
+        "n": 8,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 8,
+        "rate": 0.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "manual",
+      "parse_success": {
+        "count": 8,
+        "n": 8,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 5,
+        "n": 8,
+        "rate": 0.625
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_easy",
+      "parse_success": {
+        "count": 8,
+        "n": 8,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 8,
+        "rate": 0.125
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_hard",
+      "parse_success": {
+        "count": 8,
+        "n": 8,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 8,
+        "rate": 0.125
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "rustmizan",
+      "parse_success": {
+        "count": 8,
+        "n": 8,
+        "rate": 1.0
+      }
+    }
+  ],
+  "by_model": [
+    {
+      "accuracy": {
+        "count": 3,
+        "n": 10,
+        "rate": 0.3
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "model": "anthropic/claude-sonnet-5.5",
+      "parse_success": {
+        "count": 10,
+        "n": 10,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 10,
+        "rate": 0.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 10,
+        "n": 10,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 10,
+        "rate": 0.1
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "model": "google/gemini-3.8-flash",
+      "parse_success": {
+        "count": 10,
+        "n": 10,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 6,
+        "n": 10,
+        "rate": 0.6
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "model": "openai/gpt-6-sol",
+      "parse_success": {
+        "count": 10,
+        "n": 10,
+        "rate": 1.0
+      }
+    }
+  ],
+  "by_model_family": [
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 2,
+        "rate": 0.5
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "halurust",
+      "model": "anthropic/claude-sonnet-5.5",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "manual",
+      "model": "anthropic/claude-sonnet-5.5",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_easy",
+      "model": "anthropic/claude-sonnet-5.5",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_hard",
+      "model": "anthropic/claude-sonnet-5.5",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "rustmizan",
+      "model": "anthropic/claude-sonnet-5.5",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "halurust",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "manual",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_easy",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_hard",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "rustmizan",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "halurust",
+      "model": "google/gemini-3.8-flash",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "manual",
+      "model": "google/gemini-3.8-flash",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 2,
+        "rate": 0.5
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_easy",
+      "model": "google/gemini-3.8-flash",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_hard",
+      "model": "google/gemini-3.8-flash",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "rustmizan",
+      "model": "google/gemini-3.8-flash",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "halurust",
+      "model": "openai/gpt-6-sol",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "manual",
+      "model": "openai/gpt-6-sol",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_easy",
+      "model": "openai/gpt-6-sol",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 2,
+        "rate": 0.5
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_hard",
+      "model": "openai/gpt-6-sol",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 2,
+        "rate": 0.5
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "rustmizan",
+      "model": "openai/gpt-6-sol",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    }
+  ],
+  "by_model_family_defense_attack": [
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 2,
+        "rate": 0.5
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "halurust",
+      "defense": "neutral",
+      "model": "anthropic/claude-sonnet-5.5",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "model": "anthropic/claude-sonnet-5.5",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_easy",
+      "defense": "neutral",
+      "model": "anthropic/claude-sonnet-5.5",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_hard",
+      "defense": "neutral",
+      "model": "anthropic/claude-sonnet-5.5",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "rustmizan",
+      "defense": "neutral",
+      "model": "anthropic/claude-sonnet-5.5",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "halurust",
+      "defense": "neutral",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_easy",
+      "defense": "neutral",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_hard",
+      "defense": "neutral",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "rustmizan",
+      "defense": "neutral",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "halurust",
+      "defense": "neutral",
+      "model": "google/gemini-3.8-flash",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "model": "google/gemini-3.8-flash",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 2,
+        "rate": 0.5
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_easy",
+      "defense": "neutral",
+      "model": "google/gemini-3.8-flash",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_hard",
+      "defense": "neutral",
+      "model": "google/gemini-3.8-flash",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "rustmizan",
+      "defense": "neutral",
+      "model": "google/gemini-3.8-flash",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "halurust",
+      "defense": "neutral",
+      "model": "openai/gpt-6-sol",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 2,
+        "rate": 0.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "model": "openai/gpt-6-sol",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_easy",
+      "defense": "neutral",
+      "model": "openai/gpt-6-sol",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 2,
+        "rate": 0.5
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_hard",
+      "defense": "neutral",
+      "model": "openai/gpt-6-sol",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 2,
+        "rate": 0.5
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "rustmizan",
+      "defense": "neutral",
+      "model": "openai/gpt-6-sol",
+      "parse_success": {
+        "count": 2,
+        "n": 2,
+        "rate": 1.0
+      }
+    }
+  ],
+  "totals": {
+    "completed_responses": 40,
+    "parsed_responses": 40,
+    "requests": 40,
+    "responses": 40,
+    "unparseable_verdicts": 29
+  }
+}

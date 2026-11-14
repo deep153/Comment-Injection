@@ -1,0 +1,13 @@
+.env
+.cursor/
+*.tex
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Raw run artifacts can contain provider metadata and are too large for the repo.
+runs/**/requests.jsonl
+runs/**/responses.jsonl
+runs/**/parsed.jsonl
+

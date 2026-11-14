@@ -1,0 +1,325 @@
+{
+  "by_family": [
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "halurust",
+      "parse_success": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "manual",
+      "parse_success": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_easy",
+      "parse_success": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 1,
+        "rate": 0.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_hard",
+      "parse_success": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "rustmizan",
+      "parse_success": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      }
+    }
+  ],
+  "by_model": [
+    {
+      "accuracy": {
+        "count": 4,
+        "n": 5,
+        "rate": 0.8
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 5,
+        "n": 5,
+        "rate": 1.0
+      }
+    }
+  ],
+  "by_model_family": [
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "halurust",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "manual",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_easy",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 1,
+        "rate": 0.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_hard",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      },
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "rustmizan",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      }
+    }
+  ],
+  "by_model_family_defense_attack": [
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "halurust",
+      "defense": "neutral",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_easy",
+      "defense": "neutral",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 0,
+        "n": 1,
+        "rate": 0.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "negative_hard",
+      "defense": "neutral",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "rustmizan",
+      "defense": "neutral",
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 1,
+        "n": 1,
+        "rate": 1.0
+      }
+    }
+  ],
+  "totals": {
+    "completed_responses": 5,
+    "parsed_responses": 5,
+    "requests": 5,
+    "responses": 5,
+    "unparseable_verdicts": 0
+  }
+}
