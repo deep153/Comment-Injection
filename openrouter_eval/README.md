@@ -44,7 +44,7 @@ Families in `--repeat-families` (default: `manual`) have a deterministic `--repe
 | Defaults | 73,632 |
 | `--repeat-count 1` | 69,416 |
 | `--repeat-families` (no value: no repeats) | 65,200 |
-| `--extended-families --repeat-families` (core only, as in the v1 run) | 38,448 |
+| `--extended-families --repeat-families` (core only) | 38,448 |
 
 Always confirm the count with `--dry-run` first.
 
@@ -57,8 +57,8 @@ The paper's results come from `runs/openrouter-v2/full`. The dataset submodule m
 #    The result is byte-identical to runs/openrouter-v2/manifest.jsonl.
 python3 -m openrouter_eval.build_manifest \
   --dataset-root rust-vuln-dataset \
-  --out runs/openrouter-current/manifest.jsonl
-python3 -c "import json,sys; sys.stdout.writelines(l for l in open('runs/openrouter-current/manifest.jsonl') if (d:=json.loads(l))['dataset_family']!='rustmizan' or d['source_path'].endswith('-function'))" \
+  --out /tmp/manifest_all.jsonl
+python3 -c "import json,sys; sys.stdout.writelines(l for l in open('/tmp/manifest_all.jsonl') if (d:=json.loads(l))['dataset_family']!='rustmizan' or d['source_path'].endswith('-function'))" \
   > runs/openrouter-v2/manifest.jsonl
 
 # 1. Dry run: writes requests.jsonl, makes no API calls.
@@ -92,7 +92,7 @@ python3 -m openrouter_eval.analyze_gee --run-dir runs/openrouter-v2/full --famil
 python3 -m openrouter_eval.analyze_gee --run-dir runs/openrouter-v2/full --family manual --interaction
 ```
 
-Use a new `--out-dir` for v2. The runner refuses to add v2 responses to a folder that already holds responses from a different prompt version, so `runs/openrouter-current/full` (v1) stays intact.
+Use a new `--out-dir` for each run. The runner refuses to add responses to a folder that already holds responses from a different prompt version.
 
 ## Resuming and failures
 
@@ -102,7 +102,7 @@ Rerunning the same command resumes: requests that already have a successful resp
 - Responses that arrive with HTTP 200 but contain a provider error or no answer are recorded as failures, so they are retried on the next run.
 - A spending-limit or credit error (402, or 403 mentioning a limit) stops the whole run instead of failing every remaining request. Top up the key and rerun the same command.
 
-The default `--max-tokens` is 2048. With 1200 in the v1 run, 406 answers (363 from Gemini, whose hidden reasoning counts toward the limit) were cut off and mostly became unparseable. `summary.md` reports how many responses were truncated. After the main run, `--retry-truncated-max-tokens 8192` re-queries only the cut-off responses with a larger limit; every other request keeps its original limit in `requests.jsonl`.
+The default `--max-tokens` is 2048. Lower limits cut off many answers, mostly Gemini's, whose hidden reasoning counts toward the limit, and cut-off answers are usually unparseable. `summary.md` reports how many responses were truncated. After the main run, `--retry-truncated-max-tokens 8192` re-queries only the cut-off responses with a larger limit; every other request keeps its original limit in `requests.jsonl`.
 
 ## Routing and reasoning
 
