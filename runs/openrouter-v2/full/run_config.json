@@ -1,0 +1,31 @@
+{
+  "allow_byok_fallback": false,
+  "dataset_root": "/Users/deep-gandhi/Desktop/projects/comment-injection/rust-vuln-dataset",
+  "extended_families": [
+    "manual"
+  ],
+  "manifest": "runs/openrouter-v2/manifest.jsonl",
+  "max_source_chars": 120000,
+  "max_tokens": 2048,
+  "models": {
+    "claude_sonnet_5_5": "anthropic/claude-sonnet-5.5",
+    "deepseek_v4_pro": "deepseek/deepseek-v4-pro",
+    "gemini_3_8_flash": "google/gemini-3.8-flash",
+    "gpt_6_1_sol": "openai/gpt-6.1-sol"
+  },
+  "passes": [
+    "1. main run (resumed after two Cursor crashes), max_tokens 2048, BYOK-only routing for Claude/Gemini",
+    "2. retry of failed requests, same settings",
+    "3. --retry-truncated-max-tokens 8192: re-queried responses cut off at 2048 (requests.jsonl max_tokens=8192 where the final answer came from this pass)",
+    "4. --allow-byok-fallback for requests still failing (requests.jsonl provider=null where the final answer came from this pass)"
+  ],
+  "prompt_version": "v2",
+  "reasoning_effort": "auto",
+  "repeat_count": 2,
+  "repeat_families": [
+    "manual"
+  ],
+  "repeat_fraction": 0.1,
+  "retry_truncated_max_tokens": null,
+  "unanswered_requests": 5
+}

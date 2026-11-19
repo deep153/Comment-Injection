@@ -1,0 +1,104 @@
+{
+  "clusters": 176,
+  "n": 33792,
+  "terms": [
+    {
+      "ci_high": 1.1391088444635276,
+      "ci_low": 0.6510053522521491,
+      "odds_ratio": 0.8611422382763008,
+      "p_value": 0.2949079211535258,
+      "term": "Intercept"
+    },
+    {
+      "ci_high": 0.9867721778751252,
+      "ci_low": 0.8807425044665644,
+      "odds_ratio": 0.9322511460329046,
+      "p_value": 0.01555657823341075,
+      "term": "C(defense, Treatment('neutral'))[T.tagged]"
+    },
+    {
+      "ci_high": 0.9982255799910026,
+      "ci_low": 0.9088686870298636,
+      "odds_ratio": 0.9524998541973886,
+      "p_value": 0.04193140971621641,
+      "term": "C(defense, Treatment('neutral'))[T.warning]"
+    },
+    {
+      "ci_high": 0.9060950374752306,
+      "ci_low": 0.8230573013816406,
+      "odds_ratio": 0.8635786798779018,
+      "p_value": 2.2102391451468384e-09,
+      "term": "C(style, Treatment('dsc'))[T.api]"
+    },
+    {
+      "ci_high": 1.1722566883427625,
+      "ci_low": 1.041601764206273,
+      "odds_ratio": 1.1049998346970125,
+      "p_value": 0.0009262149202543511,
+      "term": "C(style, Treatment('dsc'))[T.escape]"
+    },
+    {
+      "ci_high": 0.8618427621142006,
+      "ci_low": 0.7687349814757878,
+      "odds_ratio": 0.8139586474563077,
+      "p_value": 1.690914051452134e-12,
+      "term": "C(style, Treatment('dsc'))[T.ivm]"
+    },
+    {
+      "ci_high": 1.2987924338075363,
+      "ci_low": 1.0956134874998873,
+      "odds_ratio": 1.192884951679055,
+      "p_value": 4.823086253235511e-05,
+      "term": "C(style, Treatment('dsc'))[T.rust]"
+    },
+    {
+      "ci_high": 6.0485839484625705,
+      "ci_low": 4.327605691090289,
+      "odds_ratio": 5.116237515831726,
+      "p_value": 1.9969015729610918e-81,
+      "term": "C(model)[T.deepseek-v4-pro]"
+    },
+    {
+      "ci_high": 0.8725530982968756,
+      "ci_low": 0.6896383534148668,
+      "odds_ratio": 0.7757229415045669,
+      "p_value": 2.3205972799934667e-05,
+      "term": "C(model)[T.gemini-3.8-flash]"
+    },
+    {
+      "ci_high": 0.7258698061063928,
+      "ci_low": 0.5152846989268463,
+      "odds_ratio": 0.6115795978444841,
+      "p_value": 1.853325854630495e-08,
+      "term": "C(model)[T.gpt-6.1-sol]"
+    },
+    {
+      "ci_high": 0.8368101165056866,
+      "ci_low": 0.44351910367707414,
+      "odds_ratio": 0.6092136512099101,
+      "p_value": 0.0022133454475784394,
+      "term": "C(goal, Treatment('suppression'))[T.induction]"
+    },
+    {
+      "ci_high": 0.9928678118553386,
+      "ci_low": 0.9138122758875646,
+      "odds_ratio": 0.9525202332796051,
+      "p_value": 0.02155480029521892,
+      "term": "C(placement, Treatment('top'))[T.inline]"
+    },
+    {
+      "ci_high": 0.47802830239678945,
+      "ci_low": 0.34176756850883294,
+      "odds_ratio": 0.4041962030852787,
+      "p_value": 3.5874307411489946e-26,
+      "term": "C(defense, Treatment('neutral'))[T.tagged]:C(goal, Treatment('suppression'))[T.induction]"
+    },
+    {
+      "ci_high": 0.5486699031882841,
+      "ci_low": 0.42106943765570587,
+      "odds_ratio": 0.4806538542382671,
+      "p_value": 2.012177918538278e-27,
+      "term": "C(defense, Treatment('neutral'))[T.warning]:C(goal, Treatment('suppression'))[T.induction]"
+    }
+  ]
+}
