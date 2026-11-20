@@ -1,6 +1,6 @@
 {
   "allow_byok_fallback": false,
-  "dataset_root": "/Users/deep-gandhi/Desktop/projects/comment-injection/rust-vuln-dataset",
+  "dataset_root": "rust-vuln-dataset",
   "extended_families": [
     "manual"
   ],
