@@ -233,7 +233,7 @@ The source dataset and paper draft are never modified. Generated files belong un
 
 ## Revision analyses
 
-`openrouter_eval.revision` reads the `parsed.jsonl` of one or more scored run directories and writes `<analysis>.json` and `<analysis>.md` into a separate output directory. It makes no network calls and takes about a second on the v2 run.
+`openrouter_eval.revision` reads the `parsed.jsonl` of one or more scored run directories and writes `<analysis>.json` and `<analysis>.md` into a separate output directory. It makes no network calls; all analyses take about 5 seconds on the v2 run and 9 seconds with the placebo run added (GEE fits about 2.5 seconds of that).
 
 ```bash
 python3 -m openrouter_eval.revision \
