@@ -141,6 +141,8 @@ The default `--max-tokens` is 2048. Lower limits cut off many answers, mostly Ge
 - GPT prefers OpenAI's flex tier (half price, slower) and has a `max_price` cap so it never falls back to priority tiers.
 - DeepSeek goes to the cheapest fp8 host, so every answer comes from the same precision.
 - Claude and Gemini are pinned to the provider that holds the BYOK key (`anthropic`, `google-ai-studio`). Without this, OpenRouter retries Gemini's intermittent "blocked the response" errors on its own billed Google endpoint. For a final pass over requests that still fail, add `--allow-byok-fallback`.
+- Claude requests are sent without `response_format` (recorded as `null` in `requests.jsonl`). In the v2 run JSON mode was not enforced for Claude, which answered with analysis followed by the JSON object. By November 2026 OpenRouter enforced it, and Claude then returned `{}` or put code into JSON keys for about half of the answers. Dropping JSON mode restores the v2 behaviour; the prompt text is unchanged.
+- An answer that stops with `finish_reason = "content_filter"` (Gemini's "blocked the response", which now arrives as a cut-off answer) is recorded as a failure and retried, like v2's blocked-response errors.
 
 The routing used for each request is stored in its `provider` field in `requests.jsonl`, and the reasoning setting in its `reasoning` field.
 
