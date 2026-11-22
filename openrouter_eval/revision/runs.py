@@ -106,6 +106,18 @@ def is_attack(row: dict[str, Any]) -> bool:
     return row.get("attack_goal") in {"suppression", "induction"}
 
 
+def attacks_with_baseline(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Attacked rows with their clean `baseline` row (or None) and `clean_correct`, the conditional flip filter."""
+    clean = clean_baselines(rows)
+    out = []
+    for row in rows:
+        if not is_attack(row):
+            continue
+        base = clean.get(baseline_key(row))
+        out.append({**row, "baseline": base, "clean_correct": bool(base and base.get("correct"))})
+    return out
+
+
 def sources(rows: list[dict[str, Any]]) -> dict[str, list[str]]:
     """Run directories and prompt versions behind rows, including attached clean `baseline` rows."""
     rows = rows + [r["baseline"] for r in rows if r.get("baseline")]
