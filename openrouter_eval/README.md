@@ -233,7 +233,7 @@ The source dataset and paper draft are never modified. Generated files belong un
 
 ## Revision analyses
 
-`openrouter_eval.revision` reads the `parsed.jsonl` of one or more scored run directories, and the `outcomes.jsonl` and `steps.jsonl` of adaptive-attack run directories, and writes `<analysis>.json` and `<analysis>.md` into a separate output directory. It makes no network calls and takes about a second on the v2 run.
+`openrouter_eval.revision` reads the `parsed.jsonl` of one or more scored run directories, and the `outcomes.jsonl` and `steps.jsonl` of adaptive-attack run directories, and writes `<analysis>.json` and `<analysis>.md` into a separate output directory. It makes no network calls; all analyses take about 5 seconds on the v2 run and 9 seconds with the placebo run added (GEE fits about 2.5 seconds of that).
 
 ```bash
 python3 -m openrouter_eval.revision \
@@ -241,7 +241,8 @@ python3 -m openrouter_eval.revision \
   [--run-dir runs/<new-run> ...] \
   [--adaptive-run-dir runs/<adaptive-run> ...] \
   --out-dir runs/revision-analyses \
-  [--family manual] [--analyses score_shift,cost_report,...] [--seed 20260101] [--bootstrap 2000]
+  [--family manual] [--analyses score_shift,cost_report,...] [--seed 20260101] [--bootstrap 2000] \
+  [--tost-margin 0.05] [--gee-maxiter 60]
 ```
 
 - Rows are restricted to completed, non-repeat answers of one dataset family (`--family all` keeps every family), as in the scorer.
@@ -259,6 +260,12 @@ python3 -m openrouter_eval.revision \
 | `cost_report` | USD per run directory, role and model from every recorded response row (`responses.jsonl` of runner directories, `steps.jsonl` of adaptive directories), failed attempts and retries included. OpenRouter-billed `cost` and BYOK `upstream_inference_cost` (billed to the user's own provider key) are reported separately. Archived logs such as `responses.before-*.jsonl` are not read |
 | `rationales` | Share of parsed answers whose rationale mentions the comment, per model, defense and goal (clean rows as a false-positive baseline); writes `rationale_coding_sample.csv` for manual coding and reads it back with `--coding-file` |
 | `memorization` | Memorization-cue rates in clean rationales, item-level flags (any model) and clean accuracy, conditional flip rate and benign flip rate per model and defense, full set vs. flagged items excluded |
+| `defense_rates` | Per model (and pooled), defense and goal: clean accuracy, raw ASR, conditional flip rate, benign-comment baseline and their difference, with 95% cluster-bootstrap intervals; the placebo appears beside the v2 defenses when its run is supplied |
+| `defense_contrasts` | Paired contrasts (warning, tagged, placebo minus neutral; warning, tagged minus placebo) on conditional flip rate and raw ASR, matched on model, item and attack family: cluster-bootstrap interval of the difference, exact McNemar, Holm over per-model tests. Contrasts whose defenses are absent are listed as skipped |
+| `defense_gee` | Logistic GEE (exchangeable, clustered by pair) per model, and pooled with a defense x goal x model interaction plus joint Wald tests, for raw attack success and for the conditional-flip subset. Each fit reports its status (`converged`, `unstable` for separation, `not converged`, `failed`) and time |
+| `stripping_tost` | TOST equivalence of stripped and neutral clean accuracy, paired by item, per model and pooled, with a cluster-robust SE and 90% interval (`--tost-margin`, default 0.05) |
+
+Extra options: `--tost-margin` (equivalence margin, default 0.05) and `--gee-maxiter` (GEE iteration limit, default 60).
 
 Rationale options: `--coding-per-stratum N` (default 20) sets how many flipped attacked answers are sampled per model x defense x goal (seeded by `--seed`). Code each row's `code` column as `follows_comment`, `dismisses_comment_but_flips` or `no_mention` (blank = uncoded) and re-run with `--coding-file <coded csv>`; an export that already holds codes is never overwritten. `--memorization-scope clean|all` (default `clean`) chooses which rationales are searched for memorization cues: clean prompts only, or every condition with echoes of the row's injected comment ignored (word runs shared with the comment are removed and cues the comment itself matches are skipped; the `induction_api` comment itself says "CVE triage note: known vulnerable pattern"). The exact rules are written into `rationales.md` and `memorization.md`.
 
