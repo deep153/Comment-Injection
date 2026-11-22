@@ -12,7 +12,7 @@ from threading import Event, Lock
 from typing import Any
 
 from .common import DEFAULT_MODELS, append_jsonl, read_jsonl, relative_to, safe_read, sha256_text, stable_id, write_json
-from .prompts import PROMPT_VERSION, build_messages, variants_for_label
+from .prompts import DEFENSE_TEXT, PLACEBO_DEFENSE, PROMPT_VERSION, build_messages, variants_for_label
 
 
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
@@ -108,6 +108,7 @@ def build_requests(
     byok_only: bool = True,
 ) -> list[dict[str, Any]]:
     requests: list[dict[str, Any]] = []
+    placebo = bool(defenses) and PLACEBO_DEFENSE in defenses
     filtered = [item for item in manifest if not families or item["dataset_family"] in families]
     if limit_per_family is not None:
         family_counts: dict[str, int] = {}
@@ -134,7 +135,7 @@ def build_requests(
         if item["dataset_family"] in repeat_families and in_repeat_sample(item, repeat_fraction):
             repeats += repeat_count
         for model_key, model_slug in models.items():
-            for variant in variants_for_label(item["label"], extended=extended):
+            for variant in variants_for_label(item["label"], extended=extended, placebo=placebo):
                 if attack_families and variant.attack_family not in attack_families:
                     continue
                 if defenses and variant.defense not in defenses:
@@ -411,6 +412,8 @@ def main() -> None:
         "max_tokens": args.max_tokens,
         "reasoning_effort": args.reasoning_effort,
         "prompt_version": PROMPT_VERSION,
+        "defense_text": DEFENSE_TEXT,
+        "defenses": args.defenses,
         "extended_families": args.extended_families,
         "repeat_families": args.repeat_families,
         "repeat_fraction": args.repeat_fraction,
