@@ -253,5 +253,9 @@ python3 -m openrouter_eval.revision \
 | `score_shift` | Attacked minus clean vulnerability score (same item, model, defense), signed toward the attacker's target, per model, goal and defense, with 95% cluster-bootstrap intervals over pairs |
 | `calibration` | Clean-prompt accuracy, mean confidence, ECE, Brier score and reliability bins per model and defense |
 | `margin_bins` | Flip rate and conditional flip rate (clean verdict correct) by bins of clean margin \|clean vulnerability score - 0.5\| |
+| `rationales` | Share of parsed answers whose rationale mentions the comment, per model, defense and goal (clean rows as a false-positive baseline); writes `rationale_coding_sample.csv` for manual coding and reads it back with `--coding-file` |
+| `memorization` | Memorization-cue rates in clean rationales, item-level flags (any model) and clean accuracy, conditional flip rate and benign flip rate per model and defense, full set vs. flagged items excluded |
+
+Rationale options: `--coding-per-stratum N` (default 20) sets how many flipped attacked answers are sampled per model x defense x goal (seeded by `--seed`). Code each row's `code` column as `follows_comment`, `dismisses_comment_but_flips` or `no_mention` (blank = uncoded) and re-run with `--coding-file <coded csv>`; an export that already holds codes is never overwritten. `--memorization-scope clean|all` (default `clean`) chooses which rationales are searched for memorization cues: clean prompts only, or every condition with cues that also match the row's injected comment ignored (the `induction_api` comment itself says "CVE triage note: known vulnerable pattern"). The exact rules are written into `rationales.md` and `memorization.md`.
 
 Each analysis is one module in `openrouter_eval/revision/analyses/`, found automatically. A module defines `NAME`, `run(ctx) -> Result | None` and optionally `add_arguments(parser)`.
