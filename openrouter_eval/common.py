@@ -63,5 +63,18 @@ def stable_id(*parts: object) -> str:
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()[:16]
 
 
+def response_cost(response: dict[str, Any]) -> float:
+    """USD charged for one recorded response.
+
+    Bring-your-own-key routes report `cost` as OpenRouter's own fee (0 so far) and the provider's
+    charge as `cost_details.upstream_inference_cost`, so both count.
+    """
+    usage = (response.get("raw") or {}).get("usage") or {}
+    cost = float(usage.get("cost") or 0)
+    if usage.get("is_byok"):
+        cost += float((usage.get("cost_details") or {}).get("upstream_inference_cost") or 0)
+    return cost
+
+
 def relative_to(path: Path, root: Path) -> str:
     return str(path.resolve().relative_to(root.resolve()))
