@@ -129,3 +129,28 @@ Models are asked for JSON only. Some Claude answers write analysis first and end
 | `gee_<family>[_interaction].{json,md}` | Odds ratios from a logistic GEE clustered by vulnerable/fixed pair |
 
 The source dataset and paper draft are never modified. Generated files belong under `runs/`.
+
+## Revision analyses
+
+`openrouter_eval.revision` reads the `parsed.jsonl` of one or more scored run directories and writes `<analysis>.json` and `<analysis>.md` into a separate output directory. It makes no network calls and takes about a second on the v2 run.
+
+```bash
+python3 -m openrouter_eval.revision \
+  --run-dir runs/openrouter-v2/full \
+  [--run-dir runs/<new-run> ...] \
+  --out-dir runs/revision-analyses \
+  [--family manual] [--analyses score_shift,calibration,margin_bins] [--seed 20260101] [--bootstrap 2000]
+```
+
+- Rows are restricted to completed, non-repeat answers of one dataset family (`--family all` keeps every family), as in the scorer.
+- Runs are joined on model, item, defense and attack family, not on prompt version. When several run directories hold the same row, the one listed last wins; each output's `provenance` counts the replaced rows. Verdict flips are recomputed against the clean row after joining.
+- Every output records the source run directories, their prompt versions and the clustering unit (vulnerable/fixed pair, `paired_item_key`). Table rows also list the runs and prompt versions behind them.
+- The output directory must lie outside every input run directory.
+
+| Analysis | Contents |
+|---|---|
+| `score_shift` | Attacked minus clean vulnerability score (same item, model, defense), signed toward the attacker's target, per model, goal and defense, with 95% cluster-bootstrap intervals over pairs |
+| `calibration` | Clean-prompt accuracy, mean confidence, ECE, Brier score and reliability bins per model and defense |
+| `margin_bins` | Flip rate and conditional flip rate (clean verdict correct) by bins of clean margin \|clean vulnerability score - 0.5\| |
+
+Each analysis is one module in `openrouter_eval/revision/analyses/`, found automatically. A module defines `NAME`, `run(ctx) -> Result | None` and optionally `add_arguments(parser)`.
