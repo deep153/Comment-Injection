@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -33,21 +33,34 @@ class RunSource:
 
 
 @dataclass
+class AdaptiveRun:
+    """One adaptive-attack run directory: outcome rows as written, plus its run_config.json."""
+
+    run_dir: Path
+    outcomes: list[dict[str, Any]]
+    run_config: dict[str, Any] | None = None
+
+
+@dataclass
 class AnalysisInput:
     """Primary (non-repeat), completed rows of one dataset family, joined across runs."""
 
     rows: list[dict[str, Any]]
     runs: list[RunSource]
     family: str | None
+    adaptive: list[AdaptiveRun] = field(default_factory=list)
 
     def provenance(self) -> dict[str, Any]:
-        return {
+        data = {
             "runs": [run.describe() for run in self.runs],
             "dataset_family": self.family or "all",
             "clustering_unit": CLUSTERING_UNIT,
             "repeats": "excluded (repeat > 0)",
             "join_key": list(JOIN_KEY),
         }
+        if self.adaptive:
+            data["adaptive_runs"] = [str(run.run_dir) for run in self.adaptive]
+        return data
 
 
 def cluster_of(row: dict[str, Any]) -> str:
@@ -91,6 +104,18 @@ def load_runs(run_dirs: list[Path], family: str | None) -> AnalysisInput:
     rows = list(joined.values())
     mark_flips(rows)
     return AnalysisInput(rows=rows, runs=runs, family=family)
+
+
+def load_adaptive(run_dirs: list[Path]) -> list[AdaptiveRun]:
+    """Adaptive run directories hold steps.jsonl and outcomes.jsonl instead of parsed.jsonl."""
+    runs = []
+    for run_dir in run_dirs:
+        if not (run_dir / "steps.jsonl").exists() and not (run_dir / "outcomes.jsonl").exists():
+            raise SystemExit(f"{run_dir} has neither steps.jsonl nor outcomes.jsonl; not an adaptive run directory")
+        config_path = run_dir / "run_config.json"
+        config = json.loads(config_path.read_text(encoding="utf-8")) if config_path.exists() else None
+        runs.append(AdaptiveRun(run_dir=run_dir, outcomes=read_jsonl(run_dir / "outcomes.jsonl"), run_config=config))
+    return runs
 
 
 def clean_baselines(rows: list[dict[str, Any]]) -> dict[tuple[Any, ...], dict[str, Any]]:
