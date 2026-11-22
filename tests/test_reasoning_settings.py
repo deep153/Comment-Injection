@@ -76,7 +76,9 @@ def test_v2_plain_models_file_builds_the_same_request_rows_as_v2(tmp_path):
     requests = requests_for(tmp_path, v2_models)
 
     # Digest of the rows the v2 runner (commit d84bfb6) builds for the same pair and models file.
-    digest = hashlib.sha256("".join(json.dumps(r, sort_keys=True) + "\n" for r in requests).encode()).hexdigest()
+    # The prompt version label was bumped to v3 for the placebo; every other field must match v2.
+    v2_rows = [{**r, "prompt_version": "v2"} for r in requests]
+    digest = hashlib.sha256("".join(json.dumps(r, sort_keys=True) + "\n" for r in v2_rows).encode()).hexdigest()
     assert len(requests) == 248
     assert digest == "248efd606789c4032612af9060133ed0b92893f07c111ffec6931d0a4f7b9f33"
     assert reasoning_by_model(requests) == {
