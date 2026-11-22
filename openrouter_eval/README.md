@@ -111,7 +111,34 @@ The default `--max-tokens` is 2048. Lower limits cut off many answers, mostly Ge
 - DeepSeek goes to the cheapest fp8 host, so every answer comes from the same precision.
 - Claude and Gemini are pinned to the provider that holds the BYOK key (`anthropic`, `google-ai-studio`). Without this, OpenRouter retries Gemini's intermittent "blocked the response" errors on its own billed Google endpoint. For a final pass over requests that still fail, add `--allow-byok-fallback`.
 
-The routing used for each request is stored in its `provider` field in `requests.jsonl`.
+The routing used for each request is stored in its `provider` field in `requests.jsonl`, and the reasoning setting in its `reasoning` field.
+
+### Per-model settings
+
+`--reasoning-effort` (default `auto`, the behaviour above) applies to every model. A models file entry can override it for one model by giving an object instead of a slug:
+
+```json
+{
+  "claude_sonnet_5_5": "anthropic/claude-sonnet-5.5",
+  "deepseek_v4_pro": {"slug": "deepseek/deepseek-v4-pro", "reasoning_effort": "minimal"}
+}
+```
+
+`slug` is required; `reasoning_effort` is optional and accepts the same values as `--reasoning-effort`. Plain slug entries (as in `runs/openrouter-v2/models.json`) build exactly the same requests as before. `run_config.json` records the models file as given, including per-model settings.
+
+The matched-reasoning rerun uses `runs/deepseek-matched-reasoning/models.json` (DeepSeek V4 Pro at `minimal`) on the main set with the extended design and no repeats, which is 10,912 requests (352 items × 31 prompts):
+
+```sh
+python3 -m openrouter_eval.run_openrouter \
+  --dataset-root rust-vuln-dataset \
+  --manifest runs/openrouter-v2/manifest.jsonl \
+  --models runs/deepseek-matched-reasoning/models.json \
+  --out-dir runs/deepseek-matched-reasoning/full \
+  --families manual --repeat-families \
+  --dry-run
+```
+
+Reasoning makes answers longer, so expect more truncation at the default `--max-tokens`; the scorer counts truncated answers as in v2, and `--retry-truncated-max-tokens 8192` re-queries them.
 
 ## Parsing
 
