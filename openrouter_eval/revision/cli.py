@@ -8,13 +8,15 @@ from typing import Any
 from ..common import write_json
 from .analyses import discover
 from .base import Context, Result
-from .runs import AnalysisInput, load_runs
+from .runs import AnalysisInput, load_adaptive, load_runs
 
 
 def build_parser(units: dict[str, Any]) -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Offline revision analyses over scored run directories.")
-    parser.add_argument("--run-dir", type=Path, action="append", required=True,
+    parser.add_argument("--run-dir", type=Path, action="append", default=[],
                         help="Scored run directory with parsed.jsonl; repeat to combine runs (later runs win on overlap).")
+    parser.add_argument("--adaptive-run-dir", type=Path, action="append", default=[],
+                        help="Adaptive-attack run directory with steps.jsonl and outcomes.jsonl; repeatable.")
     parser.add_argument("--out-dir", type=Path, required=True, help="Output directory, outside every run directory.")
     parser.add_argument("--family", default="manual", help="Dataset family to analyse, or 'all'.")
     parser.add_argument("--analyses", default="all", help=f"Comma-separated subset of: {', '.join(units)}.")
@@ -37,8 +39,10 @@ def check_out_dir(out_dir: Path, run_dirs: list[Path]) -> None:
 def provenance_lines(data: AnalysisInput) -> list[str]:
     runs = "; ".join(f"`{run.run_dir}` (prompt version {', '.join(run.prompt_versions)})" for run in data.runs)
     provenance = data.provenance()
-    return [
-        f"Runs: {runs}.",
+    lines = [f"Runs: {runs or 'none'}."]
+    if data.adaptive:
+        lines.append(f"Adaptive runs: {'; '.join(f'`{run.run_dir}`' for run in data.adaptive)}.")
+    return lines + [
         f"Dataset family: {provenance['dataset_family']}; clustering unit: {provenance['clustering_unit']}; "
         f"repeats excluded.",
     ]
@@ -57,10 +61,13 @@ def main(argv: list[str] | None = None) -> None:
     unknown = [name for name in selected if name not in units]
     if unknown:
         raise SystemExit(f"unknown analyses: {', '.join(unknown)}; available: {', '.join(units)}")
-    check_out_dir(args.out_dir, args.run_dir)
+    if not args.run_dir and not args.adaptive_run_dir:
+        raise SystemExit("give at least one --run-dir or --adaptive-run-dir")
+    check_out_dir(args.out_dir, args.run_dir + args.adaptive_run_dir)
 
     started = time.perf_counter()
     data = load_runs(args.run_dir, None if args.family == "all" else args.family)
+    data.adaptive = load_adaptive(args.adaptive_run_dir)
     args.out_dir.mkdir(parents=True, exist_ok=True)
     ctx = Context(data=data, args=args, out_dir=args.out_dir)
     for name in selected:

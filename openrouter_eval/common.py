@@ -69,11 +69,16 @@ def response_cost(response: dict[str, Any]) -> float:
     Bring-your-own-key routes report `cost` as OpenRouter's own fee (0 so far) and the provider's
     charge as `cost_details.upstream_inference_cost`, so both count.
     """
+    return sum(cost_parts(response))
+
+
+def cost_parts(response: dict[str, Any]) -> tuple[float, float]:
+    """(OpenRouter-billed USD, BYOK upstream USD billed to the user's own provider key) for one response."""
     usage = (response.get("raw") or {}).get("usage") or {}
-    cost = float(usage.get("cost") or 0)
+    upstream = 0.0
     if usage.get("is_byok"):
-        cost += float((usage.get("cost_details") or {}).get("upstream_inference_cost") or 0)
-    return cost
+        upstream = float((usage.get("cost_details") or {}).get("upstream_inference_cost") or 0)
+    return float(usage.get("cost") or 0), upstream
 
 
 def relative_to(path: Path, root: Path) -> str:

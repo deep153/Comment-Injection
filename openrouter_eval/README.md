@@ -233,19 +233,21 @@ The source dataset and paper draft are never modified. Generated files belong un
 
 ## Revision analyses
 
-`openrouter_eval.revision` reads the `parsed.jsonl` of one or more scored run directories and writes `<analysis>.json` and `<analysis>.md` into a separate output directory. It makes no network calls and takes about a second on the v2 run.
+`openrouter_eval.revision` reads the `parsed.jsonl` of one or more scored run directories, and the `outcomes.jsonl` and `steps.jsonl` of adaptive-attack run directories, and writes `<analysis>.json` and `<analysis>.md` into a separate output directory. It makes no network calls and takes about a second on the v2 run.
 
 ```bash
 python3 -m openrouter_eval.revision \
   --run-dir runs/openrouter-v2/full \
   [--run-dir runs/<new-run> ...] \
+  [--adaptive-run-dir runs/<adaptive-run> ...] \
   --out-dir runs/revision-analyses \
-  [--family manual] [--analyses score_shift,calibration,margin_bins] [--seed 20260101] [--bootstrap 2000]
+  [--family manual] [--analyses score_shift,cost_report,...] [--seed 20260101] [--bootstrap 2000]
 ```
 
 - Rows are restricted to completed, non-repeat answers of one dataset family (`--family all` keeps every family), as in the scorer.
 - Runs are joined on model, item, defense and attack family, not on prompt version. When several run directories hold the same row, the one listed last wins; each output's `provenance` counts the replaced rows. Verdict flips are recomputed against the clean row after joining.
 - Every output records the source run directories, their prompt versions and the clustering unit (vulnerable/fixed pair, `paired_item_key`). Table rows also list the runs and prompt versions behind them.
+- `--run-dir` and `--adaptive-run-dir` are both optional and repeatable, but at least one is needed. Analyses without applicable inputs are skipped.
 - The output directory must lie outside every input run directory.
 
 | Analysis | Contents |
@@ -253,5 +255,7 @@ python3 -m openrouter_eval.revision \
 | `score_shift` | Attacked minus clean vulnerability score (same item, model, defense), signed toward the attacker's target, per model, goal and defense, with 95% cluster-bootstrap intervals over pairs |
 | `calibration` | Clean-prompt accuracy, mean confidence, ECE, Brier score and reliability bins per model and defense |
 | `margin_bins` | Flip rate and conditional flip rate (clean verdict correct) by bins of clean margin \|clean vulnerability score - 0.5\| |
+| `adaptive_summary` | Adaptive runs: success within the query budget on eligible tasks (clean verdict correct), 95% cluster-bootstrap interval, queries-to-first-success counts, cumulative success by query, rejected candidates, per detector model, defense, attacker mode, feedback mode, attacker model and budget; tasks with steps but no outcome are counted |
+| `cost_report` | USD per run directory, role and model from every recorded response row (`responses.jsonl` of runner directories, `steps.jsonl` of adaptive directories), failed attempts and retries included. OpenRouter-billed `cost` and BYOK `upstream_inference_cost` (billed to the user's own provider key) are reported separately. Archived logs such as `responses.before-*.jsonl` are not read |
 
 Each analysis is one module in `openrouter_eval/revision/analyses/`, found automatically. A module defines `NAME`, `run(ctx) -> Result | None` and optionally `add_arguments(parser)`.
