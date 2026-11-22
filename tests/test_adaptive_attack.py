@@ -379,6 +379,15 @@ def test_resume_refuses_changed_attack_settings(v2_dataset, tmp_path):
         run(v2_dataset, tasks, tmp_path / "run", ScriptedCall(attacker=[], detector=[]), query_budget=3)
 
 
+def test_resume_allows_byok_fallback_for_a_final_pass(v2_dataset, tmp_path):
+    vuln = tasks_for(v2_dataset, tmp_path, [(VULN, "deepseek_v4_pro", "neutral", True)])
+    fixed = tasks_for(v2_dataset, tmp_path, [(FIXED, "deepseek_v4_pro", "neutral", True)])
+    run(v2_dataset, vuln, tmp_path / "run", ScriptedCall(attacker=[candidate("// a")], detector=[verdict("safe")]))
+    run(v2_dataset, fixed, tmp_path / "run", ScriptedCall(attacker=[candidate("// b")], detector=[verdict("vulnerable")]),
+        byok_only=False)
+    assert len(outcomes(tmp_path / "run")) == 2
+
+
 def test_dry_run_reports_maximum_calls_without_calling(v2_dataset, tmp_path, monkeypatch, capsys):
     root, manifest = v2_dataset
     manifest_path = tmp_path / "manifest.jsonl"

@@ -470,9 +470,15 @@ def run_adaptive(
         "attacker_system_prompts": {mode: attacker_system_prompt(mode, config) for mode in ATTACKER_MODES},
     }
     config_path = out_dir / "run_config.json"
+
+    def guarded(values: dict[str, Any]) -> dict[str, Any]:
+        # Routing may change for a final --allow-byok-fallback pass; each step records its own provider.
+        attack = {k: v for k, v in (values.get("attack") or {}).items() if k != "byok_only"}
+        return {**{key: values.get(key) for key in settings}, "attack": attack}
+
     if config_path.exists() and read_jsonl(out_dir / "steps.jsonl"):
         previous = json.loads(config_path.read_text(encoding="utf-8"))
-        if {key: previous.get(key) for key in settings} != settings:
+        if guarded(previous) != guarded(settings):
             raise SystemExit(
                 f"{out_dir} holds steps from different attack settings or prompt version; "
                 "use a new --out-dir so results are not mixed."
