@@ -36,9 +36,9 @@ def source_record(path: Path, dataset_root: Path) -> dict[str, Any]:
     }
 
 
-def manual_items(dataset_root: Path) -> list[dict[str, Any]]:
+def pair_items(dataset_root: Path, family: str, note: str) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    for vuln_path in sorted((dataset_root / "manual").glob("*/pairs/*/vulnerable.rs")):
+    for vuln_path in sorted((dataset_root / family).glob("*/pairs/*/vulnerable.rs")):
         pair_dir = vuln_path.parent
         case_dir = pair_dir.parents[1]
         fixed_path = pair_dir / "fixed.rs"
@@ -48,13 +48,13 @@ def manual_items(dataset_root: Path) -> list[dict[str, Any]]:
             ("vulnerable", "vulnerable", vuln_path),
             ("fixed", "safe", fixed_path),
         ):
-            notes = ["curated_manual_core"]
+            notes = [note]
             if path.stat().st_size == 0:
                 notes.append("empty_snippet")
             rows.append(
                 {
-                    "item_id": stable_id("manual", pair_key, role),
-                    "dataset_family": "manual",
+                    "item_id": stable_id(family, pair_key, role),
+                    "dataset_family": family,
                     "case_id": case_dir.name,
                     "pair_id": pair_dir.name,
                     "package": metadata.get("package"),
@@ -67,6 +67,20 @@ def manual_items(dataset_root: Path) -> list[dict[str, Any]]:
                     "paired_item_key": pair_key,
                 }
             )
+    return rows
+
+
+def manual_items(dataset_root: Path) -> list[dict[str, Any]]:
+    return pair_items(dataset_root, "manual", "curated_manual_core")
+
+
+def post_cutoff_items(dataset_root: Path) -> list[dict[str, Any]]:
+    rows = pair_items(dataset_root, "post_cutoff", "post_cutoff_advisory")
+    for row in rows:
+        published = load_yaml(dataset_root / row["metadata_path"]).get("date")
+        if not published:
+            raise ValueError(f"{row['metadata_path']} has no advisory publication date (`date`)")
+        row["advisory_published"] = str(published)
     return rows
 
 
@@ -178,6 +192,7 @@ def build_manifest(dataset_root: Path) -> list[dict[str, Any]]:
         + negative_items(dataset_root)
         + halurust_items(dataset_root)
         + rustmizan_items(dataset_root)
+        + post_cutoff_items(dataset_root)
     )
 
 
