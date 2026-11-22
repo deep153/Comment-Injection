@@ -18,13 +18,28 @@ from .prompts import DEFENSE_TEXT, PLACEBO_DEFENSE, PROMPT_VERSION, build_messag
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 
-def load_models(path: Path | None) -> dict[str, str]:
+MODEL_SETTING_KEYS = {"slug", "reasoning_effort"}
+
+
+def load_models(path: Path | None) -> dict[str, str | dict[str, str]]:
+    """Map model key to a slug, or to {"slug": ..., "reasoning_effort": ...} for per-model settings."""
     if not path:
         return DEFAULT_MODELS
     data = json.loads(path.read_text(encoding="utf-8"))
     if isinstance(data, list):
         return {model.replace("/", "_").replace("-", "_").replace(".", "_"): model for model in data}
+    for key, entry in data.items():
+        if isinstance(entry, dict) and ("slug" not in entry or set(entry) - MODEL_SETTING_KEYS):
+            raise SystemExit(
+                f"{path}: model {key!r} needs a 'slug' and only {sorted(MODEL_SETTING_KEYS)}; got {sorted(entry)}"
+            )
     return dict(data)
+
+
+def model_slug_and_effort(entry: str | dict[str, str], default_effort: str) -> tuple[str, str]:
+    if isinstance(entry, str):
+        return entry, default_effort
+    return entry["slug"], entry.get("reasoning_effort", default_effort)
 
 
 def reasoning_for_model(model: str, effort: str) -> dict[str, Any]:
@@ -92,7 +107,7 @@ def in_repeat_sample(item: dict[str, Any], fraction: float) -> bool:
 def build_requests(
     manifest: list[dict[str, Any]],
     dataset_root: Path,
-    models: dict[str, str],
+    models: dict[str, str | dict[str, str]],
     max_source_chars: int,
     limit: int | None,
     limit_per_family: int | None,
@@ -134,7 +149,8 @@ def build_requests(
         repeats = 1
         if item["dataset_family"] in repeat_families and in_repeat_sample(item, repeat_fraction):
             repeats += repeat_count
-        for model_key, model_slug in models.items():
+        for model_key, model_entry in models.items():
+            model_slug, model_effort = model_slug_and_effort(model_entry, reasoning_effort)
             for variant in variants_for_label(item["label"], extended=extended, placebo=placebo):
                 if attack_families and variant.attack_family not in attack_families:
                     continue
@@ -155,7 +171,7 @@ def build_requests(
                             "temperature": 0,
                             "max_tokens": max_tokens,
                             "response_format": {"type": "json_object"},
-                            "reasoning": reasoning_for_model(model_slug, reasoning_effort),
+                            "reasoning": reasoning_for_model(model_slug, model_effort),
                             "provider": provider_for_model(model_slug, byok_only),
                             "variant_id": variant.variant_id,
                             "repeat": repeat,
