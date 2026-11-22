@@ -170,7 +170,7 @@ def build_requests(
                             "messages": messages,
                             "temperature": 0,
                             "max_tokens": max_tokens,
-                            "response_format": {"type": "json_object"},
+                            "response_format": response_format_for_model(model_slug),
                             "reasoning": reasoning_for_model(model_slug, model_effort),
                             "provider": provider_for_model(model_slug, byok_only),
                             "variant_id": variant.variant_id,
@@ -189,18 +189,35 @@ def build_requests(
     return requests
 
 
-def openrouter_call(api_key: str, request: dict[str, Any], app_title: str) -> dict[str, Any]:
+def response_format_for_model(model: str) -> dict[str, str] | None:
+    """JSON mode per model.
+
+    Since the v2 run, OpenRouter enforces JSON mode for Claude, which then puts its analysis inside the
+    JSON object (empty `{}` or code as keys). Without it Claude answers as it did in v2: analysis, then
+    the JSON object, which the scorer extracts.
+    """
+    if model.startswith("anthropic/"):
+        return None
+    return {"type": "json_object"}
+
+
+def request_payload(request: dict[str, Any]) -> dict[str, Any]:
     payload = {
         "model": request["model"],
         "messages": request["messages"],
         "temperature": request["temperature"],
         "max_tokens": request["max_tokens"],
-        "response_format": request["response_format"],
         "reasoning": request["reasoning"],
     }
+    if request.get("response_format"):
+        payload["response_format"] = request["response_format"]
     if request.get("provider"):
         payload["provider"] = request["provider"]
-    body = json.dumps(payload).encode("utf-8")
+    return payload
+
+
+def openrouter_call(api_key: str, request: dict[str, Any], app_title: str) -> dict[str, Any]:
+    body = json.dumps(request_payload(request)).encode("utf-8")
     req = urllib.request.Request(
         OPENROUTER_URL,
         data=body,
@@ -236,6 +253,9 @@ def embedded_error(raw: dict[str, Any]) -> dict[str, Any] | None:
     if choices[0].get("finish_reason") == "error":
         err = choices[0].get("error")
         return err if isinstance(err, dict) else {"code": 502, "message": "finish_reason=error"}
+    if choices[0].get("finish_reason") == "content_filter":
+        # Gemini's "blocked the response" now arrives as a cut-off answer; retry it like v2's errors.
+        return {"code": 502, "message": "finish_reason=content_filter"}
     return None
 
 
