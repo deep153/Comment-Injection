@@ -9,9 +9,9 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 from threading import Event, Lock
-from typing import Any
+from typing import Any, Callable
 
-from .common import DEFAULT_MODELS, append_jsonl, read_jsonl, relative_to, safe_read, sha256_text, stable_id, write_json
+from .common import DEFAULT_MODELS, append_jsonl, read_jsonl, relative_to, response_cost, safe_read, sha256_text, stable_id, write_json
 from .prompts import PROMPT_VERSION, build_messages, variants_for_label
 
 
@@ -240,10 +240,19 @@ def run_requests(
     sleep_seconds: float,
     concurrency: int,
     retry_truncated_max_tokens: int | None = None,
+    max_cost_usd: float | None = None,
+    call: Callable[[dict[str, Any]], dict[str, Any]] | None = None,
 ) -> None:
+    """Call the API for requests not yet answered in out_dir.
+
+    `call` sends one request and returns a response row; it defaults to OpenRouter with the key from
+    OPENROUTER_API_KEY. With `max_cost_usd`, no request starts once recorded spend (including spend
+    already in responses.jsonl) reaches the ceiling; requests already in flight still finish.
+    """
     out_dir.mkdir(parents=True, exist_ok=True)
     responses_path = out_dir / "responses.jsonl"
-    successes = [row for row in read_jsonl(responses_path) if row.get("ok")]
+    previous = read_jsonl(responses_path)
+    successes = [row for row in previous if row.get("ok")]
     completed = {row["request_id"] for row in successes}
     if retry_truncated_max_tokens:
         untruncated = {row["request_id"] for row in successes if not is_truncated(row)}
@@ -257,13 +266,20 @@ def run_requests(
     requests_path.write_text("", encoding="utf-8")
     append_jsonl(requests_path, requests)
     print(f"wrote {len(requests)} requests to {requests_path}")
+    spent = sum(response_cost(row) for row in previous)
+    if max_cost_usd is not None:
+        print(f"recorded spend ${spent:.4f} of ${max_cost_usd:.4f} ceiling")
     if dry_run:
         print("dry run requested; no OpenRouter calls made")
         return
 
-    api_key = os.environ.get("OPENROUTER_API_KEY")
-    if not api_key:
-        raise SystemExit("OPENROUTER_API_KEY is not set; cannot call OpenRouter.")
+    if call is None:
+        api_key = os.environ.get("OPENROUTER_API_KEY")
+        if not api_key:
+            raise SystemExit("OPENROUTER_API_KEY is not set; cannot call OpenRouter.")
+
+        def call(request: dict[str, Any]) -> dict[str, Any]:
+            return openrouter_call(api_key, request, "comment-injection-rust")
 
     remaining = [r for r in requests if r["request_id"] not in completed]
     if max_calls is not None:
@@ -271,6 +287,20 @@ def run_requests(
     print(f"{len(completed)} already complete; calling {len(remaining)} requests")
 
     stop = Event()
+    lock = Lock()
+    ceiling_hit = False
+
+    def record_spend(response: dict[str, Any]) -> None:
+        nonlocal spent, ceiling_hit
+        with lock:
+            spent += response_cost(response)
+            if max_cost_usd is not None and spent >= max_cost_usd and not ceiling_hit:
+                ceiling_hit = True
+                stop.set()
+                print(f"stopping: estimated spend ${spent:.4f} reached ceiling ${max_cost_usd:.4f}", flush=True)
+
+    if max_cost_usd is not None and spent >= max_cost_usd:
+        record_spend({})
 
     def call_with_retries(request: dict[str, Any]) -> dict[str, Any] | None:
         response: dict[str, Any]
@@ -278,7 +308,8 @@ def run_requests(
             if stop.is_set():
                 return None
             try:
-                response = openrouter_call(api_key, request, "comment-injection-rust")
+                response = call(request)
+                record_spend(response)
                 if response["ok"]:
                     break
                 response["attempt"] = attempt
@@ -319,7 +350,6 @@ def run_requests(
         response["variant_id"] = request["variant_id"]
         return response
 
-    lock = Lock()
     done = 0
 
     def persist(response: dict[str, Any] | None) -> None:
@@ -331,7 +361,7 @@ def run_requests(
             done += 1
             print(
                 f"{done}/{len(remaining)} {response.get('model')} "
-                f"{response.get('variant_id')} ok={response.get('ok')}",
+                f"{response.get('variant_id')} ok={response.get('ok')} spent=${spent:.4f}",
                 flush=True,
             )
 
@@ -345,6 +375,11 @@ def run_requests(
             futures = [pool.submit(call_with_retries, request) for request in remaining]
             for future in as_completed(futures):
                 persist(future.result())
+    if ceiling_hit:
+        raise SystemExit(
+            f"run stopped after {done} saved responses at estimated spend ${spent:.4f} "
+            f"(--max-cost-usd {max_cost_usd}); raise the ceiling and rerun the same command to resume."
+        )
     if stop.is_set():
         raise SystemExit(
             f"run stopped after {done} saved responses; top up the key or credits and rerun "
@@ -389,6 +424,11 @@ def main() -> None:
         type=int,
         help="Re-query responses cut off at max_tokens with this larger limit; other requests keep --max-tokens.",
     )
+    parser.add_argument(
+        "--max-cost-usd",
+        type=float,
+        help="Stop starting requests once spend recorded in this out-dir's responses reaches this many USD.",
+    )
     args = parser.parse_args()
 
     previous_config = args.out_dir / "run_config.json"
@@ -417,6 +457,7 @@ def main() -> None:
         "repeat_count": args.repeat_count,
         "allow_byok_fallback": args.allow_byok_fallback,
         "retry_truncated_max_tokens": args.retry_truncated_max_tokens,
+        "max_cost_usd": args.max_cost_usd,
     }
     write_json(args.out_dir / "run_config.json", metadata)
     requests = build_requests(
@@ -445,6 +486,7 @@ def main() -> None:
         args.sleep_seconds,
         args.concurrency,
         args.retry_truncated_max_tokens,
+        max_cost_usd=args.max_cost_usd,
     )
 
 
