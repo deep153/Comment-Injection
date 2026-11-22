@@ -385,6 +385,8 @@ def run_requests(
             time.sleep(sleep_seconds)
         response["model"] = request["model"]
         response["variant_id"] = request["variant_id"]
+        response["request_max_tokens"] = request.get("max_tokens")
+        response["request_provider"] = request.get("provider")
         return response
 
     done = 0
