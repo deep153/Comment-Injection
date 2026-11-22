@@ -92,6 +92,20 @@ python3 -m openrouter_eval.analyze_gee --run-dir runs/openrouter-v2/full --famil
 python3 -m openrouter_eval.analyze_gee --run-dir runs/openrouter-v2/full --family manual --interaction
 ```
 
+The README command reproduces the tracked manifest with the stdlib YAML fallback (`python3` without PyYAML). With PyYAML installed one HaluRust row gets a different `package` value.
+
+## Post-cutoff family (optional)
+
+Advisories published after the evaluated models' training cutoffs go in a curated `post_cutoff/` folder at the top of the dataset submodule, using the same layout as `manual/`:
+
+```text
+rust-vuln-dataset/post_cutoff/<ADVISORY-ID>/metadata.yaml
+rust-vuln-dataset/post_cutoff/<ADVISORY-ID>/pairs/<pair>/vulnerable.rs
+rust-vuln-dataset/post_cutoff/<ADVISORY-ID>/pairs/<pair>/fixed.rs
+```
+
+`metadata.yaml` must have a `date` field with the advisory publication date (`YYYY-MM-DD`, as in RustSec advisories); `package` is read as for `manual`. The builder emits these items with `dataset_family: post_cutoff`, `paired_item_key: <ADVISORY-ID>/<pair>`, and the date as `advisory_published`, and stops with an error if an advisory has no date. When the folder is absent the manifest is unchanged. Select the family with `--families post_cutoff --extended-families post_cutoff` (add `--repeat-families` with no value to skip repeats).
+
 Use a new `--out-dir` for each run. The runner refuses to add responses to a folder that already holds responses from a different prompt version.
 
 ## Resuming and failures
