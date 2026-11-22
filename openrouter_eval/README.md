@@ -54,11 +54,14 @@ Families in `--repeat-families` (default: `manual`) have a deterministic `--repe
 | `--repeat-families` (no value: no repeats) | 65,200 |
 | `--extended-families --repeat-families` (core only) | 38,448 |
 
-With the v2 manifest and models (`runs/openrouter-v2/`), the defaults give 68,736 requests, the size of the v2 run, and the placebo run gives:
+With the v2 manifest and models (`runs/openrouter-v2/`), the defaults give 68,736 requests, the size of the v2 run. The revision runs (see [Revision runs](#revision-runs)) use:
 
 | Command options | Requests |
 |---|---:|
 | `--families manual --defenses placebo --repeat-families` (352 items x 4 models x 10 prompts) | 14,080 |
+| `--families manual --defenses neutral --attack-families clean --repeat-families` (352 items x 4 models) | 1,408 |
+| DeepSeek models file, `--families manual --extended-families --repeat-families` (352 items x 12 prompts) | 4,224 |
+| DeepSeek models file, `--families manual --repeat-families` (352 items x 31 prompts) | 10,912 |
 
 Always confirm the count with `--dry-run` first.
 
@@ -159,19 +162,20 @@ The routing used for each request is stored in its `provider` field in `requests
 
 `slug` is required; `reasoning_effort` is optional and accepts the same values as `--reasoning-effort`. Plain slug entries (as in `runs/openrouter-v2/models.json`) build exactly the same requests as before. `run_config.json` records the models file as given, including per-model settings.
 
-The matched-reasoning rerun uses `runs/deepseek-matched-reasoning/models.json` (DeepSeek V4 Pro at `minimal`) on the main set with the extended design and no repeats, which is 10,912 requests (352 items × 31 prompts):
+The matched-reasoning rerun uses `runs/deepseek-matched-reasoning/models.json` (DeepSeek V4 Pro at `minimal`) on the main set. With the extended design and no repeats that is 10,912 requests (352 items × 31 prompts); the run in `runs/revision-deepseek-minimal/full` used the core design (`--extended-families` with no value), 4,224 requests (352 items × 12 prompts), with `--max-tokens 16384`:
 
 ```sh
 python3 -m openrouter_eval.run_openrouter \
   --dataset-root rust-vuln-dataset \
   --manifest runs/openrouter-v2/manifest.jsonl \
   --models runs/deepseek-matched-reasoning/models.json \
-  --out-dir runs/deepseek-matched-reasoning/full \
-  --families manual --repeat-families \
+  --out-dir runs/revision-deepseek-minimal/full \
+  --families manual --extended-families --repeat-families \
+  --max-tokens 16384 \
   --dry-run
 ```
 
-Reasoning makes answers longer, so expect more truncation at the default `--max-tokens`; the scorer counts truncated answers as in v2, and `--retry-truncated-max-tokens 8192` re-queries them.
+Even at `minimal`, DeepSeek V4 Pro emits hidden reasoning before the answer (median about 1,100 tokens, 10% of answers above 3,300). At the default `--max-tokens 2048`, 56 of 62 smoke-test answers were cut off, hence 16,384; the two answers still cut off at 16,384 were re-queried with `--retry-truncated-max-tokens 32768`.
 
 ## Adaptive attack
 
@@ -270,3 +274,138 @@ Extra options: `--tost-margin` (equivalence margin, default 0.05) and `--gee-max
 Rationale options: `--coding-per-stratum N` (default 20) sets how many flipped attacked answers are sampled per model x defense x goal (seeded by `--seed`). Code each row's `code` column as `follows_comment`, `dismisses_comment_but_flips` or `no_mention` (blank = uncoded) and re-run with `--coding-file <coded csv>`; an export that already holds codes is never overwritten. `--memorization-scope clean|all` (default `clean`) chooses which rationales are searched for memorization cues: clean prompts only, or every condition with echoes of the row's injected comment ignored (word runs shared with the comment are removed and cues the comment itself matches are skipped; the `induction_api` comment itself says "CVE triage note: known vulnerable pattern"). The exact rules are written into `rationales.md` and `memorization.md`.
 
 Each analysis is one module in `openrouter_eval/revision/analyses/`, found automatically. A module defines `NAME`, `run(ctx) -> Result | None` and optionally `add_arguments(parser)`.
+
+## Revision runs
+
+Four paid runs were added for the paper revision, all with prompt version `v3`, the v2 manifest and, except the DeepSeek rerun, the v2 models file (`runs/openrouter-v2/models.json`). The v2 run itself is unchanged. Costs are the recorded usage of every response row, failed attempts and retries included (`runs/revision-analyses/cost-new-runs/cost_report.md`); "BYOK" is the upstream cost billed to the bring-your-own-key provider accounts for Claude and Gemini.
+
+| Run directory | Condition | Requests | Completed | Logged calls | Cost (OpenRouter + BYOK) |
+|---|---|---:|---:|---:|---:|
+| `runs/revision-placebo/full` | `placebo` defense, all four models, extended design on `manual` (`clean`, `benign`, eight attacks) | 14,080 | 14,078 (17 unparseable) | 14,419 | $43.00 ($6.12 + $36.88) |
+| `runs/revision-neutral-reanchor/full` | `neutral` clean prompts again, all four models, to measure drift since v2 | 1,408 | 1,408 | 1,447 | $3.66 ($0.52 + $3.15) |
+| `runs/revision-deepseek-minimal/full` | DeepSeek V4 Pro at reasoning effort `minimal`, core design (neutral, warning, tagged) | 4,224 | 4,224 | 4,288 | $10.87 ($10.87 + $0) |
+| `runs/revision-adaptive/full` | Adaptive attack, 50-pair subset, four detectors | 800 tasks | 800 tasks | 4,718 (2,320 attacker, 2,398 detector) | $9.76 ($4.38 + $5.38) |
+| **Total** | | | | | **$67.30** ($21.90 + $45.40) |
+
+For planning, that is about $3.05 per 1,000 requests for all four models with the default token limit (placebo run), $2.57 per 1,000 for DeepSeek at `minimal` with `--max-tokens 16384`, and about $0.012 per adaptive task. The v2 run cost $196.55 for 68,736 requests.
+
+The runner runs share these settings: Claude without `response_format` (OpenRouter's JSON mode made Claude return `{}` or put code into JSON keys), Gemini answers with `finish_reason = "content_filter"` recorded as failures and retried, and BYOK-only routing for Claude and Gemini until a final `--allow-byok-fallback` pass (see [Routing and reasoning](#routing-and-reasoning)). Each run started with a small paid smoke test in the same out-dir. `run_config.json` lists every pass under `passes` and the number of requests still unanswered after the last one (`unanswered_requests`: 2 for the placebo run, 0 otherwise). Concurrency is not recorded; it does not change requests or results.
+
+Placebo run (dry run: 14,080 requests):
+
+```sh
+python3 -m openrouter_eval.run_openrouter \
+  --dataset-root rust-vuln-dataset \
+  --manifest runs/openrouter-v2/manifest.jsonl \
+  --models runs/openrouter-v2/models.json \
+  --out-dir runs/revision-placebo/full \
+  --families manual --defenses placebo --repeat-families \
+  --max-cost-usd 70 --dry-run
+
+# Main pass; rerun the same command once to retry failures.
+OPENROUTER_API_KEY=... python3 -m openrouter_eval.run_openrouter ...same options without --dry-run...
+# Re-query cut-off answers, then a final pass for requests still failing or cut off.
+OPENROUTER_API_KEY=... python3 -m openrouter_eval.run_openrouter ...same options... --retry-truncated-max-tokens 8192
+OPENROUTER_API_KEY=... python3 -m openrouter_eval.run_openrouter ...same options... --retry-truncated-max-tokens 8192 --allow-byok-fallback
+
+python3 -m openrouter_eval.reconcile_requests --run-dir runs/revision-placebo/full
+python3 -m openrouter_eval.score_results --run-dir runs/revision-placebo/full
+```
+
+Neutral re-anchor (1,408 requests): the same passes with `--out-dir runs/revision-neutral-reanchor/full --families manual --defenses neutral --attack-families clean --repeat-families --max-cost-usd 6`. The request IDs match the v2 `neutral:clean` requests, so the two runs can be compared item by item.
+
+DeepSeek at `minimal` (4,224 requests): `--models runs/deepseek-matched-reasoning/models.json --out-dir runs/revision-deepseek-minimal/full --families manual --extended-families --repeat-families --max-tokens 16384 --max-cost-usd 50`, then one pass with `--retry-truncated-max-tokens 32768`, then `reconcile_requests` and `score_results` as above. There is no BYOK fallback pass because DeepSeek is not on a BYOK route.
+
+Adaptive attack (800 tasks: neutral/blind 264, tagged/blind 268, tagged/tag-aware 268; budget 5, attacker `openai/gpt-6.1-sol`, verdict and confidence feedback):
+
+```sh
+python3 -m openrouter_eval.adaptive_attack \
+  --dataset-root rust-vuln-dataset \
+  --manifest runs/openrouter-v2/manifest.jsonl \
+  --models runs/openrouter-v2/models.json \
+  --parsed runs/openrouter-v2/full/parsed.jsonl \
+  --out-dir runs/revision-adaptive/full \
+  --max-cost-usd 35 --dry-run
+
+# Main pass; rerun the same command to resume tasks stopped by failed calls (logged calls are replayed).
+OPENROUTER_API_KEY=... python3 -m openrouter_eval.adaptive_attack ...same options without --dry-run...
+# Final pass for the tasks Gemini still blocked.
+OPENROUTER_API_KEY=... python3 -m openrouter_eval.adaptive_attack ...same options... --allow-byok-fallback
+```
+
+The smoke test (`--limit-items 2`, 16 tasks) ran in the same out-dir and its tasks are kept. `run_config.main-pass.json` is the configuration before the fallback pass; it differs only in `attack.byok_only` and the added `passes` notes.
+
+Revision analyses (no network calls):
+
+```sh
+# v2 + placebo + adaptive: every analysis.
+python3 -m openrouter_eval.revision \
+  --run-dir runs/openrouter-v2/full --run-dir runs/revision-placebo/full \
+  --adaptive-run-dir runs/revision-adaptive/full \
+  --out-dir runs/revision-analyses/main
+
+# DeepSeek at minimal on its own (stripping_tost and adaptive_summary are skipped: no stripped or adaptive rows).
+python3 -m openrouter_eval.revision \
+  --run-dir runs/revision-deepseek-minimal/full \
+  --out-dir runs/revision-analyses/deepseek-minimal
+
+# Cost of the four new runs.
+python3 -m openrouter_eval.revision \
+  --run-dir runs/revision-placebo/full --run-dir runs/revision-neutral-reanchor/full \
+  --run-dir runs/revision-deepseek-minimal/full \
+  --adaptive-run-dir runs/revision-adaptive/full \
+  --analyses cost_report \
+  --out-dir runs/revision-analyses/cost-new-runs
+```
+
+### Reconciled request logs and archived files
+
+Each runner invocation rewrites `requests.jsonl` with its own `--max-tokens` and routing, so after the follow-up passes the file no longer says which settings produced each final answer. `python3 -m openrouter_eval.reconcile_requests --run-dir <run>` rewrites each request's `max_tokens` and `provider` to those of its final successful answer, read from the response row (newer rows record `request_max_tokens` and `request_provider`) or inferred for older rows. Files named `*.before-*.jsonl` are archived copies that no command reads:
+
+| File | Contents |
+|---|---|
+| `requests.before-reconcile.jsonl` | `requests.jsonl` as the last pass wrote it, before reconciling |
+| `responses.before-claude-json-fix.jsonl` (placebo, re-anchor) | Smoke-test responses as first recorded. Claude's answers there were sent with JSON mode; they (and, in the placebo run, one content-filtered Gemini answer) were later marked `ok: false` in `responses.jsonl` and re-asked |
+| `responses.before-16384.jsonl` (DeepSeek) | The 62 smoke-test responses at `--max-tokens 2048` (56 cut off), later marked `ok: false` and not used |
+
+### Post-cutoff family
+
+The `post_cutoff` family (see [Post-cutoff family (optional)](#post-cutoff-family-optional)) is implemented but has not been run: the dataset has no `post_cutoff/` folder yet, and curating the advisories is a separate task. Once it exists, the extended design without repeats costs 4 models × 31 prompts = 124 requests per item, about $0.38 per item at the placebo run's cost per request:
+
+```sh
+python3 -m openrouter_eval.run_openrouter \
+  --dataset-root rust-vuln-dataset \
+  --manifest <manifest with post_cutoff rows> \
+  --models runs/openrouter-v2/models.json \
+  --out-dir runs/revision-post-cutoff/full \
+  --families post_cutoff --extended-families post_cutoff --repeat-families \
+  --dry-run
+```
+
+## Review artifact
+
+`export_review_artifact` assembles one folder for double-blind review. It makes no network calls and only reads its inputs.
+
+```sh
+python3 -m openrouter_eval.export_review_artifact \
+  --adaptive-run-dir runs/revision-adaptive/full \
+  --analysis-dir runs/revision-analyses/main \
+  --analysis-dir runs/revision-analyses/deepseek-minimal \
+  --analysis-dir runs/revision-analyses/cost-new-runs \
+  --run-dir runs/openrouter-v2/full --run-dir runs/revision-placebo/full \
+  --run-dir runs/revision-neutral-reanchor/full --run-dir runs/revision-deepseek-minimal/full \
+  --include-tests \
+  --out-dir runs/review-artifact
+```
+
+| Folder | Contents |
+|---|---|
+| `code/` | The `openrouter_eval` package (and `tests/` with `--include-tests`); no caches or `.env` |
+| `prompts/` | Detector system prompts for `neutral`, `warning`, `tagged`, `placebo` and `stripped`, the user template, the adaptive attacker system prompts, and `templates.json` with every attack template and the conditions of the core and extended designs |
+| `adaptive/runs/<run>/` | `steps.jsonl`, `outcomes.jsonl` and `run_config.json` reduced to experiment fields |
+| `results/runs/<dir>/` | `.md`, `.json` and `.csv` tables of each `--analysis-dir`; `scores.json`, `summary.md`, GEE tables and `run_config.json` of each `--run-dir` (never `requests.jsonl`, `responses.jsonl` or `parsed.jsonl`) |
+| `MANIFEST.md` | Inputs, scrub rules, and every file with its size and SHA-256 |
+
+Adaptive logs keep an allowlist of fields: item and pair ids, model key and slug, defense, attacker mode, step and attempt, the request messages and generation settings, the attacker's candidate (placement, lines, invariance result, rejection reason), the answer text, verdict, confidence, rationale, success, token counts and the total cost of each call. Raw provider payloads, generation ids, provider names and routing, service tiers, BYOK flags and upstream cost details, timestamps, latency and provider error bodies are dropped. `run_config.json` files lose `passes`, `allow_byok_fallback`, `byok_only` and `provider`. Model slugs stay: they are the public models named in the paper.
+
+In every exported file, absolute paths under `/Users/` or `/home/` become relative `runs/...` or `rust-vuln-dataset/...` paths, key-like strings (`sk-...`, bearer tokens) and generation ids are redacted, and identifying terms are replaced with `anonymous`, case-insensitively. The terms are the local user name (also with `-`, `_` and `.` as spaces), the git author name and email, and any `--scrub TERM`. The export is then scanned for the same patterns and fails if any remain. The output folder must be empty; `--force` replaces an earlier artifact (a folder with a `MANIFEST.md`) and refuses any other folder.
