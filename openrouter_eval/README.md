@@ -240,7 +240,8 @@ python3 -m openrouter_eval.revision \
   --run-dir runs/openrouter-v2/full \
   [--run-dir runs/<new-run> ...] \
   --out-dir runs/revision-analyses \
-  [--family manual] [--analyses score_shift,calibration,margin_bins] [--seed 20260101] [--bootstrap 2000]
+  [--family manual] [--analyses score_shift,calibration,margin_bins] [--seed 20260101] [--bootstrap 2000] \
+  [--tost-margin 0.05] [--gee-maxiter 60]
 ```
 
 - Rows are restricted to completed, non-repeat answers of one dataset family (`--family all` keeps every family), as in the scorer.
@@ -253,5 +254,11 @@ python3 -m openrouter_eval.revision \
 | `score_shift` | Attacked minus clean vulnerability score (same item, model, defense), signed toward the attacker's target, per model, goal and defense, with 95% cluster-bootstrap intervals over pairs |
 | `calibration` | Clean-prompt accuracy, mean confidence, ECE, Brier score and reliability bins per model and defense |
 | `margin_bins` | Flip rate and conditional flip rate (clean verdict correct) by bins of clean margin \|clean vulnerability score - 0.5\| |
+| `defense_rates` | Per model (and pooled), defense and goal: clean accuracy, raw ASR, conditional flip rate, benign-comment baseline and their difference, with 95% cluster-bootstrap intervals; the placebo appears beside the v2 defenses when its run is supplied |
+| `defense_contrasts` | Paired contrasts (warning, tagged, placebo minus neutral; warning, tagged minus placebo) on conditional flip rate and raw ASR, matched on model, item and attack family: cluster-bootstrap interval of the difference, exact McNemar, Holm over per-model tests. Contrasts whose defenses are absent are listed as skipped |
+| `defense_gee` | Logistic GEE (exchangeable, clustered by pair) per model, and pooled with a defense x goal x model interaction plus joint Wald tests, for raw attack success and for the conditional-flip subset. Each fit reports its status (`converged`, `unstable` for separation, `not converged`, `failed`) and time |
+| `stripping_tost` | TOST equivalence of stripped and neutral clean accuracy, paired by item, per model and pooled, with a cluster-robust SE and 90% interval (`--tost-margin`, default 0.05) |
+
+Extra options: `--tost-margin` (equivalence margin, default 0.05) and `--gee-maxiter` (GEE iteration limit, default 60).
 
 Each analysis is one module in `openrouter_eval/revision/analyses/`, found automatically. A module defines `NAME`, `run(ctx) -> Result | None` and optionally `add_arguments(parser)`.
