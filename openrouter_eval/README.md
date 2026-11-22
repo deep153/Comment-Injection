@@ -92,6 +92,20 @@ python3 -m openrouter_eval.analyze_gee --run-dir runs/openrouter-v2/full --famil
 python3 -m openrouter_eval.analyze_gee --run-dir runs/openrouter-v2/full --family manual --interaction
 ```
 
+The README command reproduces the tracked manifest with the stdlib YAML fallback (`python3` without PyYAML). With PyYAML installed one HaluRust row gets a different `package` value.
+
+## Post-cutoff family (optional)
+
+Advisories published after the evaluated models' training cutoffs go in a curated `post_cutoff/` folder at the top of the dataset submodule, using the same layout as `manual/`:
+
+```text
+rust-vuln-dataset/post_cutoff/<ADVISORY-ID>/metadata.yaml
+rust-vuln-dataset/post_cutoff/<ADVISORY-ID>/pairs/<pair>/vulnerable.rs
+rust-vuln-dataset/post_cutoff/<ADVISORY-ID>/pairs/<pair>/fixed.rs
+```
+
+`metadata.yaml` must have a `date` field with the advisory publication date (`YYYY-MM-DD`, as in RustSec advisories); `package` is read as for `manual`. The builder emits these items with `dataset_family: post_cutoff`, `paired_item_key: <ADVISORY-ID>/<pair>`, and the date as `advisory_published`, and stops with an error if an advisory has no date. When the folder is absent the manifest is unchanged. Select the family with `--families post_cutoff --extended-families post_cutoff` (add `--repeat-families` with no value to skip repeats).
+
 Use a new `--out-dir` for each run. The runner refuses to add responses to a folder that already holds responses from a different prompt version.
 
 ## Resuming and failures
@@ -112,7 +126,34 @@ The default `--max-tokens` is 2048. Lower limits cut off many answers, mostly Ge
 - DeepSeek goes to the cheapest fp8 host, so every answer comes from the same precision.
 - Claude and Gemini are pinned to the provider that holds the BYOK key (`anthropic`, `google-ai-studio`). Without this, OpenRouter retries Gemini's intermittent "blocked the response" errors on its own billed Google endpoint. For a final pass over requests that still fail, add `--allow-byok-fallback`.
 
-The routing used for each request is stored in its `provider` field in `requests.jsonl`.
+The routing used for each request is stored in its `provider` field in `requests.jsonl`, and the reasoning setting in its `reasoning` field.
+
+### Per-model settings
+
+`--reasoning-effort` (default `auto`, the behaviour above) applies to every model. A models file entry can override it for one model by giving an object instead of a slug:
+
+```json
+{
+  "claude_sonnet_5_5": "anthropic/claude-sonnet-5.5",
+  "deepseek_v4_pro": {"slug": "deepseek/deepseek-v4-pro", "reasoning_effort": "minimal"}
+}
+```
+
+`slug` is required; `reasoning_effort` is optional and accepts the same values as `--reasoning-effort`. Plain slug entries (as in `runs/openrouter-v2/models.json`) build exactly the same requests as before. `run_config.json` records the models file as given, including per-model settings.
+
+The matched-reasoning rerun uses `runs/deepseek-matched-reasoning/models.json` (DeepSeek V4 Pro at `minimal`) on the main set with the extended design and no repeats, which is 10,912 requests (352 items × 31 prompts):
+
+```sh
+python3 -m openrouter_eval.run_openrouter \
+  --dataset-root rust-vuln-dataset \
+  --manifest runs/openrouter-v2/manifest.jsonl \
+  --models runs/deepseek-matched-reasoning/models.json \
+  --out-dir runs/deepseek-matched-reasoning/full \
+  --families manual --repeat-families \
+  --dry-run
+```
+
+Reasoning makes answers longer, so expect more truncation at the default `--max-tokens`; the scorer counts truncated answers as in v2, and `--retry-truncated-max-tokens 8192` re-queries them.
 
 ## Parsing
 
