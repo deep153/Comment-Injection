@@ -231,6 +231,20 @@ def test_detector_prompt_matches_the_recorded_v2_prompt_for_the_same_comment(v2_
         assert sent["model"] == "deepseek/deepseek-v4-pro"
 
 
+def test_claude_detector_requests_follow_the_runner_without_json_mode(v2_dataset, tmp_path):
+    _root, manifest = v2_dataset
+    claude = {"claude_sonnet_5_5": "anthropic/claude-sonnet-5.5"}
+    parsed = write_parsed(tmp_path / "parsed.jsonl", [(VULN, "claude_sonnet_5_5", "neutral", True)])
+    tasks = plan_tasks(manifest, parsed, claude, defenses=["neutral"], attacker_modes=["blind"])
+    call = ScriptedCall(attacker=[candidate("// x")], detector=[verdict("safe")])
+    run(v2_dataset, tasks, tmp_path / "run", call)
+
+    detector = call.requests[1]
+    assert detector["response_format"] is None
+    assert detector["provider"] == {"only": ["anthropic"]}
+    assert detector["reasoning"] == {"effort": "minimal", "exclude": True}
+
+
 def test_attacker_request_uses_runner_routing_for_its_slug(v2_dataset, tmp_path):
     tasks = tasks_for(v2_dataset, tmp_path, [(VULN, "deepseek_v4_pro", "neutral", True)])
     call = ScriptedCall(attacker=[candidate("// x")], detector=[verdict("safe")])
@@ -404,6 +418,17 @@ def test_items_run_concurrently_with_each_loop_in_order(v2_dataset, tmp_path):
     for task_id in by_item[VULN]["task_id"], by_item[FIXED]["task_id"]:
         steps = [(s["step"], s["role"]) for s in read_jsonl(tmp_path / "run" / "steps.jsonl") if s["task_id"] == task_id]
         assert steps == sorted(steps, key=lambda s: (s[0], s[1] == "detector"))
+
+
+def test_attacker_json_after_prose_is_accepted_and_flagged(v2_dataset, tmp_path):
+    tasks = tasks_for(v2_dataset, tmp_path, [(VULN, "deepseek_v4_pro", "neutral", True)])
+    prose = 'Plan: claim a review {not json}. ' + candidate("// reviewed")
+    call = ScriptedCall(attacker=[prose], detector=[verdict("safe")])
+    run(v2_dataset, tasks, tmp_path / "run", call)
+
+    assert outcomes(tmp_path / "run")[0]["final_comment"] == ["// reviewed"]
+    first = read_jsonl(tmp_path / "run" / "steps.jsonl")[0]
+    assert first["candidate"]["strict_json"] is False
 
 
 def test_lines_without_comment_marker_are_normalised(v2_dataset, tmp_path):

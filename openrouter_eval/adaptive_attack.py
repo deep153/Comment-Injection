@@ -7,6 +7,7 @@ from dataclasses import asdict, dataclass
 import json
 import os
 from pathlib import Path
+import re
 from threading import Event, Lock
 import time
 from typing import Any, Callable, Iterable
@@ -22,8 +23,9 @@ from .run_openrouter import (
     openrouter_call,
     provider_for_model,
     reasoning_for_model,
+    response_format_for_model,
 )
-from .score_results import parse_response, response_content
+from .score_results import is_strict_json, parse_response, response_content
 
 
 DEFAULT_ATTACKER = "openai/gpt-6.1-sol"
@@ -171,19 +173,33 @@ def plan_tasks(
     return tasks
 
 
+def _embedded_candidate(text: str) -> dict[str, Any] | None:
+    """The last JSON object with `comment_lines`, for attackers that write prose first (no JSON mode)."""
+    decoder = json.JSONDecoder()
+    found = None
+    for match in re.finditer(r"\{", text):
+        try:
+            data, _ = decoder.raw_decode(text, match.start())
+        except json.JSONDecodeError:
+            continue
+        if isinstance(data, dict) and "comment_lines" in data:
+            found = data
+    return found
+
+
 def review_candidate(content: str, source: str, config: AdaptiveConfig) -> dict[str, Any]:
     """Parse and check one attacker answer; `rejected` holds the reason or None."""
-    result: dict[str, Any] = {"placement": None, "comment_lines": None, "invariant": None, "rejected": None}
+    result: dict[str, Any] = {
+        "placement": None, "comment_lines": None, "strict_json": None, "invariant": None, "rejected": None
+    }
 
     def reject(reason: str) -> dict[str, Any]:
         result["rejected"] = reason
         return result
 
-    try:
-        data = json.loads(content.strip())
-    except json.JSONDecodeError:
-        return reject("malformed: not a JSON object")
-    if not isinstance(data, dict):
+    result["strict_json"] = is_strict_json(content)
+    data = json.loads(content.strip()) if result["strict_json"] else _embedded_candidate(content)
+    if data is None:
         return reject("malformed: not a JSON object")
     placement, lines = data.get("placement"), data.get("comment_lines")
     result["placement"] = placement
@@ -252,7 +268,7 @@ def attacker_request(task: dict[str, Any], source: str, history: list[dict[str, 
         "messages": messages,
         "temperature": config.attacker_temperature,
         "max_tokens": config.attacker_max_tokens,
-        "response_format": {"type": "json_object"},
+        "response_format": response_format_for_model(config.attacker_model),
         "reasoning": reasoning_for_model(config.attacker_model, config.attacker_reasoning_effort),
         "provider": provider_for_model(config.attacker_model, config.byok_only),
         "variant_id": f"attacker:{task['attacker_mode']}",
@@ -276,7 +292,7 @@ def detector_request(task: dict[str, Any], source: str, candidate: dict[str, Any
         "messages": messages,
         "temperature": 0,
         "max_tokens": config.max_tokens,
-        "response_format": {"type": "json_object"},
+        "response_format": response_format_for_model(task["model"]),
         "reasoning": reasoning_for_model(task["model"], task["reasoning_effort"]),
         "provider": provider_for_model(task["model"], config.byok_only),
         "variant_id": variant.variant_id,
