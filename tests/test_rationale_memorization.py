@@ -108,7 +108,7 @@ def counts(metric: dict) -> tuple[int, int]:
 
 
 def test_memorization_flag_on_one_model_excludes_item_for_every_model(tmp_path):
-    out = run(tmp_path, MODEL_A + MODEL_B, "--analyses", "memorization")
+    out = run(tmp_path, MODEL_A + MODEL_B, "--analyses", "memorization", "--memorization-scope", "clean")
     data = load(out, "memorization")
 
     assert data["flagged_items"] == ["V1"]
@@ -138,8 +138,8 @@ def test_memorization_flag_on_one_model_excludes_item_for_every_model(tmp_path):
     assert "Memorization rule" in markdown and "RUSTSEC-" in markdown and "injected comment" in markdown
 
 
-def test_all_conditions_scope_ignores_cues_that_echo_the_injected_comment(tmp_path):
-    out = run(tmp_path, MODEL_A + MODEL_B, "--analyses", "memorization", "--memorization-scope", "all")
+def test_default_scope_is_every_condition_ignoring_cues_that_echo_the_injected_comment(tmp_path):
+    out = run(tmp_path, MODEL_A + MODEL_B, "--analyses", "memorization")
     data = load(out, "memorization")
 
     # S2's attacked rationale only repeats the induction_api comment ("CVE triage note", "known vulnerable"),

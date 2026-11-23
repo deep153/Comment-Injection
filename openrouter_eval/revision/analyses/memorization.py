@@ -48,9 +48,9 @@ METRICS = ("clean_accuracy", "conditional_flip", "benign_flip")
 
 def add_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
-        "--memorization-scope", choices=("clean", "all"), default="clean",
-        help="Rationales searched for memorization cues: clean prompts only (default) or every condition, "
-             "ignoring text that echoes the row's injected comment.",
+        "--memorization-scope", choices=("clean", "all"), default="all",
+        help="Rationales searched for memorization cues: every condition (default), ignoring text that echoes "
+             "the row's injected comment, or clean prompts only.",
     )
 
 
