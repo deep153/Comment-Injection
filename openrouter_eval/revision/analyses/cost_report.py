@@ -44,11 +44,20 @@ def adaptive_rows(run_dir: Path) -> Iterator[tuple[tuple[str, str], dict[str, An
         yield (str(step.get("role")), str((step.get("request") or {}).get("model"))), step.get("response") or {}
 
 
-def summarise(run_dir: Path, log: str, totals: dict[tuple[str, str], dict[str, float]]) -> dict[str, Any]:
+def logs_every_attempt(run_dir: Path) -> bool:
+    """Runner logs record every attempt only once successful rows carry `attempt`; before that, a request's
+    failed attempts that were followed by a retry were not written, so its total is a lower bound."""
+    return all("attempt" in row for row in stream(run_dir / "responses.jsonl") if row.get("ok"))
+
+
+def summarise(
+    run_dir: Path, log: str, totals: dict[tuple[str, str], dict[str, float]], lower_bound: bool = False
+) -> dict[str, Any]:
     by_model = [{"role": role, "model": model, **entry} for (role, model), entry in sorted(totals.items())]
     return {
         "run_dir": str(run_dir),
         "log": log,
+        "lower_bound": lower_bound,
         **{field: sum(entry[field] for entry in by_model) for field in FIELDS},
         "by_model": by_model,
     }
@@ -56,7 +65,8 @@ def summarise(run_dir: Path, log: str, totals: dict[tuple[str, str], dict[str, f
 
 def run(ctx: Context) -> Result | None:
     runs = [
-        summarise(source.run_dir, "responses.jsonl", tally(runner_rows(source.run_dir)))
+        summarise(source.run_dir, "responses.jsonl", tally(runner_rows(source.run_dir)),
+                  lower_bound=not logs_every_attempt(source.run_dir))
         for source in ctx.data.runs
         if (source.run_dir / "responses.jsonl").exists()
     ] + [
@@ -81,6 +91,13 @@ def run(ctx: Context) -> Result | None:
                 f"{m['openrouter_usd']:.4f} | {m['byok_upstream_usd']:.4f} | {m['total_usd']:.4f} |"
             )
     total = {field: sum(r[field] for r in runs) for field in ("openrouter_usd", "byok_upstream_usd", "total_usd")}
-    lines += ["", f"Total over all runs: {total['total_usd']:.4f} USD ({total['openrouter_usd']:.4f} OpenRouter, "
+    lower = [r["run_dir"] for r in runs if r["lower_bound"]]
+    at_least = "at least " if lower else ""
+    lines += ["", f"Total over all runs: {at_least}{total['total_usd']:.4f} USD ({total['openrouter_usd']:.4f} OpenRouter, "
               f"{total['byok_upstream_usd']:.4f} BYOK upstream)."]
-    return Result(title="Cost per run from recorded usage", payload={"runs": runs, **total}, markdown=lines)
+    if lower:
+        lines += ["", "Lower bounds: these runs were made before the runner logged failed attempts that it then "
+                  "retried, so billed attempts that ended in a retry are missing from their totals: "
+                  + ", ".join(f"`{d}`" for d in lower) + "."]
+    return Result(title="Cost per run from recorded usage", payload={"runs": runs, "lower_bound": bool(lower), **total},
+                  markdown=lines)

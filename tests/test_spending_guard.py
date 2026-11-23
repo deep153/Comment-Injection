@@ -106,6 +106,28 @@ def test_run_without_ceiling_calls_everything(tmp_path: Path) -> None:
     assert saved_ids(tmp_path) == ["req0", "req1", "req2", "req3", "req4"]
 
 
+class FlakyCall(FakeCall):
+    """Content-filters the first answer to each request (billed), then answers normally."""
+
+    def __call__(self, request: dict) -> dict:
+        response = super().__call__(request)
+        if self.calls.count(request["request_id"]) == 1:
+            response.update(ok=False, error="content_filter")
+        return response
+
+
+def test_billed_failed_attempts_are_saved_before_the_retry(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr("openrouter_eval.run_openrouter.time.sleep", lambda _: None)
+    run_requests(make_requests(2), tmp_path, dry_run=False, max_calls=None, sleep_seconds=0,
+                 concurrency=1, call=FlakyCall(cost=0.4))
+    rows = read_jsonl(tmp_path / "responses.jsonl")
+    assert [(r["request_id"], r["ok"], r["attempt"]) for r in rows] == [
+        ("req0", False, 1), ("req0", True, 2), ("req1", False, 1), ("req1", True, 2),
+    ]
+    assert all(r["model"] == "openai/gpt-6.1-sol" for r in rows)
+    assert sum(response_cost(r) for r in rows) == pytest.approx(1.6)
+
+
 def v2_rows() -> dict[str, dict]:
     return {row["request_id"]: row for row in read_jsonl(FIXTURES / "v2_response_usage_rows.jsonl")}
 

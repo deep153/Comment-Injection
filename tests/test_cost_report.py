@@ -96,6 +96,21 @@ def test_runner_cost_counts_every_billed_row_and_splits_openrouter_from_byok(tmp
     assert CLAUDE in markdown and "0.0610" in markdown
 
 
+def test_runner_log_without_attempt_numbers_on_answers_is_a_lower_bound(tmp_path):
+    out = tmp_path / "out"
+    main(["--run-dir", str(runner_dir(tmp_path / "run", RESPONSES)), "--out-dir", str(out), "--analyses", "cost_report"])
+    data = load(out, "cost_report")
+    assert data["runs"][0]["lower_bound"] and data["lower_bound"]
+    assert "at least 0.0710" in (out / "cost_report.md").read_text(encoding="utf-8")
+
+    numbered = [{**r, "attempt": r.get("attempt", 1)} for r in RESPONSES]
+    out = tmp_path / "out2"
+    main(["--run-dir", str(runner_dir(tmp_path / "run2", numbered)), "--out-dir", str(out), "--analyses", "cost_report"])
+    data = load(out, "cost_report")
+    assert not data["runs"][0]["lower_bound"] and not data["lower_bound"]
+    assert "at least" not in (out / "cost_report.md").read_text(encoding="utf-8")
+
+
 GPT = "openai/gpt-6.1-sol"
 
 

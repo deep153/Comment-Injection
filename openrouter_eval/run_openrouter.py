@@ -339,6 +339,17 @@ def run_requests(
     if max_cost_usd is not None and spent >= max_cost_usd:
         record_spend({})
 
+    def tag(response: dict[str, Any], request: dict[str, Any]) -> dict[str, Any]:
+        response["model"] = request["model"]
+        response["variant_id"] = request["variant_id"]
+        response["request_max_tokens"] = request.get("max_tokens")
+        response["request_provider"] = request.get("provider")
+        return response
+
+    def save_retried(response: dict[str, Any], request: dict[str, Any]) -> None:
+        with lock:
+            append_jsonl(responses_path, [tag(response, request)])
+
     def call_with_retries(request: dict[str, Any]) -> dict[str, Any] | None:
         response: dict[str, Any]
         for attempt in range(1, 4):
@@ -347,11 +358,10 @@ def run_requests(
             try:
                 response = call(request)
                 record_spend(response)
-                if response["ok"]:
-                    break
                 response["attempt"] = attempt
-                if attempt == 3:
+                if response["ok"] or attempt == 3:
                     break
+                save_retried(response, request)
                 time.sleep(2 * attempt)
             except urllib.error.HTTPError as exc:
                 body = exc.read().decode("utf-8", errors="replace")
@@ -369,6 +379,7 @@ def run_requests(
                     return None
                 if exc.code not in {408, 409, 429, 500, 502, 503, 504} or attempt == 3:
                     break
+                save_retried(response, request)
                 time.sleep(2 * attempt)
             except Exception as exc:  # noqa: BLE001 - record enough for audit.
                 response = {
@@ -380,14 +391,11 @@ def run_requests(
                 }
                 if attempt == 3:
                     break
+                save_retried(response, request)
                 time.sleep(2 * attempt)
         if sleep_seconds:
             time.sleep(sleep_seconds)
-        response["model"] = request["model"]
-        response["variant_id"] = request["variant_id"]
-        response["request_max_tokens"] = request.get("max_tokens")
-        response["request_provider"] = request.get("provider")
-        return response
+        return tag(response, request)
 
     done = 0
 
