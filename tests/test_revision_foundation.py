@@ -173,7 +173,10 @@ def test_runs_combine_on_item_model_defense_and_family_with_provenance(tmp_path)
     re_anchor = row("V1", "P1", "vulnerable", "neutral", "clean", "vulnerable", 0.85, prompt_version="v3")
     second = write_run(tmp_path / "v3run", TAGGED_ATTACK + [re_anchor])
     out = tmp_path / "out"
-    main(["--run-dir", str(first), "--run-dir", str(second), "--out-dir", str(out)])
+    with pytest.raises(SystemExit, match=f"1 rows of {first}.*--allow-replace"):
+        main(["--run-dir", str(first), "--run-dir", str(second), "--out-dir", str(out)])
+    assert not out.exists()
+    main(["--run-dir", str(first), "--run-dir", str(second), "--out-dir", str(out), "--allow-replace"])
 
     shift = load(out, "score_shift")
     tagged = find(shift["by_model_goal_defense"], goal="suppression", defense="tagged")
@@ -195,6 +198,7 @@ def test_runs_combine_on_item_model_defense_and_family_with_provenance(tmp_path)
         markdown = (out / f"{name}.md").read_text(encoding="utf-8")
         assert str(first) in markdown and str(second) in markdown
         assert "prompt version v3" in markdown and "vulnerable/fixed pair" in markdown
+        assert f"1 rows of `{first}`" in markdown
 
 
 def test_refuses_to_write_inside_a_run_directory(tmp_path):

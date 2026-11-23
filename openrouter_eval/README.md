@@ -250,7 +250,7 @@ python3 -m openrouter_eval.revision \
 ```
 
 - Rows are restricted to completed, non-repeat answers of one dataset family (`--family all` keeps every family), as in the scorer.
-- Runs are joined on model, item, defense and attack family, not on prompt version. When several run directories hold the same row, the one listed last wins; each output's `provenance` counts the replaced rows. Verdict flips are recomputed against the clean row after joining.
+- Runs are joined on model, item, defense and attack family, not on prompt version. When several run directories hold the same row, the command stops and names the overlap; with `--allow-replace` the one listed last wins, and each output's `provenance` and Markdown header count the replaced rows. Verdict flips are recomputed against the clean row after joining.
 - Every output records the source run directories, their prompt versions and the clustering unit (vulnerable/fixed pair, `paired_item_key`). Table rows also list the runs and prompt versions behind them.
 - `--run-dir` and `--adaptive-run-dir` are both optional and repeatable, but at least one is needed. Analyses without applicable inputs are skipped.
 - The output directory must lie outside every input run directory.

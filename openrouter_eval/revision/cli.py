@@ -14,7 +14,9 @@ from .runs import AnalysisInput, load_adaptive, load_runs
 def build_parser(units: dict[str, Any]) -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Offline revision analyses over scored run directories.")
     parser.add_argument("--run-dir", type=Path, action="append", default=[],
-                        help="Scored run directory with parsed.jsonl; repeat to combine runs (later runs win on overlap).")
+                        help="Scored run directory with parsed.jsonl; repeat to combine runs.")
+    parser.add_argument("--allow-replace", action="store_true",
+                        help="Let a later --run-dir replace rows an earlier one also holds (refused by default).")
     parser.add_argument("--adaptive-run-dir", type=Path, action="append", default=[],
                         help="Adaptive-attack run directory with steps.jsonl and outcomes.jsonl; repeatable.")
     parser.add_argument("--out-dir", type=Path, required=True, help="Output directory, outside every run directory.")
@@ -40,6 +42,10 @@ def provenance_lines(data: AnalysisInput) -> list[str]:
     runs = "; ".join(f"`{run.run_dir}` (prompt version {', '.join(run.prompt_versions)})" for run in data.runs)
     provenance = data.provenance()
     lines = [f"Runs: {runs or 'none'}."]
+    replaced = [run for run in data.runs if run.rows_replaced_by_later_runs]
+    if replaced:
+        lines.append("Replaced by a later run (--allow-replace): " + "; ".join(
+            f"{run.rows_replaced_by_later_runs} rows of `{run.run_dir}`" for run in replaced) + ".")
     if data.adaptive:
         lines.append(f"Adaptive runs: {'; '.join(f'`{run.run_dir}`' for run in data.adaptive)}.")
     return lines + [
@@ -66,7 +72,7 @@ def main(argv: list[str] | None = None) -> None:
     check_out_dir(args.out_dir, args.run_dir + args.adaptive_run_dir)
 
     started = time.perf_counter()
-    data = load_runs(args.run_dir, None if args.family == "all" else args.family)
+    data = load_runs(args.run_dir, None if args.family == "all" else args.family, args.allow_replace)
     data.adaptive = load_adaptive(args.adaptive_run_dir)
     args.out_dir.mkdir(parents=True, exist_ok=True)
     ctx = Context(data=data, args=args, out_dir=args.out_dir)

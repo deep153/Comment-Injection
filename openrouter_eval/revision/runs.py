@@ -67,8 +67,9 @@ def cluster_of(row: dict[str, Any]) -> str:
     return row.get("paired_item_key") or row["item_id"]
 
 
-def load_runs(run_dirs: list[Path], family: str | None) -> AnalysisInput:
-    """Join runs on item, model, defense and attack family; a later run directory replaces earlier rows."""
+def load_runs(run_dirs: list[Path], family: str | None, allow_replace: bool = False) -> AnalysisInput:
+    """Join runs on item, model, defense and attack family. Rows present in more than one run directory are
+    refused unless `allow_replace`, in which case the later run directory replaces earlier rows."""
     joined: dict[tuple[Any, ...], dict[str, Any]] = {}
     origin: dict[tuple[Any, ...], int] = {}
     runs: list[RunSource] = []
@@ -99,6 +100,13 @@ def load_runs(run_dirs: list[Path], family: str | None) -> AnalysisInput:
                 runs[origin[key]].rows_replaced_by_later_runs += 1
             joined[key] = row
             origin[key] = index
+    replaced = [run for run in runs if run.rows_replaced_by_later_runs]
+    if replaced and not allow_replace:
+        detail = "; ".join(f"{run.rows_replaced_by_later_runs} rows of {run.run_dir}" for run in replaced)
+        raise SystemExit(
+            f"run directories overlap on (model, item, defense, attack family): {detail} would be replaced by a "
+            "later --run-dir. Analyse them separately, or pass --allow-replace to let the later run win."
+        )
     for index in origin.values():
         runs[index].rows_used += 1
     rows = list(joined.values())
