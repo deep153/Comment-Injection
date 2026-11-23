@@ -1,0 +1,262 @@
+{
+  "analysis": "cost_report",
+  "byok_upstream_usd": 45.4040953,
+  "lower_bound": true,
+  "openrouter_usd": 21.897688658654975,
+  "provenance": {
+    "adaptive_runs": [
+      "runs/revision-adaptive/full"
+    ],
+    "clustering_unit": "vulnerable/fixed pair (paired_item_key; item_id when missing)",
+    "dataset_family": "manual",
+    "join_key": [
+      "model",
+      "item_id",
+      "defense",
+      "attack_family"
+    ],
+    "repeats": "excluded (repeat > 0)",
+    "runs": [
+      {
+        "parsed_rows": 14080,
+        "prompt_versions": [
+          "v3"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 14078,
+        "run_dir": "runs/revision-placebo/full"
+      },
+      {
+        "parsed_rows": 1408,
+        "prompt_versions": [
+          "v3"
+        ],
+        "rows_replaced_by_later_runs": 352,
+        "rows_used": 1056,
+        "run_dir": "runs/revision-neutral-reanchor/full"
+      },
+      {
+        "parsed_rows": 4224,
+        "prompt_versions": [
+          "v3"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 4224,
+        "run_dir": "runs/revision-deepseek-minimal/full"
+      }
+    ]
+  },
+  "runs": [
+    {
+      "by_model": [
+        {
+          "byok_rows": 3540,
+          "byok_upstream_usd": 22.52014799999999,
+          "failed_rows": 20,
+          "model": "anthropic/claude-sonnet-5.5",
+          "ok_rows": 3520,
+          "openrouter_usd": 0.0,
+          "role": "detector",
+          "rows": 3540,
+          "total_usd": 22.52014799999999
+        },
+        {
+          "byok_rows": 0,
+          "byok_upstream_usd": 0.0,
+          "failed_rows": 0,
+          "model": "deepseek/deepseek-v4-pro",
+          "ok_rows": 3520,
+          "openrouter_usd": 1.5105833734120027,
+          "role": "detector",
+          "rows": 3520,
+          "total_usd": 1.5105833734120027
+        },
+        {
+          "byok_rows": 3628,
+          "byok_upstream_usd": 14.362089750000017,
+          "failed_rows": 209,
+          "model": "google/gemini-3.8-flash",
+          "ok_rows": 3630,
+          "openrouter_usd": 0.27192075,
+          "role": "detector",
+          "rows": 3839,
+          "total_usd": 14.63401050000002
+        },
+        {
+          "byok_rows": 0,
+          "byok_upstream_usd": 0.0,
+          "failed_rows": 0,
+          "model": "openai/gpt-6.1-sol",
+          "ok_rows": 3520,
+          "openrouter_usd": 4.340047250000001,
+          "role": "detector",
+          "rows": 3520,
+          "total_usd": 4.340047250000001
+        }
+      ],
+      "byok_rows": 7168,
+      "byok_upstream_usd": 36.88223775,
+      "failed_rows": 229,
+      "log": "responses.jsonl",
+      "lower_bound": true,
+      "ok_rows": 14190,
+      "openrouter_usd": 6.122551373412004,
+      "rows": 14419,
+      "run_dir": "runs/revision-placebo/full",
+      "total_usd": 43.00478912341201
+    },
+    {
+      "by_model": [
+        {
+          "byok_rows": 354,
+          "byok_upstream_usd": 1.424436,
+          "failed_rows": 2,
+          "model": "anthropic/claude-sonnet-5.5",
+          "ok_rows": 352,
+          "openrouter_usd": 0.0,
+          "role": "detector",
+          "rows": 354,
+          "total_usd": 1.424436
+        },
+        {
+          "byok_rows": 0,
+          "byok_upstream_usd": 0.0,
+          "failed_rows": 0,
+          "model": "deepseek/deepseek-v4-pro",
+          "ok_rows": 352,
+          "openrouter_usd": 0.13012876473999996,
+          "role": "detector",
+          "rows": 352,
+          "total_usd": 0.13012876473999996
+        },
+        {
+          "byok_rows": 360,
+          "byok_upstream_usd": 1.721918999999999,
+          "failed_rows": 29,
+          "model": "google/gemini-3.8-flash",
+          "ok_rows": 360,
+          "openrouter_usd": 0.018306000000000003,
+          "role": "detector",
+          "rows": 389,
+          "total_usd": 1.740224999999999
+        },
+        {
+          "byok_rows": 0,
+          "byok_upstream_usd": 0.0,
+          "failed_rows": 0,
+          "model": "openai/gpt-6.1-sol",
+          "ok_rows": 352,
+          "openrouter_usd": 0.3697820000000001,
+          "role": "detector",
+          "rows": 352,
+          "total_usd": 0.3697820000000001
+        }
+      ],
+      "byok_rows": 714,
+      "byok_upstream_usd": 3.146354999999999,
+      "failed_rows": 31,
+      "log": "responses.jsonl",
+      "lower_bound": true,
+      "ok_rows": 1416,
+      "openrouter_usd": 0.5182167647400001,
+      "rows": 1447,
+      "run_dir": "runs/revision-neutral-reanchor/full",
+      "total_usd": 3.664571764739999
+    },
+    {
+      "by_model": [
+        {
+          "byok_rows": 0,
+          "byok_upstream_usd": 0.0,
+          "failed_rows": 62,
+          "model": "deepseek/deepseek-v4-pro",
+          "ok_rows": 4226,
+          "openrouter_usd": 10.873891958300971,
+          "role": "detector",
+          "rows": 4288,
+          "total_usd": 10.873891958300971
+        }
+      ],
+      "byok_rows": 0,
+      "byok_upstream_usd": 0.0,
+      "failed_rows": 62,
+      "log": "responses.jsonl",
+      "lower_bound": true,
+      "ok_rows": 4226,
+      "openrouter_usd": 10.873891958300971,
+      "rows": 4288,
+      "run_dir": "runs/revision-deepseek-minimal/full",
+      "total_usd": 10.873891958300971
+    },
+    {
+      "by_model": [
+        {
+          "byok_rows": 0,
+          "byok_upstream_usd": 0.0,
+          "failed_rows": 4,
+          "model": "openai/gpt-6.1-sol",
+          "ok_rows": 2316,
+          "openrouter_usd": 3.3215066499999994,
+          "role": "attacker",
+          "rows": 2320,
+          "total_usd": 3.3215066499999994
+        },
+        {
+          "byok_rows": 561,
+          "byok_upstream_usd": 2.304622000000002,
+          "failed_rows": 1,
+          "model": "anthropic/claude-sonnet-5.5",
+          "ok_rows": 561,
+          "openrouter_usd": 0.0,
+          "role": "detector",
+          "rows": 562,
+          "total_usd": 2.304622000000002
+        },
+        {
+          "byok_rows": 0,
+          "byok_upstream_usd": 0.0,
+          "failed_rows": 0,
+          "model": "deepseek/deepseek-v4-pro",
+          "ok_rows": 206,
+          "openrouter_usd": 0.09574066220200002,
+          "role": "detector",
+          "rows": 206,
+          "total_usd": 0.09574066220200002
+        },
+        {
+          "byok_rows": 743,
+          "byok_upstream_usd": 3.0708805500000005,
+          "failed_rows": 82,
+          "model": "google/gemini-3.8-flash",
+          "ok_rows": 713,
+          "openrouter_usd": 0.00581925,
+          "role": "detector",
+          "rows": 795,
+          "total_usd": 3.076699800000001
+        },
+        {
+          "byok_rows": 0,
+          "byok_upstream_usd": 0.0,
+          "failed_rows": 1,
+          "model": "openai/gpt-6.1-sol",
+          "ok_rows": 834,
+          "openrouter_usd": 0.959961999999999,
+          "role": "detector",
+          "rows": 835,
+          "total_usd": 0.959961999999999
+        }
+      ],
+      "byok_rows": 1304,
+      "byok_upstream_usd": 5.375502550000002,
+      "failed_rows": 88,
+      "log": "steps.jsonl",
+      "lower_bound": false,
+      "ok_rows": 4630,
+      "openrouter_usd": 4.383028562201998,
+      "rows": 4718,
+      "run_dir": "runs/revision-adaptive/full",
+      "total_usd": 9.758531112202002
+    }
+  ],
+  "total_usd": 67.30178395865498
+}

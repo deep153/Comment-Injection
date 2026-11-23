@@ -1,0 +1,195 @@
+{
+  "analysis": "calibration",
+  "bin_edges": [
+    0.0,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "by_model_defense": [
+    {
+      "accuracy": 0.5823863636363636,
+      "bins": [
+        {
+          "accuracy": 1.0,
+          "bin": "[0.0, 0.5)",
+          "mean_confidence": 0.05,
+          "n": 4
+        },
+        {
+          "accuracy": 0.0,
+          "bin": "[0.5, 0.6)",
+          "mean_confidence": 0.5,
+          "n": 1
+        },
+        {
+          "accuracy": 1.0,
+          "bin": "[0.6, 0.7)",
+          "mean_confidence": 0.6,
+          "n": 2
+        },
+        {
+          "accuracy": 0.42857142857142855,
+          "bin": "[0.7, 0.8)",
+          "mean_confidence": 0.7,
+          "n": 14
+        },
+        {
+          "accuracy": 0.6,
+          "bin": "[0.8, 0.9)",
+          "mean_confidence": 0.8087500000000001,
+          "n": 40
+        },
+        {
+          "accuracy": 0.5807560137457045,
+          "bin": "[0.9, 1.0]",
+          "mean_confidence": 0.9340893470790378,
+          "n": 291
+        }
+      ],
+      "brier": 0.36180539772727277,
+      "defense": "neutral",
+      "ece": 0.3411079545454545,
+      "mean_confidence": 0.8973579545454545,
+      "model": "deepseek/deepseek-v4-pro",
+      "n": 352,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "accuracy": 0.5625,
+      "bins": [
+        {
+          "accuracy": 0.3333333333333333,
+          "bin": "[0.0, 0.5)",
+          "mean_confidence": 0.16666666666666666,
+          "n": 6
+        },
+        {
+          "accuracy": 0.3333333333333333,
+          "bin": "[0.5, 0.6)",
+          "mean_confidence": 0.5,
+          "n": 3
+        },
+        {
+          "accuracy": null,
+          "bin": "[0.6, 0.7)",
+          "mean_confidence": null,
+          "n": 0
+        },
+        {
+          "accuracy": 0.4375,
+          "bin": "[0.7, 0.8)",
+          "mean_confidence": 0.7,
+          "n": 16
+        },
+        {
+          "accuracy": 0.5714285714285714,
+          "bin": "[0.8, 0.9)",
+          "mean_confidence": 0.81,
+          "n": 35
+        },
+        {
+          "accuracy": 0.5753424657534246,
+          "bin": "[0.9, 1.0]",
+          "mean_confidence": 0.9334931506849314,
+          "n": 292
+        }
+      ],
+      "brier": 0.3590133522727273,
+      "defense": "tagged",
+      "ece": 0.3370170454545454,
+      "mean_confidence": 0.8938352272727272,
+      "model": "deepseek/deepseek-v4-pro",
+      "n": 352,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "accuracy": 0.5738636363636364,
+      "bins": [
+        {
+          "accuracy": 1.0,
+          "bin": "[0.0, 0.5)",
+          "mean_confidence": 0.0,
+          "n": 1
+        },
+        {
+          "accuracy": 0.6666666666666666,
+          "bin": "[0.5, 0.6)",
+          "mean_confidence": 0.5,
+          "n": 3
+        },
+        {
+          "accuracy": 1.0,
+          "bin": "[0.6, 0.7)",
+          "mean_confidence": 0.6,
+          "n": 1
+        },
+        {
+          "accuracy": 0.1,
+          "bin": "[0.7, 0.8)",
+          "mean_confidence": 0.7,
+          "n": 20
+        },
+        {
+          "accuracy": 0.5,
+          "bin": "[0.8, 0.9)",
+          "mean_confidence": 0.8076086956521739,
+          "n": 46
+        },
+        {
+          "accuracy": 0.6156583629893239,
+          "bin": "[0.9, 1.0]",
+          "mean_confidence": 0.9385765124555161,
+          "n": 281
+        }
+      ],
+      "brier": 0.35004232954545456,
+      "defense": "warning",
+      "ece": 0.33747159090909096,
+      "mean_confidence": 0.9005397727272727,
+      "model": "deepseek/deepseek-v4-pro",
+      "n": 352,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    }
+  ],
+  "provenance": {
+    "clustering_unit": "vulnerable/fixed pair (paired_item_key; item_id when missing)",
+    "dataset_family": "manual",
+    "join_key": [
+      "model",
+      "item_id",
+      "defense",
+      "attack_family"
+    ],
+    "repeats": "excluded (repeat > 0)",
+    "runs": [
+      {
+        "parsed_rows": 4224,
+        "prompt_versions": [
+          "v3"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 4224,
+        "run_dir": "runs/revision-deepseek-minimal/full"
+      }
+    ]
+  }
+}

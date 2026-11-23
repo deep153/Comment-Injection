@@ -1,0 +1,513 @@
+{
+  "analysis": "defense_rates",
+  "bootstrap": {
+    "interval": "percentile 95%",
+    "resamples": 2000,
+    "seed": 20260101,
+    "unit": "vulnerable/fixed pair"
+  },
+  "by_model_defense_goal": [
+    {
+      "attack_success": {
+        "count": 459,
+        "n": 528,
+        "rate": 0.8693181818181818
+      },
+      "benign_flip": {
+        "ci_high": null,
+        "ci_low": null,
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "clean_accuracy": {
+        "count": 205,
+        "n": 352,
+        "rate": 0.5823863636363636
+      },
+      "conditional_flip": {
+        "ci_high": 0.8504672897196262,
+        "ci_low": 0.7507788161993769,
+        "count": 258,
+        "n": 321,
+        "rate": 0.8037383177570093
+      },
+      "defense": "neutral",
+      "excess_over_benign": {
+        "ci_high": null,
+        "ci_low": null,
+        "estimate": null
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 334,
+        "n": 528,
+        "rate": 0.6325757575757576
+      },
+      "benign_flip": {
+        "ci_high": null,
+        "ci_low": null,
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "clean_accuracy": {
+        "count": 205,
+        "n": 352,
+        "rate": 0.5823863636363636
+      },
+      "conditional_flip": {
+        "ci_high": 0.5374149659863946,
+        "ci_low": 0.3945578231292517,
+        "count": 137,
+        "n": 294,
+        "rate": 0.46598639455782315
+      },
+      "defense": "neutral",
+      "excess_over_benign": {
+        "ci_high": null,
+        "ci_low": null,
+        "estimate": null
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 240,
+        "n": 528,
+        "rate": 0.45454545454545453
+      },
+      "benign_flip": {
+        "ci_high": null,
+        "ci_low": null,
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "clean_accuracy": {
+        "count": 198,
+        "n": 352,
+        "rate": 0.5625
+      },
+      "conditional_flip": {
+        "ci_high": 0.31691419141914146,
+        "ci_low": 0.19801980198019803,
+        "count": 78,
+        "n": 303,
+        "rate": 0.25742574257425743
+      },
+      "defense": "tagged",
+      "excess_over_benign": {
+        "ci_high": null,
+        "ci_low": null,
+        "estimate": null
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 255,
+        "n": 528,
+        "rate": 0.48295454545454547
+      },
+      "benign_flip": {
+        "ci_high": null,
+        "ci_low": null,
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "clean_accuracy": {
+        "count": 198,
+        "n": 352,
+        "rate": 0.5625
+      },
+      "conditional_flip": {
+        "ci_high": 0.25773195876288657,
+        "ci_low": 0.13745704467353953,
+        "count": 57,
+        "n": 291,
+        "rate": 0.1958762886597938
+      },
+      "defense": "tagged",
+      "excess_over_benign": {
+        "ci_high": null,
+        "ci_low": null,
+        "estimate": null
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 256,
+        "n": 528,
+        "rate": 0.48484848484848486
+      },
+      "benign_flip": {
+        "ci_high": null,
+        "ci_low": null,
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "clean_accuracy": {
+        "count": 202,
+        "n": 352,
+        "rate": 0.5738636363636364
+      },
+      "conditional_flip": {
+        "ci_high": 0.31958762886597936,
+        "ci_low": 0.19931271477663232,
+        "count": 76,
+        "n": 291,
+        "rate": 0.2611683848797251
+      },
+      "defense": "warning",
+      "excess_over_benign": {
+        "ci_high": null,
+        "ci_low": null,
+        "estimate": null
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 248,
+        "n": 528,
+        "rate": 0.4696969696969697
+      },
+      "benign_flip": {
+        "ci_high": null,
+        "ci_low": null,
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "clean_accuracy": {
+        "count": 202,
+        "n": 352,
+        "rate": 0.5738636363636364
+      },
+      "conditional_flip": {
+        "ci_high": 0.3142857142857143,
+        "ci_low": 0.17777777777777778,
+        "count": 77,
+        "n": 315,
+        "rate": 0.24444444444444444
+      },
+      "defense": "warning",
+      "excess_over_benign": {
+        "ci_high": null,
+        "ci_low": null,
+        "estimate": null
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 459,
+        "n": 528,
+        "rate": 0.8693181818181818
+      },
+      "benign_flip": {
+        "ci_high": null,
+        "ci_low": null,
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "clean_accuracy": {
+        "count": 205,
+        "n": 352,
+        "rate": 0.5823863636363636
+      },
+      "conditional_flip": {
+        "ci_high": 0.8504672897196262,
+        "ci_low": 0.7507788161993769,
+        "count": 258,
+        "n": 321,
+        "rate": 0.8037383177570093
+      },
+      "defense": "neutral",
+      "excess_over_benign": {
+        "ci_high": null,
+        "ci_low": null,
+        "estimate": null
+      },
+      "goal": "induction",
+      "model": "all",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 334,
+        "n": 528,
+        "rate": 0.6325757575757576
+      },
+      "benign_flip": {
+        "ci_high": null,
+        "ci_low": null,
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "clean_accuracy": {
+        "count": 205,
+        "n": 352,
+        "rate": 0.5823863636363636
+      },
+      "conditional_flip": {
+        "ci_high": 0.5374149659863946,
+        "ci_low": 0.3945578231292517,
+        "count": 137,
+        "n": 294,
+        "rate": 0.46598639455782315
+      },
+      "defense": "neutral",
+      "excess_over_benign": {
+        "ci_high": null,
+        "ci_low": null,
+        "estimate": null
+      },
+      "goal": "suppression",
+      "model": "all",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 240,
+        "n": 528,
+        "rate": 0.45454545454545453
+      },
+      "benign_flip": {
+        "ci_high": null,
+        "ci_low": null,
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "clean_accuracy": {
+        "count": 198,
+        "n": 352,
+        "rate": 0.5625
+      },
+      "conditional_flip": {
+        "ci_high": 0.31691419141914146,
+        "ci_low": 0.19801980198019803,
+        "count": 78,
+        "n": 303,
+        "rate": 0.25742574257425743
+      },
+      "defense": "tagged",
+      "excess_over_benign": {
+        "ci_high": null,
+        "ci_low": null,
+        "estimate": null
+      },
+      "goal": "induction",
+      "model": "all",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 255,
+        "n": 528,
+        "rate": 0.48295454545454547
+      },
+      "benign_flip": {
+        "ci_high": null,
+        "ci_low": null,
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "clean_accuracy": {
+        "count": 198,
+        "n": 352,
+        "rate": 0.5625
+      },
+      "conditional_flip": {
+        "ci_high": 0.25773195876288657,
+        "ci_low": 0.13745704467353953,
+        "count": 57,
+        "n": 291,
+        "rate": 0.1958762886597938
+      },
+      "defense": "tagged",
+      "excess_over_benign": {
+        "ci_high": null,
+        "ci_low": null,
+        "estimate": null
+      },
+      "goal": "suppression",
+      "model": "all",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 256,
+        "n": 528,
+        "rate": 0.48484848484848486
+      },
+      "benign_flip": {
+        "ci_high": null,
+        "ci_low": null,
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "clean_accuracy": {
+        "count": 202,
+        "n": 352,
+        "rate": 0.5738636363636364
+      },
+      "conditional_flip": {
+        "ci_high": 0.31958762886597936,
+        "ci_low": 0.19931271477663232,
+        "count": 76,
+        "n": 291,
+        "rate": 0.2611683848797251
+      },
+      "defense": "warning",
+      "excess_over_benign": {
+        "ci_high": null,
+        "ci_low": null,
+        "estimate": null
+      },
+      "goal": "induction",
+      "model": "all",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 248,
+        "n": 528,
+        "rate": 0.4696969696969697
+      },
+      "benign_flip": {
+        "ci_high": null,
+        "ci_low": null,
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "clean_accuracy": {
+        "count": 202,
+        "n": 352,
+        "rate": 0.5738636363636364
+      },
+      "conditional_flip": {
+        "ci_high": 0.3142857142857143,
+        "ci_low": 0.17777777777777778,
+        "count": 77,
+        "n": 315,
+        "rate": 0.24444444444444444
+      },
+      "defense": "warning",
+      "excess_over_benign": {
+        "ci_high": null,
+        "ci_low": null,
+        "estimate": null
+      },
+      "goal": "suppression",
+      "model": "all",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    }
+  ],
+  "provenance": {
+    "clustering_unit": "vulnerable/fixed pair (paired_item_key; item_id when missing)",
+    "dataset_family": "manual",
+    "join_key": [
+      "model",
+      "item_id",
+      "defense",
+      "attack_family"
+    ],
+    "repeats": "excluded (repeat > 0)",
+    "runs": [
+      {
+        "parsed_rows": 4224,
+        "prompt_versions": [
+          "v3"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 4224,
+        "run_dir": "runs/revision-deepseek-minimal/full"
+      }
+    ]
+  }
+}

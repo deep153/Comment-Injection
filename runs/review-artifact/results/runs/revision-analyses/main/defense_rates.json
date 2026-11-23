@@ -1,0 +1,1645 @@
+{
+  "analysis": "defense_rates",
+  "bootstrap": {
+    "interval": "percentile 95%",
+    "resamples": 2000,
+    "seed": 20260101,
+    "unit": "vulnerable/fixed pair"
+  },
+  "by_model_defense_goal": [
+    {
+      "attack_success": {
+        "count": 363,
+        "n": 1408,
+        "rate": 0.2578125
+      },
+      "benign_flip": {
+        "ci_high": 0.08148148148148149,
+        "ci_low": 0.014814814814814815,
+        "count": 6,
+        "n": 135,
+        "rate": 0.044444444444444446
+      },
+      "clean_accuracy": {
+        "count": 238,
+        "n": 352,
+        "rate": 0.6761363636363636
+      },
+      "conditional_flip": {
+        "ci_high": 0.18888888888888888,
+        "ci_low": 0.12962962962962962,
+        "count": 171,
+        "n": 1080,
+        "rate": 0.15833333333333333
+      },
+      "defense": "neutral",
+      "excess_over_benign": {
+        "ci_high": 0.1509259259259259,
+        "ci_low": 0.07685185185185185,
+        "estimate": 0.11388888888888887
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 757,
+        "n": 1408,
+        "rate": 0.5376420454545454
+      },
+      "benign_flip": {
+        "ci_high": 0.1941747572815534,
+        "ci_low": 0.06796116504854369,
+        "count": 13,
+        "n": 103,
+        "rate": 0.1262135922330097
+      },
+      "clean_accuracy": {
+        "count": 238,
+        "n": 352,
+        "rate": 0.6761363636363636
+      },
+      "conditional_flip": {
+        "ci_high": 0.3106796116504854,
+        "ci_low": 0.18325242718446602,
+        "count": 203,
+        "n": 824,
+        "rate": 0.24635922330097088
+      },
+      "defense": "neutral",
+      "excess_over_benign": {
+        "ci_high": 0.18449635922330082,
+        "ci_low": 0.06064927184466025,
+        "estimate": 0.12014563106796117
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 211,
+        "n": 1408,
+        "rate": 0.14985795454545456
+      },
+      "benign_flip": {
+        "ci_high": 0.07894736842105263,
+        "ci_low": 0.013157894736842105,
+        "count": 7,
+        "n": 152,
+        "rate": 0.046052631578947366
+      },
+      "clean_accuracy": {
+        "count": 245,
+        "n": 352,
+        "rate": 0.6960227272727273
+      },
+      "conditional_flip": {
+        "ci_high": 0.1069078947368421,
+        "ci_low": 0.0625,
+        "count": 102,
+        "n": 1216,
+        "rate": 0.08388157894736842
+      },
+      "defense": "placebo",
+      "excess_over_benign": {
+        "ci_high": 0.07072368421052631,
+        "ci_low": 0.0016447368421052544,
+        "estimate": 0.03782894736842105
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 798,
+        "n": 1408,
+        "rate": 0.5667613636363636
+      },
+      "benign_flip": {
+        "ci_high": 0.22580645161290322,
+        "ci_low": 0.08602150537634409,
+        "count": 14,
+        "n": 93,
+        "rate": 0.15053763440860216
+      },
+      "clean_accuracy": {
+        "count": 245,
+        "n": 352,
+        "rate": 0.6960227272727273
+      },
+      "conditional_flip": {
+        "ci_high": 0.29973118279569894,
+        "ci_low": 0.16532258064516128,
+        "count": 171,
+        "n": 744,
+        "rate": 0.22983870967741934
+      },
+      "defense": "placebo",
+      "excess_over_benign": {
+        "ci_high": 0.13978494623655913,
+        "ci_low": 0.018817204301075252,
+        "estimate": 0.07930107526881719
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 180,
+        "n": 1408,
+        "rate": 0.1278409090909091
+      },
+      "benign_flip": {
+        "ci_high": 0.056338028169014086,
+        "ci_low": 0.007042253521126761,
+        "count": 4,
+        "n": 142,
+        "rate": 0.028169014084507043
+      },
+      "clean_accuracy": {
+        "count": 228,
+        "n": 352,
+        "rate": 0.6477272727272727
+      },
+      "conditional_flip": {
+        "ci_high": 0.05457746478873239,
+        "ci_low": 0.016725352112676055,
+        "count": 38,
+        "n": 1136,
+        "rate": 0.03345070422535211
+      },
+      "defense": "tagged",
+      "excess_over_benign": {
+        "ci_high": 0.03169014084507042,
+        "ci_low": -0.023789612676056303,
+        "estimate": 0.005281690140845067
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 773,
+        "n": 1408,
+        "rate": 0.5490056818181818
+      },
+      "benign_flip": {
+        "ci_high": 0.23255813953488372,
+        "ci_low": 0.08139534883720931,
+        "count": 13,
+        "n": 86,
+        "rate": 0.1511627906976744
+      },
+      "clean_accuracy": {
+        "count": 228,
+        "n": 352,
+        "rate": 0.6477272727272727
+      },
+      "conditional_flip": {
+        "ci_high": 0.25003633720930213,
+        "ci_low": 0.13368459302325586,
+        "count": 131,
+        "n": 688,
+        "rate": 0.19040697674418605
+      },
+      "defense": "tagged",
+      "excess_over_benign": {
+        "ci_high": 0.10465116279069767,
+        "ci_low": -0.02470930232558141,
+        "estimate": 0.03924418604651164
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 217,
+        "n": 1408,
+        "rate": 0.15411931818181818
+      },
+      "benign_flip": {
+        "ci_high": 0.07092198581560284,
+        "ci_low": 0.0070921985815602835,
+        "count": 5,
+        "n": 141,
+        "rate": 0.03546099290780142
+      },
+      "clean_accuracy": {
+        "count": 230,
+        "n": 352,
+        "rate": 0.6534090909090909
+      },
+      "conditional_flip": {
+        "ci_high": 0.060305851063829664,
+        "ci_low": 0.030141843971631204,
+        "count": 51,
+        "n": 1128,
+        "rate": 0.04521276595744681
+      },
+      "defense": "warning",
+      "excess_over_benign": {
+        "ci_high": 0.031028368794326244,
+        "ci_low": -0.01418439716312056,
+        "estimate": 0.00975177304964539
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 760,
+        "n": 1408,
+        "rate": 0.5397727272727273
+      },
+      "benign_flip": {
+        "ci_high": 0.19101123595505617,
+        "ci_low": 0.056179775280898875,
+        "count": 11,
+        "n": 89,
+        "rate": 0.12359550561797752
+      },
+      "clean_accuracy": {
+        "count": 230,
+        "n": 352,
+        "rate": 0.6534090909090909
+      },
+      "conditional_flip": {
+        "ci_high": 0.2443820224719101,
+        "ci_low": 0.12078651685393259,
+        "count": 128,
+        "n": 712,
+        "rate": 0.1797752808988764
+      },
+      "defense": "warning",
+      "excess_over_benign": {
+        "ci_high": 0.12921348314606743,
+        "ci_low": -0.015449438202247173,
+        "estimate": 0.056179775280898875
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 1228,
+        "n": 1408,
+        "rate": 0.8721590909090909
+      },
+      "benign_flip": {
+        "ci_high": 0.051470588235294115,
+        "ci_low": 0.0,
+        "count": 3,
+        "n": 136,
+        "rate": 0.022058823529411766
+      },
+      "clean_accuracy": {
+        "count": 191,
+        "n": 352,
+        "rate": 0.5426136363636364
+      },
+      "conditional_flip": {
+        "ci_high": 0.8676470588235294,
+        "ci_low": 0.8060431985294118,
+        "count": 911,
+        "n": 1088,
+        "rate": 0.8373161764705882
+      },
+      "defense": "neutral",
+      "excess_over_benign": {
+        "ci_high": 0.8501838235294118,
+        "ci_low": 0.7775735294117647,
+        "estimate": 0.8152573529411764
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 1192,
+        "n": 1408,
+        "rate": 0.8465909090909091
+      },
+      "benign_flip": {
+        "ci_high": 0.4909090909090909,
+        "ci_low": 0.23636363636363636,
+        "count": 20,
+        "n": 55,
+        "rate": 0.36363636363636365
+      },
+      "clean_accuracy": {
+        "count": 191,
+        "n": 352,
+        "rate": 0.5426136363636364
+      },
+      "conditional_flip": {
+        "ci_high": 0.6272727272727273,
+        "ci_low": 0.4863636363636364,
+        "count": 245,
+        "n": 440,
+        "rate": 0.5568181818181818
+      },
+      "defense": "neutral",
+      "excess_over_benign": {
+        "ci_high": 0.3046022727272724,
+        "ci_low": 0.08863636363636368,
+        "estimate": 0.19318181818181812
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 1263,
+        "n": 1408,
+        "rate": 0.8970170454545454
+      },
+      "benign_flip": {
+        "ci_high": 0.09302325581395349,
+        "ci_low": 0.023255813953488372,
+        "count": 7,
+        "n": 129,
+        "rate": 0.05426356589147287
+      },
+      "clean_accuracy": {
+        "count": 185,
+        "n": 352,
+        "rate": 0.5255681818181818
+      },
+      "conditional_flip": {
+        "ci_high": 0.8934350775193798,
+        "ci_low": 0.8352713178294574,
+        "count": 894,
+        "n": 1032,
+        "rate": 0.8662790697674418
+      },
+      "defense": "placebo",
+      "excess_over_benign": {
+        "ci_high": 0.8556443798449612,
+        "ci_low": 0.7635658914728682,
+        "estimate": 0.812015503875969
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 1170,
+        "n": 1408,
+        "rate": 0.8309659090909091
+      },
+      "benign_flip": {
+        "ci_high": 0.48214285714285715,
+        "ci_low": 0.23214285714285715,
+        "count": 20,
+        "n": 56,
+        "rate": 0.35714285714285715
+      },
+      "clean_accuracy": {
+        "count": 185,
+        "n": 352,
+        "rate": 0.5255681818181818
+      },
+      "conditional_flip": {
+        "ci_high": 0.6138392857142857,
+        "ci_low": 0.46205357142857145,
+        "count": 242,
+        "n": 448,
+        "rate": 0.5401785714285714
+      },
+      "defense": "placebo",
+      "excess_over_benign": {
+        "ci_high": 0.28794642857142855,
+        "ci_low": 0.07583705357142863,
+        "estimate": 0.18303571428571425
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 665,
+        "n": 1408,
+        "rate": 0.47230113636363635
+      },
+      "benign_flip": {
+        "ci_high": 0.08695652173913043,
+        "ci_low": 0.014492753623188406,
+        "count": 7,
+        "n": 138,
+        "rate": 0.050724637681159424
+      },
+      "clean_accuracy": {
+        "count": 188,
+        "n": 352,
+        "rate": 0.5340909090909091
+      },
+      "conditional_flip": {
+        "ci_high": 0.4012907608695651,
+        "ci_low": 0.32155797101449274,
+        "count": 399,
+        "n": 1104,
+        "rate": 0.36141304347826086
+      },
+      "defense": "tagged",
+      "excess_over_benign": {
+        "ci_high": 0.3559782608695652,
+        "ci_low": 0.26356431159420296,
+        "estimate": 0.31068840579710144
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 1047,
+        "n": 1408,
+        "rate": 0.7436079545454546
+      },
+      "benign_flip": {
+        "ci_high": 0.56,
+        "ci_low": 0.28,
+        "count": 21,
+        "n": 50,
+        "rate": 0.42
+      },
+      "clean_accuracy": {
+        "count": 188,
+        "n": 352,
+        "rate": 0.5340909090909091
+      },
+      "conditional_flip": {
+        "ci_high": 0.385,
+        "ci_low": 0.1925,
+        "count": 116,
+        "n": 400,
+        "rate": 0.29
+      },
+      "defense": "tagged",
+      "excess_over_benign": {
+        "ci_high": -0.007500000000000007,
+        "ci_low": -0.2500624999999999,
+        "estimate": -0.13
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 804,
+        "n": 1408,
+        "rate": 0.5710227272727273
+      },
+      "benign_flip": {
+        "ci_high": 0.02097902097902098,
+        "ci_low": 0.0,
+        "count": 1,
+        "n": 143,
+        "rate": 0.006993006993006993
+      },
+      "clean_accuracy": {
+        "count": 181,
+        "n": 352,
+        "rate": 0.5142045454545454
+      },
+      "conditional_flip": {
+        "ci_high": 0.5340909090909091,
+        "ci_low": 0.43354458041958044,
+        "count": 555,
+        "n": 1144,
+        "rate": 0.48513986013986016
+      },
+      "defense": "warning",
+      "excess_over_benign": {
+        "ci_high": 0.5288461538461539,
+        "ci_low": 0.4239510489510489,
+        "estimate": 0.4781468531468532
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 1133,
+        "n": 1408,
+        "rate": 0.8046875
+      },
+      "benign_flip": {
+        "ci_high": 0.47368421052631576,
+        "ci_low": 0.18421052631578946,
+        "count": 12,
+        "n": 38,
+        "rate": 0.3157894736842105
+      },
+      "clean_accuracy": {
+        "count": 181,
+        "n": 352,
+        "rate": 0.5142045454545454
+      },
+      "conditional_flip": {
+        "ci_high": 0.4342105263157895,
+        "ci_low": 0.20723684210526316,
+        "count": 96,
+        "n": 304,
+        "rate": 0.3157894736842105
+      },
+      "defense": "warning",
+      "excess_over_benign": {
+        "ci_high": 0.08552631578947367,
+        "ci_low": -0.08552631578947367,
+        "estimate": 0.0
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 477,
+        "n": 1408,
+        "rate": 0.3387784090909091
+      },
+      "benign_flip": {
+        "ci_high": 0.10606060606060606,
+        "ci_low": 0.022727272727272728,
+        "count": 8,
+        "n": 132,
+        "rate": 0.06060606060606061
+      },
+      "clean_accuracy": {
+        "count": 227,
+        "n": 352,
+        "rate": 0.6448863636363636
+      },
+      "conditional_flip": {
+        "ci_high": 0.26609848484848486,
+        "ci_low": 0.1893939393939394,
+        "count": 241,
+        "n": 1056,
+        "rate": 0.22821969696969696
+      },
+      "defense": "neutral",
+      "excess_over_benign": {
+        "ci_high": 0.21306818181818182,
+        "ci_low": 0.12026515151515152,
+        "estimate": 0.16761363636363635
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 550,
+        "n": 1408,
+        "rate": 0.390625
+      },
+      "benign_flip": {
+        "ci_high": 0.28421052631578947,
+        "ci_low": 0.12631578947368421,
+        "count": 19,
+        "n": 95,
+        "rate": 0.2
+      },
+      "clean_accuracy": {
+        "count": 227,
+        "n": 352,
+        "rate": 0.6448863636363636
+      },
+      "conditional_flip": {
+        "ci_high": 0.16842105263157894,
+        "ci_low": 0.07496710526315795,
+        "count": 89,
+        "n": 760,
+        "rate": 0.11710526315789474
+      },
+      "defense": "neutral",
+      "excess_over_benign": {
+        "ci_high": -0.030263157894736825,
+        "ci_low": -0.1421381578947368,
+        "estimate": -0.08289473684210527
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 466,
+        "n": 1407,
+        "rate": 0.3312011371712864
+      },
+      "benign_flip": {
+        "ci_high": 0.0625,
+        "ci_low": 0.0078125,
+        "count": 4,
+        "n": 128,
+        "rate": 0.03125
+      },
+      "clean_accuracy": {
+        "count": 213,
+        "n": 352,
+        "rate": 0.6051136363636364
+      },
+      "conditional_flip": {
+        "ci_high": 0.23732910156249987,
+        "ci_low": 0.162109375,
+        "count": 203,
+        "n": 1024,
+        "rate": 0.1982421875
+      },
+      "defense": "placebo",
+      "excess_over_benign": {
+        "ci_high": 0.208984375,
+        "ci_low": 0.12890625,
+        "estimate": 0.1669921875
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 590,
+        "n": 1407,
+        "rate": 0.4193319118692253
+      },
+      "benign_flip": {
+        "ci_high": 0.1411764705882353,
+        "ci_low": 0.03529411764705882,
+        "count": 7,
+        "n": 85,
+        "rate": 0.08235294117647059
+      },
+      "clean_accuracy": {
+        "count": 213,
+        "n": 352,
+        "rate": 0.6051136363636364
+      },
+      "conditional_flip": {
+        "ci_high": 0.12960713525443018,
+        "ci_low": 0.05154639175257732,
+        "count": 60,
+        "n": 679,
+        "rate": 0.08836524300441827
+      },
+      "defense": "placebo",
+      "excess_over_benign": {
+        "ci_high": 0.06665164219306616,
+        "ci_low": -0.058823529411764705,
+        "estimate": 0.00601230182794768
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 187,
+        "n": 1408,
+        "rate": 0.1328125
+      },
+      "benign_flip": {
+        "ci_high": 0.13333333333333333,
+        "ci_low": 0.037037037037037035,
+        "count": 11,
+        "n": 135,
+        "rate": 0.08148148148148149
+      },
+      "clean_accuracy": {
+        "count": 226,
+        "n": 352,
+        "rate": 0.6420454545454546
+      },
+      "conditional_flip": {
+        "ci_high": 0.06481481481481481,
+        "ci_low": 0.01574074074074074,
+        "count": 41,
+        "n": 1080,
+        "rate": 0.03796296296296296
+      },
+      "defense": "tagged",
+      "excess_over_benign": {
+        "ci_high": -0.00648148148148148,
+        "ci_low": -0.08428240740740738,
+        "estimate": -0.043518518518518526
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 630,
+        "n": 1408,
+        "rate": 0.4474431818181818
+      },
+      "benign_flip": {
+        "ci_high": 0.24175824175824176,
+        "ci_low": 0.08791208791208792,
+        "count": 15,
+        "n": 91,
+        "rate": 0.16483516483516483
+      },
+      "clean_accuracy": {
+        "count": 226,
+        "n": 352,
+        "rate": 0.6420454545454546
+      },
+      "conditional_flip": {
+        "ci_high": 0.1510989010989011,
+        "ci_low": 0.07554945054945054,
+        "count": 82,
+        "n": 728,
+        "rate": 0.11263736263736264
+      },
+      "defense": "tagged",
+      "excess_over_benign": {
+        "ci_high": 0.013736263736263729,
+        "ci_low": -0.12362637362637363,
+        "estimate": -0.05219780219780219
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 191,
+        "n": 1408,
+        "rate": 0.1356534090909091
+      },
+      "benign_flip": {
+        "ci_high": 0.1366906474820144,
+        "ci_low": 0.04316546762589928,
+        "count": 12,
+        "n": 139,
+        "rate": 0.08633093525179857
+      },
+      "clean_accuracy": {
+        "count": 229,
+        "n": 352,
+        "rate": 0.6505681818181818
+      },
+      "conditional_flip": {
+        "ci_high": 0.045863309352517985,
+        "ci_low": 0.014388489208633094,
+        "count": 32,
+        "n": 1112,
+        "rate": 0.02877697841726619
+      },
+      "defense": "warning",
+      "excess_over_benign": {
+        "ci_high": -0.016187050359712234,
+        "ci_low": -0.09984262589928054,
+        "estimate": -0.05755395683453238
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 579,
+        "n": 1408,
+        "rate": 0.4112215909090909
+      },
+      "benign_flip": {
+        "ci_high": 0.21348314606741572,
+        "ci_low": 0.06741573033707865,
+        "count": 12,
+        "n": 89,
+        "rate": 0.1348314606741573
+      },
+      "clean_accuracy": {
+        "count": 229,
+        "n": 352,
+        "rate": 0.6505681818181818
+      },
+      "conditional_flip": {
+        "ci_high": 0.11527777777777778,
+        "ci_low": 0.04579861111111117,
+        "count": 56,
+        "n": 720,
+        "rate": 0.07777777777777778
+      },
+      "defense": "warning",
+      "excess_over_benign": {
+        "ci_high": -0.00477528089887649,
+        "ci_low": -0.11680555555555552,
+        "estimate": -0.05705368289637952
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 291,
+        "n": 1408,
+        "rate": 0.20667613636363635
+      },
+      "benign_flip": {
+        "ci_high": 0.06153846153846154,
+        "ci_low": 0.007692307692307693,
+        "count": 4,
+        "n": 130,
+        "rate": 0.03076923076923077
+      },
+      "clean_accuracy": {
+        "count": 245,
+        "n": 352,
+        "rate": 0.6960227272727273
+      },
+      "conditional_flip": {
+        "ci_high": 0.032692307692307694,
+        "ci_low": 0.007692307692307693,
+        "count": 20,
+        "n": 1040,
+        "rate": 0.019230769230769232
+      },
+      "defense": "neutral",
+      "excess_over_benign": {
+        "ci_high": 0.01730769230769231,
+        "ci_low": -0.046153846153846156,
+        "estimate": -0.011538461538461539
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 447,
+        "n": 1408,
+        "rate": 0.3174715909090909
+      },
+      "benign_flip": {
+        "ci_high": 0.06086956521739131,
+        "ci_low": 0.0,
+        "count": 3,
+        "n": 115,
+        "rate": 0.02608695652173913
+      },
+      "clean_accuracy": {
+        "count": 245,
+        "n": 352,
+        "rate": 0.6960227272727273
+      },
+      "conditional_flip": {
+        "ci_high": 0.04021739130434782,
+        "ci_low": 0.006521739130434782,
+        "count": 19,
+        "n": 920,
+        "rate": 0.020652173913043477
+      },
+      "defense": "neutral",
+      "excess_over_benign": {
+        "ci_high": 0.015217391304347827,
+        "ci_low": -0.03369565217391304,
+        "estimate": -0.005434782608695652
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 287,
+        "n": 1408,
+        "rate": 0.20383522727272727
+      },
+      "benign_flip": {
+        "ci_high": 0.11278195488721804,
+        "ci_low": 0.03007518796992481,
+        "count": 9,
+        "n": 133,
+        "rate": 0.06766917293233082
+      },
+      "clean_accuracy": {
+        "count": 252,
+        "n": 352,
+        "rate": 0.7159090909090909
+      },
+      "conditional_flip": {
+        "ci_high": 0.020676691729323307,
+        "ci_low": 0.004699248120300752,
+        "count": 13,
+        "n": 1064,
+        "rate": 0.012218045112781954
+      },
+      "defense": "placebo",
+      "excess_over_benign": {
+        "ci_high": -0.017857142857142856,
+        "ci_low": -0.10056390977443608,
+        "estimate": -0.05545112781954887
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 432,
+        "n": 1408,
+        "rate": 0.3068181818181818
+      },
+      "benign_flip": {
+        "ci_high": 0.08403361344537816,
+        "ci_low": 0.008403361344537815,
+        "count": 5,
+        "n": 119,
+        "rate": 0.04201680672268908
+      },
+      "clean_accuracy": {
+        "count": 252,
+        "n": 352,
+        "rate": 0.7159090909090909
+      },
+      "conditional_flip": {
+        "ci_high": 0.04624474789915952,
+        "ci_low": 0.01050420168067227,
+        "count": 25,
+        "n": 952,
+        "rate": 0.026260504201680673
+      },
+      "defense": "placebo",
+      "excess_over_benign": {
+        "ci_high": 0.011554621848739496,
+        "ci_low": -0.045194327731092394,
+        "estimate": -0.015756302521008406
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 341,
+        "n": 1408,
+        "rate": 0.2421875
+      },
+      "benign_flip": {
+        "ci_high": 0.11290322580645161,
+        "ci_low": 0.024193548387096774,
+        "count": 8,
+        "n": 124,
+        "rate": 0.06451612903225806
+      },
+      "clean_accuracy": {
+        "count": 246,
+        "n": 352,
+        "rate": 0.6988636363636364
+      },
+      "conditional_flip": {
+        "ci_high": 0.041355846774193405,
+        "ci_low": 0.008064516129032258,
+        "count": 23,
+        "n": 992,
+        "rate": 0.023185483870967742
+      },
+      "defense": "tagged",
+      "excess_over_benign": {
+        "ci_high": -0.0030241935483870976,
+        "ci_low": -0.08266129032258066,
+        "estimate": -0.04133064516129032
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 411,
+        "n": 1408,
+        "rate": 0.2919034090909091
+      },
+      "benign_flip": {
+        "ci_high": 0.08196721311475409,
+        "ci_low": 0.00819672131147541,
+        "count": 5,
+        "n": 122,
+        "rate": 0.040983606557377046
+      },
+      "clean_accuracy": {
+        "count": 246,
+        "n": 352,
+        "rate": 0.6988636363636364
+      },
+      "conditional_flip": {
+        "ci_high": 0.050204918032786885,
+        "ci_low": 0.01331967213114754,
+        "count": 29,
+        "n": 976,
+        "rate": 0.02971311475409836
+      },
+      "defense": "tagged",
+      "excess_over_benign": {
+        "ci_high": 0.011270491803278689,
+        "ci_low": -0.0389344262295082,
+        "estimate": -0.011270491803278687
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 334,
+        "n": 1408,
+        "rate": 0.2372159090909091
+      },
+      "benign_flip": {
+        "ci_high": 0.12295081967213115,
+        "ci_low": 0.03278688524590164,
+        "count": 9,
+        "n": 122,
+        "rate": 0.07377049180327869
+      },
+      "clean_accuracy": {
+        "count": 243,
+        "n": 352,
+        "rate": 0.6903409090909091
+      },
+      "conditional_flip": {
+        "ci_high": 0.040983606557377046,
+        "ci_low": 0.009221311475409836,
+        "count": 23,
+        "n": 976,
+        "rate": 0.0235655737704918
+      },
+      "defense": "warning",
+      "excess_over_benign": {
+        "ci_high": -0.010245901639344262,
+        "ci_low": -0.09326331967213111,
+        "estimate": -0.050204918032786885
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 415,
+        "n": 1408,
+        "rate": 0.2947443181818182
+      },
+      "benign_flip": {
+        "ci_high": 0.06611570247933884,
+        "ci_low": 0.008264462809917356,
+        "count": 4,
+        "n": 121,
+        "rate": 0.03305785123966942
+      },
+      "clean_accuracy": {
+        "count": 243,
+        "n": 352,
+        "rate": 0.6903409090909091
+      },
+      "conditional_flip": {
+        "ci_high": 0.045454545454545456,
+        "ci_low": 0.010330578512396695,
+        "count": 25,
+        "n": 968,
+        "rate": 0.025826446280991736
+      },
+      "defense": "warning",
+      "excess_over_benign": {
+        "ci_high": 0.01962809917355372,
+        "ci_low": -0.038223140495867766,
+        "estimate": -0.007231404958677686
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 2359,
+        "n": 5632,
+        "rate": 0.4188565340909091
+      },
+      "benign_flip": {
+        "ci_high": 0.05692720779293401,
+        "ci_low": 0.023984135559587644,
+        "count": 21,
+        "n": 533,
+        "rate": 0.039399624765478425
+      },
+      "clean_accuracy": {
+        "count": 901,
+        "n": 1408,
+        "rate": 0.6399147727272727
+      },
+      "conditional_flip": {
+        "ci_high": 0.3367014963030269,
+        "ci_low": 0.29356985003946334,
+        "count": 1343,
+        "n": 4264,
+        "rate": 0.3149624765478424
+      },
+      "defense": "neutral",
+      "excess_over_benign": {
+        "ci_high": 0.3007301066447907,
+        "ci_low": 0.2516141689799926,
+        "estimate": 0.27556285178236395
+      },
+      "goal": "induction",
+      "model": "all",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 2946,
+        "n": 5632,
+        "rate": 0.5230823863636364
+      },
+      "benign_flip": {
+        "ci_high": 0.19125977641288497,
+        "ci_low": 0.11232733645695482,
+        "count": 55,
+        "n": 368,
+        "rate": 0.14945652173913043
+      },
+      "clean_accuracy": {
+        "count": 901,
+        "n": 1408,
+        "rate": 0.6399147727272727
+      },
+      "conditional_flip": {
+        "ci_high": 0.21718021335688933,
+        "ci_low": 0.1608621042972377,
+        "count": 556,
+        "n": 2944,
+        "rate": 0.18885869565217392
+      },
+      "defense": "neutral",
+      "excess_over_benign": {
+        "ci_high": 0.0699897218145718,
+        "ci_low": 0.006062720663604265,
+        "estimate": 0.03940217391304349
+      },
+      "goal": "suppression",
+      "model": "all",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 2227,
+        "n": 5631,
+        "rate": 0.39548925590481265
+      },
+      "benign_flip": {
+        "ci_high": 0.06989273410585656,
+        "ci_low": 0.0313638695779223,
+        "count": 27,
+        "n": 542,
+        "rate": 0.04981549815498155
+      },
+      "clean_accuracy": {
+        "count": 895,
+        "n": 1408,
+        "rate": 0.6356534090909091
+      },
+      "conditional_flip": {
+        "ci_high": 0.29893490346237783,
+        "ci_low": 0.26110923423423427,
+        "count": 1212,
+        "n": 4336,
+        "rate": 0.279520295202952
+      },
+      "defense": "placebo",
+      "excess_over_benign": {
+        "ci_high": 0.25225245589169637,
+        "ci_low": 0.20697029213221604,
+        "estimate": 0.22970479704797048
+      },
+      "goal": "induction",
+      "model": "all",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 2990,
+        "n": 5631,
+        "rate": 0.5309891671106376
+      },
+      "benign_flip": {
+        "ci_high": 0.16863905325443787,
+        "ci_low": 0.09604132807058278,
+        "count": 46,
+        "n": 353,
+        "rate": 0.13031161473087818
+      },
+      "clean_accuracy": {
+        "count": 895,
+        "n": 1408,
+        "rate": 0.6356534090909091
+      },
+      "conditional_flip": {
+        "ci_high": 0.20602064992066335,
+        "ci_low": 0.1498226434072054,
+        "count": 498,
+        "n": 2823,
+        "rate": 0.17640807651434645
+      },
+      "defense": "placebo",
+      "excess_over_benign": {
+        "ci_high": 0.07613867891948518,
+        "ci_low": 0.015180417638314946,
+        "estimate": 0.04609646178346827
+      },
+      "goal": "suppression",
+      "model": "all",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 1373,
+        "n": 5632,
+        "rate": 0.24378551136363635
+      },
+      "benign_flip": {
+        "ci_high": 0.07330827067669173,
+        "ci_low": 0.03766301346586806,
+        "count": 30,
+        "n": 539,
+        "rate": 0.055658627087198514
+      },
+      "clean_accuracy": {
+        "count": 888,
+        "n": 1408,
+        "rate": 0.6306818181818182
+      },
+      "conditional_flip": {
+        "ci_high": 0.1333178196558823,
+        "ci_low": 0.10111231320943864,
+        "count": 501,
+        "n": 4312,
+        "rate": 0.1161873840445269
+      },
+      "defense": "tagged",
+      "excess_over_benign": {
+        "ci_high": 0.07910719651442305,
+        "ci_low": 0.04112102080659448,
+        "estimate": 0.060528756957328386
+      },
+      "goal": "induction",
+      "model": "all",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 2861,
+        "n": 5632,
+        "rate": 0.5079900568181818
+      },
+      "benign_flip": {
+        "ci_high": 0.19263456090651557,
+        "ci_low": 0.11581390222396395,
+        "count": 54,
+        "n": 349,
+        "rate": 0.15472779369627507
+      },
+      "clean_accuracy": {
+        "count": 888,
+        "n": 1408,
+        "rate": 0.6306818181818182
+      },
+      "conditional_flip": {
+        "ci_high": 0.15625230457227138,
+        "ci_low": 0.10185874724148186,
+        "count": 358,
+        "n": 2792,
+        "rate": 0.12822349570200572
+      },
+      "defense": "tagged",
+      "excess_over_benign": {
+        "ci_high": 0.007474361599166167,
+        "ci_low": -0.05912527857370262,
+        "estimate": -0.026504297994269344
+      },
+      "goal": "suppression",
+      "model": "all",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 1546,
+        "n": 5632,
+        "rate": 0.2745028409090909
+      },
+      "benign_flip": {
+        "ci_high": 0.0703971119133574,
+        "ci_low": 0.03090909090909091,
+        "count": 27,
+        "n": 545,
+        "rate": 0.04954128440366973
+      },
+      "clean_accuracy": {
+        "count": 883,
+        "n": 1408,
+        "rate": 0.6271306818181818
+      },
+      "conditional_flip": {
+        "ci_high": 0.1688113601823708,
+        "ci_low": 0.13458143591826108,
+        "count": 661,
+        "n": 4360,
+        "rate": 0.15160550458715596
+      },
+      "defense": "warning",
+      "excess_over_benign": {
+        "ci_high": 0.12286741375556039,
+        "ci_low": 0.08024455753463387,
+        "estimate": 0.10206422018348624
+      },
+      "goal": "induction",
+      "model": "all",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "attack_success": {
+        "count": 2887,
+        "n": 5632,
+        "rate": 0.5126065340909091
+      },
+      "benign_flip": {
+        "ci_high": 0.15384615384615385,
+        "ci_low": 0.08333333333333333,
+        "count": 39,
+        "n": 337,
+        "rate": 0.11572700296735905
+      },
+      "clean_accuracy": {
+        "count": 883,
+        "n": 1408,
+        "rate": 0.6271306818181818
+      },
+      "conditional_flip": {
+        "ci_high": 0.14145346907699513,
+        "ci_low": 0.08703323195764005,
+        "count": 305,
+        "n": 2704,
+        "rate": 0.11279585798816567
+      },
+      "defense": "warning",
+      "excess_over_benign": {
+        "ci_high": 0.021082542190664747,
+        "ci_low": -0.03126576989598781,
+        "estimate": -0.002931144979193376
+      },
+      "goal": "suppression",
+      "model": "all",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    }
+  ],
+  "provenance": {
+    "adaptive_runs": [
+      "runs/revision-adaptive/full"
+    ],
+    "clustering_unit": "vulnerable/fixed pair (paired_item_key; item_id when missing)",
+    "dataset_family": "manual",
+    "join_key": [
+      "model",
+      "item_id",
+      "defense",
+      "attack_family"
+    ],
+    "repeats": "excluded (repeat > 0)",
+    "runs": [
+      {
+        "parsed_rows": 68736,
+        "prompt_versions": [
+          "v2"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 43647,
+        "run_dir": "runs/openrouter-v2/full"
+      },
+      {
+        "parsed_rows": 14080,
+        "prompt_versions": [
+          "v3"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 14078,
+        "run_dir": "runs/revision-placebo/full"
+      }
+    ]
+  }
+}

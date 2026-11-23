@@ -1,0 +1,434 @@
+{
+  "analysis": "defense_contrasts",
+  "bootstrap": {
+    "interval": "percentile 95%",
+    "resamples": 2000,
+    "seed": 20260101,
+    "unit": "vulnerable/fixed pair"
+  },
+  "contrasts": [
+    {
+      "baseline": "neutral",
+      "baseline_only": 137,
+      "baseline_rate": 0.7642276422764228,
+      "ci_high": -0.483739837398374,
+      "ci_low": -0.6097560975609756,
+      "clusters": 82,
+      "defense": "warning",
+      "defense_only": 2,
+      "defense_rate": 0.21544715447154472,
+      "difference": -0.5487804878048781,
+      "goal": "induction",
+      "metric": "conditional_flip",
+      "model": "all",
+      "n_pairs": 246,
+      "p_holm": null,
+      "p_mcnemar": 2.792660040979414e-38,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "baseline": "neutral",
+      "baseline_only": 62,
+      "baseline_rate": 0.3422222222222222,
+      "ci_high": -0.16444444444444445,
+      "ci_low": -0.28888888888888886,
+      "clusters": 75,
+      "defense": "warning",
+      "defense_only": 11,
+      "defense_rate": 0.11555555555555555,
+      "difference": -0.22666666666666666,
+      "goal": "suppression",
+      "metric": "conditional_flip",
+      "model": "all",
+      "n_pairs": 225,
+      "p_holm": null,
+      "p_mcnemar": 9.089007009078587e-10,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "baseline": "neutral",
+      "baseline_only": 137,
+      "baseline_rate": 0.7642276422764228,
+      "ci_high": -0.483739837398374,
+      "ci_low": -0.6097560975609756,
+      "clusters": 82,
+      "defense": "warning",
+      "defense_only": 2,
+      "defense_rate": 0.21544715447154472,
+      "difference": -0.5487804878048781,
+      "goal": "induction",
+      "metric": "conditional_flip",
+      "model": "deepseek/deepseek-v4-pro",
+      "n_pairs": 246,
+      "p_holm": 1.1170640163917656e-37,
+      "p_mcnemar": 2.792660040979414e-38,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "baseline": "neutral",
+      "baseline_only": 62,
+      "baseline_rate": 0.3422222222222222,
+      "ci_high": -0.16444444444444445,
+      "ci_low": -0.28888888888888886,
+      "clusters": 75,
+      "defense": "warning",
+      "defense_only": 11,
+      "defense_rate": 0.11555555555555555,
+      "difference": -0.22666666666666666,
+      "goal": "suppression",
+      "metric": "conditional_flip",
+      "model": "deepseek/deepseek-v4-pro",
+      "n_pairs": 225,
+      "p_holm": 1.8178014018157174e-09,
+      "p_mcnemar": 9.089007009078587e-10,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "baseline": "neutral",
+      "baseline_only": 140,
+      "baseline_rate": 0.75,
+      "ci_high": -0.4873958333333339,
+      "ci_low": -0.6333333333333333,
+      "clusters": 80,
+      "defense": "tagged",
+      "defense_only": 6,
+      "defense_rate": 0.19166666666666668,
+      "difference": -0.5583333333333333,
+      "goal": "induction",
+      "metric": "conditional_flip",
+      "model": "all",
+      "n_pairs": 240,
+      "p_holm": null,
+      "p_mcnemar": 2.8378191731534526e-34,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "baseline": "neutral",
+      "baseline_only": 65,
+      "baseline_rate": 0.358974358974359,
+      "ci_high": -0.15373931623931683,
+      "ci_low": -0.2863247863247863,
+      "clusters": 78,
+      "defense": "tagged",
+      "defense_only": 14,
+      "defense_rate": 0.14102564102564102,
+      "difference": -0.21794871794871795,
+      "goal": "suppression",
+      "metric": "conditional_flip",
+      "model": "all",
+      "n_pairs": 234,
+      "p_holm": null,
+      "p_mcnemar": 5.194941262584352e-09,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "baseline": "neutral",
+      "baseline_only": 140,
+      "baseline_rate": 0.75,
+      "ci_high": -0.4873958333333339,
+      "ci_low": -0.6333333333333333,
+      "clusters": 80,
+      "defense": "tagged",
+      "defense_only": 6,
+      "defense_rate": 0.19166666666666668,
+      "difference": -0.5583333333333333,
+      "goal": "induction",
+      "metric": "conditional_flip",
+      "model": "deepseek/deepseek-v4-pro",
+      "n_pairs": 240,
+      "p_holm": 8.513457519460358e-34,
+      "p_mcnemar": 2.8378191731534526e-34,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "baseline": "neutral",
+      "baseline_only": 65,
+      "baseline_rate": 0.358974358974359,
+      "ci_high": -0.15373931623931683,
+      "ci_low": -0.2863247863247863,
+      "clusters": 78,
+      "defense": "tagged",
+      "defense_only": 14,
+      "defense_rate": 0.14102564102564102,
+      "difference": -0.21794871794871795,
+      "goal": "suppression",
+      "metric": "conditional_flip",
+      "model": "deepseek/deepseek-v4-pro",
+      "n_pairs": 234,
+      "p_holm": 5.194941262584352e-09,
+      "p_mcnemar": 5.194941262584352e-09,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "baseline": "neutral",
+      "baseline_only": 209,
+      "baseline_rate": 0.8693181818181818,
+      "ci_high": -0.3371212121212121,
+      "ci_low": -0.4337121212121212,
+      "clusters": 176,
+      "defense": "warning",
+      "defense_only": 6,
+      "defense_rate": 0.48484848484848486,
+      "difference": -0.38446969696969696,
+      "goal": "induction",
+      "metric": "attack_success",
+      "model": "all",
+      "n_pairs": 528,
+      "p_holm": null,
+      "p_mcnemar": 4.998544684724284e-54,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "baseline": "neutral",
+      "baseline_only": 113,
+      "baseline_rate": 0.6325757575757576,
+      "ci_high": -0.11931818181818182,
+      "ci_low": -0.20454545454545456,
+      "clusters": 176,
+      "defense": "warning",
+      "defense_only": 27,
+      "defense_rate": 0.4696969696969697,
+      "difference": -0.16287878787878787,
+      "goal": "suppression",
+      "metric": "attack_success",
+      "model": "all",
+      "n_pairs": 528,
+      "p_holm": null,
+      "p_mcnemar": 1.0374925647730656e-13,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "baseline": "neutral",
+      "baseline_only": 209,
+      "baseline_rate": 0.8693181818181818,
+      "ci_high": -0.3371212121212121,
+      "ci_low": -0.4337121212121212,
+      "clusters": 176,
+      "defense": "warning",
+      "defense_only": 6,
+      "defense_rate": 0.48484848484848486,
+      "difference": -0.38446969696969696,
+      "goal": "induction",
+      "metric": "attack_success",
+      "model": "deepseek/deepseek-v4-pro",
+      "n_pairs": 528,
+      "p_holm": 1.4995634054172851e-53,
+      "p_mcnemar": 4.998544684724284e-54,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "baseline": "neutral",
+      "baseline_only": 113,
+      "baseline_rate": 0.6325757575757576,
+      "ci_high": -0.11931818181818182,
+      "ci_low": -0.20454545454545456,
+      "clusters": 176,
+      "defense": "warning",
+      "defense_only": 27,
+      "defense_rate": 0.4696969696969697,
+      "difference": -0.16287878787878787,
+      "goal": "suppression",
+      "metric": "attack_success",
+      "model": "deepseek/deepseek-v4-pro",
+      "n_pairs": 528,
+      "p_holm": 2.0749851295461312e-13,
+      "p_mcnemar": 1.0374925647730656e-13,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "baseline": "neutral",
+      "baseline_only": 230,
+      "baseline_rate": 0.8693181818181818,
+      "ci_high": -0.36174242424242425,
+      "ci_low": -0.4640624999999999,
+      "clusters": 176,
+      "defense": "tagged",
+      "defense_only": 11,
+      "defense_rate": 0.45454545454545453,
+      "difference": -0.4147727272727273,
+      "goal": "induction",
+      "metric": "attack_success",
+      "model": "all",
+      "n_pairs": 528,
+      "p_holm": null,
+      "p_mcnemar": 1.8807705708188802e-54,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "baseline": "neutral",
+      "baseline_only": 114,
+      "baseline_rate": 0.6325757575757576,
+      "ci_high": -0.10606060606060606,
+      "ci_low": -0.19512310606060598,
+      "clusters": 176,
+      "defense": "tagged",
+      "defense_only": 35,
+      "defense_rate": 0.48295454545454547,
+      "difference": -0.14962121212121213,
+      "goal": "suppression",
+      "metric": "attack_success",
+      "model": "all",
+      "n_pairs": 528,
+      "p_holm": null,
+      "p_mcnemar": 5.799424766851349e-11,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "baseline": "neutral",
+      "baseline_only": 230,
+      "baseline_rate": 0.8693181818181818,
+      "ci_high": -0.36174242424242425,
+      "ci_low": -0.4640624999999999,
+      "clusters": 176,
+      "defense": "tagged",
+      "defense_only": 11,
+      "defense_rate": 0.45454545454545453,
+      "difference": -0.4147727272727273,
+      "goal": "induction",
+      "metric": "attack_success",
+      "model": "deepseek/deepseek-v4-pro",
+      "n_pairs": 528,
+      "p_holm": 7.523082283275521e-54,
+      "p_mcnemar": 1.8807705708188802e-54,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "baseline": "neutral",
+      "baseline_only": 114,
+      "baseline_rate": 0.6325757575757576,
+      "ci_high": -0.10606060606060606,
+      "ci_low": -0.19512310606060598,
+      "clusters": 176,
+      "defense": "tagged",
+      "defense_only": 35,
+      "defense_rate": 0.48295454545454547,
+      "difference": -0.14962121212121213,
+      "goal": "suppression",
+      "metric": "attack_success",
+      "model": "deepseek/deepseek-v4-pro",
+      "n_pairs": 528,
+      "p_holm": 5.799424766851349e-11,
+      "p_mcnemar": 5.799424766851349e-11,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    }
+  ],
+  "provenance": {
+    "clustering_unit": "vulnerable/fixed pair (paired_item_key; item_id when missing)",
+    "dataset_family": "manual",
+    "join_key": [
+      "model",
+      "item_id",
+      "defense",
+      "attack_family"
+    ],
+    "repeats": "excluded (repeat > 0)",
+    "runs": [
+      {
+        "parsed_rows": 4224,
+        "prompt_versions": [
+          "v3"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 4224,
+        "run_dir": "runs/revision-deepseek-minimal/full"
+      }
+    ]
+  },
+  "skipped": [
+    {
+      "baseline": "neutral",
+      "defense": "placebo",
+      "reason": "no attacked rows for placebo"
+    },
+    {
+      "baseline": "placebo",
+      "defense": "warning",
+      "reason": "no attacked rows for placebo"
+    },
+    {
+      "baseline": "placebo",
+      "defense": "tagged",
+      "reason": "no attacked rows for placebo"
+    }
+  ]
+}

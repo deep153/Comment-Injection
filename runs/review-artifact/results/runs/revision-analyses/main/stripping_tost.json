@@ -1,0 +1,147 @@
+{
+  "alpha": 0.05,
+  "analysis": "stripping_tost",
+  "margin": 0.05,
+  "provenance": {
+    "adaptive_runs": [
+      "runs/revision-adaptive/full"
+    ],
+    "clustering_unit": "vulnerable/fixed pair (paired_item_key; item_id when missing)",
+    "dataset_family": "manual",
+    "join_key": [
+      "model",
+      "item_id",
+      "defense",
+      "attack_family"
+    ],
+    "repeats": "excluded (repeat > 0)",
+    "runs": [
+      {
+        "parsed_rows": 68736,
+        "prompt_versions": [
+          "v2"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 43647,
+        "run_dir": "runs/openrouter-v2/full"
+      },
+      {
+        "parsed_rows": 14080,
+        "prompt_versions": [
+          "v3"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 14078,
+        "run_dir": "runs/revision-placebo/full"
+      }
+    ]
+  },
+  "results": [
+    {
+      "ci90_high": 0.02150679888253183,
+      "ci90_low": -0.027188617064350013,
+      "clusters": 176,
+      "difference": -0.002840909090909091,
+      "equivalent": true,
+      "model": "anthropic/claude-sonnet-5.5",
+      "n_items": 352,
+      "neutral_accuracy": 0.6761363636363636,
+      "p_lower": 0.0007214773805682695,
+      "p_tost": 0.0007214773805682695,
+      "p_upper": 0.00017865177996105616,
+      "prompt_versions": [
+        "v2"
+      ],
+      "se": 0.014802355403846069,
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ],
+      "stripped_accuracy": 0.6732954545454546
+    },
+    {
+      "ci90_high": 0.014264882578627725,
+      "ci90_low": -0.036992155305900457,
+      "clusters": 176,
+      "difference": -0.011363636363636364,
+      "equivalent": true,
+      "model": "deepseek/deepseek-v4-pro",
+      "n_items": 352,
+      "neutral_accuracy": 0.5426136363636364,
+      "p_lower": 0.006574558665448538,
+      "p_tost": 0.006574558665448538,
+      "p_upper": 4.1021114058207946e-05,
+      "prompt_versions": [
+        "v2"
+      ],
+      "se": 0.015581033182729647,
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ],
+      "stripped_accuracy": 0.53125
+    },
+    {
+      "ci90_high": 0.050114126463328926,
+      "ci90_low": -0.016023217372419837,
+      "clusters": 176,
+      "difference": 0.017045454545454544,
+      "equivalent": false,
+      "model": "google/gemini-3.8-flash",
+      "n_items": 352,
+      "neutral_accuracy": 0.6448863636363636,
+      "p_lower": 0.0004266854205889903,
+      "p_tost": 0.050588210067941605,
+      "p_upper": 0.050588210067941605,
+      "prompt_versions": [
+        "v2"
+      ],
+      "se": 0.020104325014720606,
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ],
+      "stripped_accuracy": 0.6619318181818182
+    },
+    {
+      "ci90_high": 0.036992155305900457,
+      "ci90_low": -0.014264882578627725,
+      "clusters": 176,
+      "difference": 0.011363636363636364,
+      "equivalent": true,
+      "model": "openai/gpt-6.1-sol",
+      "n_items": 352,
+      "neutral_accuracy": 0.6960227272727273,
+      "p_lower": 4.1021114058237274e-05,
+      "p_tost": 0.006574558665448513,
+      "p_upper": 0.006574558665448513,
+      "prompt_versions": [
+        "v2"
+      ],
+      "se": 0.015581033182729647,
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ],
+      "stripped_accuracy": 0.7073863636363636
+    },
+    {
+      "ci90_high": 0.01813016774658028,
+      "ci90_low": -0.011027895019307551,
+      "clusters": 176,
+      "difference": 0.0035511363636363635,
+      "equivalent": true,
+      "model": "all",
+      "n_items": 1408,
+      "neutral_accuracy": 0.6399147727272727,
+      "p_lower": 7.619602726549601e-10,
+      "p_tost": 8.006604783852512e-08,
+      "p_upper": 8.006604783852512e-08,
+      "prompt_versions": [
+        "v2"
+      ],
+      "se": 0.008863421731916845,
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ],
+      "stripped_accuracy": 0.6434659090909091
+    }
+  ],
+  "test": "TOST, z, cluster-robust SE"
+}

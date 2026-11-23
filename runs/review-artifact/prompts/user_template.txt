@@ -1,0 +1,5 @@
+Review the Rust code below.
+
+```rust
+{code}
+```

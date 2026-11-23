@@ -1,0 +1,228 @@
+{
+  "analysis": "cost_report",
+  "byok_upstream_usd": 212.44881825000036,
+  "lower_bound": true,
+  "openrouter_usd": 36.86944332683903,
+  "provenance": {
+    "adaptive_runs": [
+      "runs/revision-adaptive/full"
+    ],
+    "clustering_unit": "vulnerable/fixed pair (paired_item_key; item_id when missing)",
+    "dataset_family": "manual",
+    "join_key": [
+      "model",
+      "item_id",
+      "defense",
+      "attack_family"
+    ],
+    "repeats": "excluded (repeat > 0)",
+    "runs": [
+      {
+        "parsed_rows": 68736,
+        "prompt_versions": [
+          "v2"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 43647,
+        "run_dir": "runs/openrouter-v2/full"
+      },
+      {
+        "parsed_rows": 14080,
+        "prompt_versions": [
+          "v3"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 14078,
+        "run_dir": "runs/revision-placebo/full"
+      }
+    ]
+  },
+  "runs": [
+    {
+      "by_model": [
+        {
+          "byok_rows": 17184,
+          "byok_upstream_usd": 78.85809800000047,
+          "failed_rows": 0,
+          "model": "anthropic/claude-sonnet-5.5",
+          "ok_rows": 17184,
+          "openrouter_usd": 0.0,
+          "role": "detector",
+          "rows": 17184,
+          "total_usd": 78.85809800000047
+        },
+        {
+          "byok_rows": 0,
+          "byok_upstream_usd": 0.0,
+          "failed_rows": 0,
+          "model": "deepseek/deepseek-v4-pro",
+          "ok_rows": 17189,
+          "openrouter_usd": 4.066732191224996,
+          "role": "detector",
+          "rows": 17189,
+          "total_usd": 4.066732191224996
+        },
+        {
+          "byok_rows": 17813,
+          "byok_upstream_usd": 91.3329799499999,
+          "failed_rows": 1092,
+          "model": "google/gemini-3.8-flash",
+          "ok_rows": 17691,
+          "openrouter_usd": 0.49683225000000014,
+          "role": "detector",
+          "rows": 18783,
+          "total_usd": 91.82981219999986
+        },
+        {
+          "byok_rows": 0,
+          "byok_upstream_usd": 0.0,
+          "failed_rows": 0,
+          "model": "openai/gpt-6.1-sol",
+          "ok_rows": 17184,
+          "openrouter_usd": 21.80029895000003,
+          "role": "detector",
+          "rows": 17184,
+          "total_usd": 21.80029895000003
+        }
+      ],
+      "byok_rows": 34997,
+      "byok_upstream_usd": 170.19107795000036,
+      "failed_rows": 1092,
+      "log": "responses.jsonl",
+      "lower_bound": true,
+      "ok_rows": 69248,
+      "openrouter_usd": 26.363863391225028,
+      "rows": 70340,
+      "run_dir": "runs/openrouter-v2/full",
+      "total_usd": 196.55494134122534
+    },
+    {
+      "by_model": [
+        {
+          "byok_rows": 3540,
+          "byok_upstream_usd": 22.52014799999999,
+          "failed_rows": 20,
+          "model": "anthropic/claude-sonnet-5.5",
+          "ok_rows": 3520,
+          "openrouter_usd": 0.0,
+          "role": "detector",
+          "rows": 3540,
+          "total_usd": 22.52014799999999
+        },
+        {
+          "byok_rows": 0,
+          "byok_upstream_usd": 0.0,
+          "failed_rows": 0,
+          "model": "deepseek/deepseek-v4-pro",
+          "ok_rows": 3520,
+          "openrouter_usd": 1.5105833734120027,
+          "role": "detector",
+          "rows": 3520,
+          "total_usd": 1.5105833734120027
+        },
+        {
+          "byok_rows": 3628,
+          "byok_upstream_usd": 14.362089750000017,
+          "failed_rows": 209,
+          "model": "google/gemini-3.8-flash",
+          "ok_rows": 3630,
+          "openrouter_usd": 0.27192075,
+          "role": "detector",
+          "rows": 3839,
+          "total_usd": 14.63401050000002
+        },
+        {
+          "byok_rows": 0,
+          "byok_upstream_usd": 0.0,
+          "failed_rows": 0,
+          "model": "openai/gpt-6.1-sol",
+          "ok_rows": 3520,
+          "openrouter_usd": 4.340047250000001,
+          "role": "detector",
+          "rows": 3520,
+          "total_usd": 4.340047250000001
+        }
+      ],
+      "byok_rows": 7168,
+      "byok_upstream_usd": 36.88223775,
+      "failed_rows": 229,
+      "log": "responses.jsonl",
+      "lower_bound": true,
+      "ok_rows": 14190,
+      "openrouter_usd": 6.122551373412004,
+      "rows": 14419,
+      "run_dir": "runs/revision-placebo/full",
+      "total_usd": 43.00478912341201
+    },
+    {
+      "by_model": [
+        {
+          "byok_rows": 0,
+          "byok_upstream_usd": 0.0,
+          "failed_rows": 4,
+          "model": "openai/gpt-6.1-sol",
+          "ok_rows": 2316,
+          "openrouter_usd": 3.3215066499999994,
+          "role": "attacker",
+          "rows": 2320,
+          "total_usd": 3.3215066499999994
+        },
+        {
+          "byok_rows": 561,
+          "byok_upstream_usd": 2.304622000000002,
+          "failed_rows": 1,
+          "model": "anthropic/claude-sonnet-5.5",
+          "ok_rows": 561,
+          "openrouter_usd": 0.0,
+          "role": "detector",
+          "rows": 562,
+          "total_usd": 2.304622000000002
+        },
+        {
+          "byok_rows": 0,
+          "byok_upstream_usd": 0.0,
+          "failed_rows": 0,
+          "model": "deepseek/deepseek-v4-pro",
+          "ok_rows": 206,
+          "openrouter_usd": 0.09574066220200002,
+          "role": "detector",
+          "rows": 206,
+          "total_usd": 0.09574066220200002
+        },
+        {
+          "byok_rows": 743,
+          "byok_upstream_usd": 3.0708805500000005,
+          "failed_rows": 82,
+          "model": "google/gemini-3.8-flash",
+          "ok_rows": 713,
+          "openrouter_usd": 0.00581925,
+          "role": "detector",
+          "rows": 795,
+          "total_usd": 3.076699800000001
+        },
+        {
+          "byok_rows": 0,
+          "byok_upstream_usd": 0.0,
+          "failed_rows": 1,
+          "model": "openai/gpt-6.1-sol",
+          "ok_rows": 834,
+          "openrouter_usd": 0.959961999999999,
+          "role": "detector",
+          "rows": 835,
+          "total_usd": 0.959961999999999
+        }
+      ],
+      "byok_rows": 1304,
+      "byok_upstream_usd": 5.375502550000002,
+      "failed_rows": 88,
+      "log": "steps.jsonl",
+      "lower_bound": false,
+      "ok_rows": 4630,
+      "openrouter_usd": 4.383028562201998,
+      "rows": 4718,
+      "run_dir": "runs/revision-adaptive/full",
+      "total_usd": 9.758531112202002
+    }
+  ],
+  "total_usd": 249.31826157683935
+}

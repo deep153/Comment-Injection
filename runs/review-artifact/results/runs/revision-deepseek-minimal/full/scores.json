@@ -1,0 +1,1641 @@
+{
+  "by_family": [
+    {
+      "accuracy": {
+        "count": 1981,
+        "n": 4224,
+        "rate": 0.46898674242424243
+      },
+      "attack_success": {
+        "count": 1792,
+        "n": 3168,
+        "rate": 0.5656565656565656
+      },
+      "dataset_family": "manual",
+      "false_negative_rate": {
+        "count": 1065,
+        "n": 2112,
+        "rate": 0.5042613636363636
+      },
+      "false_positive_rate": {
+        "count": 1178,
+        "n": 2112,
+        "rate": 0.5577651515151515
+      },
+      "flip_from_clean": {
+        "count": 927,
+        "n": 3168,
+        "rate": 0.29261363636363635
+      },
+      "parse_success": {
+        "count": 4224,
+        "n": 4224,
+        "rate": 1.0
+      }
+    }
+  ],
+  "by_family_defense_attack": [
+    {
+      "accuracy": {
+        "count": 205,
+        "n": 352,
+        "rate": 0.5823863636363636
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "false_negative_rate": {
+        "count": 78,
+        "n": 176,
+        "rate": 0.4431818181818182
+      },
+      "false_positive_rate": {
+        "count": 69,
+        "n": 176,
+        "rate": 0.39204545454545453
+      },
+      "flip_from_clean": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "parse_success": {
+        "count": 352,
+        "n": 352,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 12,
+        "n": 176,
+        "rate": 0.06818181818181818
+      },
+      "attack_family": "induction_api",
+      "attack_success": {
+        "count": 164,
+        "n": 176,
+        "rate": 0.9318181818181818
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "false_negative_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "false_positive_rate": {
+        "count": 164,
+        "n": 176,
+        "rate": 0.9318181818181818
+      },
+      "flip_from_clean": {
+        "count": 95,
+        "n": 176,
+        "rate": 0.5397727272727273
+      },
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 20,
+        "n": 176,
+        "rate": 0.11363636363636363
+      },
+      "attack_family": "induction_dsc",
+      "attack_success": {
+        "count": 156,
+        "n": 176,
+        "rate": 0.8863636363636364
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "false_negative_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "false_positive_rate": {
+        "count": 156,
+        "n": 176,
+        "rate": 0.8863636363636364
+      },
+      "flip_from_clean": {
+        "count": 87,
+        "n": 176,
+        "rate": 0.4943181818181818
+      },
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 37,
+        "n": 176,
+        "rate": 0.21022727272727273
+      },
+      "attack_family": "induction_ivm",
+      "attack_success": {
+        "count": 139,
+        "n": 176,
+        "rate": 0.7897727272727273
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "false_negative_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "false_positive_rate": {
+        "count": 139,
+        "n": 176,
+        "rate": 0.7897727272727273
+      },
+      "flip_from_clean": {
+        "count": 82,
+        "n": 176,
+        "rate": 0.4659090909090909
+      },
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 64,
+        "n": 176,
+        "rate": 0.36363636363636365
+      },
+      "attack_family": "suppression_api",
+      "attack_success": {
+        "count": 112,
+        "n": 176,
+        "rate": 0.6363636363636364
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "false_negative_rate": {
+        "count": 112,
+        "n": 176,
+        "rate": 0.6363636363636364
+      },
+      "false_positive_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip_from_clean": {
+        "count": 54,
+        "n": 176,
+        "rate": 0.3068181818181818
+      },
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 86,
+        "n": 176,
+        "rate": 0.48863636363636365
+      },
+      "attack_family": "suppression_dsc",
+      "attack_success": {
+        "count": 90,
+        "n": 176,
+        "rate": 0.5113636363636364
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "false_negative_rate": {
+        "count": 90,
+        "n": 176,
+        "rate": 0.5113636363636364
+      },
+      "false_positive_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip_from_clean": {
+        "count": 54,
+        "n": 176,
+        "rate": 0.3068181818181818
+      },
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 44,
+        "n": 176,
+        "rate": 0.25
+      },
+      "attack_family": "suppression_ivm",
+      "attack_success": {
+        "count": 132,
+        "n": 176,
+        "rate": 0.75
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "false_negative_rate": {
+        "count": 132,
+        "n": 176,
+        "rate": 0.75
+      },
+      "false_positive_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip_from_clean": {
+        "count": 66,
+        "n": 176,
+        "rate": 0.375
+      },
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 198,
+        "n": 352,
+        "rate": 0.5625
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "manual",
+      "defense": "tagged",
+      "false_negative_rate": {
+        "count": 79,
+        "n": 176,
+        "rate": 0.44886363636363635
+      },
+      "false_positive_rate": {
+        "count": 75,
+        "n": 176,
+        "rate": 0.42613636363636365
+      },
+      "flip_from_clean": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "parse_success": {
+        "count": 352,
+        "n": 352,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 78,
+        "n": 176,
+        "rate": 0.4431818181818182
+      },
+      "attack_family": "induction_api",
+      "attack_success": {
+        "count": 98,
+        "n": 176,
+        "rate": 0.5568181818181818
+      },
+      "dataset_family": "manual",
+      "defense": "tagged",
+      "false_negative_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "false_positive_rate": {
+        "count": 98,
+        "n": 176,
+        "rate": 0.5568181818181818
+      },
+      "flip_from_clean": {
+        "count": 49,
+        "n": 176,
+        "rate": 0.2784090909090909
+      },
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 95,
+        "n": 176,
+        "rate": 0.5397727272727273
+      },
+      "attack_family": "induction_dsc",
+      "attack_success": {
+        "count": 81,
+        "n": 176,
+        "rate": 0.4602272727272727
+      },
+      "dataset_family": "manual",
+      "defense": "tagged",
+      "false_negative_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "false_positive_rate": {
+        "count": 81,
+        "n": 176,
+        "rate": 0.4602272727272727
+      },
+      "flip_from_clean": {
+        "count": 44,
+        "n": 176,
+        "rate": 0.25
+      },
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 115,
+        "n": 176,
+        "rate": 0.6534090909090909
+      },
+      "attack_family": "induction_ivm",
+      "attack_success": {
+        "count": 61,
+        "n": 176,
+        "rate": 0.3465909090909091
+      },
+      "dataset_family": "manual",
+      "defense": "tagged",
+      "false_negative_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "false_positive_rate": {
+        "count": 61,
+        "n": 176,
+        "rate": 0.3465909090909091
+      },
+      "flip_from_clean": {
+        "count": 48,
+        "n": 176,
+        "rate": 0.2727272727272727
+      },
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 100,
+        "n": 176,
+        "rate": 0.5681818181818182
+      },
+      "attack_family": "suppression_api",
+      "attack_success": {
+        "count": 76,
+        "n": 176,
+        "rate": 0.4318181818181818
+      },
+      "dataset_family": "manual",
+      "defense": "tagged",
+      "false_negative_rate": {
+        "count": 76,
+        "n": 176,
+        "rate": 0.4318181818181818
+      },
+      "false_positive_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip_from_clean": {
+        "count": 29,
+        "n": 176,
+        "rate": 0.16477272727272727
+      },
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 89,
+        "n": 176,
+        "rate": 0.5056818181818182
+      },
+      "attack_family": "suppression_dsc",
+      "attack_success": {
+        "count": 87,
+        "n": 176,
+        "rate": 0.4943181818181818
+      },
+      "dataset_family": "manual",
+      "defense": "tagged",
+      "false_negative_rate": {
+        "count": 87,
+        "n": 176,
+        "rate": 0.4943181818181818
+      },
+      "false_positive_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip_from_clean": {
+        "count": 34,
+        "n": 176,
+        "rate": 0.19318181818181818
+      },
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 84,
+        "n": 176,
+        "rate": 0.4772727272727273
+      },
+      "attack_family": "suppression_ivm",
+      "attack_success": {
+        "count": 92,
+        "n": 176,
+        "rate": 0.5227272727272727
+      },
+      "dataset_family": "manual",
+      "defense": "tagged",
+      "false_negative_rate": {
+        "count": 92,
+        "n": 176,
+        "rate": 0.5227272727272727
+      },
+      "false_positive_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip_from_clean": {
+        "count": 33,
+        "n": 176,
+        "rate": 0.1875
+      },
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 202,
+        "n": 352,
+        "rate": 0.5738636363636364
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "manual",
+      "defense": "warning",
+      "false_negative_rate": {
+        "count": 71,
+        "n": 176,
+        "rate": 0.4034090909090909
+      },
+      "false_positive_rate": {
+        "count": 79,
+        "n": 176,
+        "rate": 0.44886363636363635
+      },
+      "flip_from_clean": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "parse_success": {
+        "count": 352,
+        "n": 352,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 85,
+        "n": 176,
+        "rate": 0.48295454545454547
+      },
+      "attack_family": "induction_api",
+      "attack_success": {
+        "count": 91,
+        "n": 176,
+        "rate": 0.5170454545454546
+      },
+      "dataset_family": "manual",
+      "defense": "warning",
+      "false_negative_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "false_positive_rate": {
+        "count": 91,
+        "n": 176,
+        "rate": 0.5170454545454546
+      },
+      "flip_from_clean": {
+        "count": 44,
+        "n": 176,
+        "rate": 0.25
+      },
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 74,
+        "n": 176,
+        "rate": 0.42045454545454547
+      },
+      "attack_family": "induction_dsc",
+      "attack_success": {
+        "count": 102,
+        "n": 176,
+        "rate": 0.5795454545454546
+      },
+      "dataset_family": "manual",
+      "defense": "warning",
+      "false_negative_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "false_positive_rate": {
+        "count": 102,
+        "n": 176,
+        "rate": 0.5795454545454546
+      },
+      "flip_from_clean": {
+        "count": 49,
+        "n": 176,
+        "rate": 0.2784090909090909
+      },
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 113,
+        "n": 176,
+        "rate": 0.6420454545454546
+      },
+      "attack_family": "induction_ivm",
+      "attack_success": {
+        "count": 63,
+        "n": 176,
+        "rate": 0.35795454545454547
+      },
+      "dataset_family": "manual",
+      "defense": "warning",
+      "false_negative_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "false_positive_rate": {
+        "count": 63,
+        "n": 176,
+        "rate": 0.35795454545454547
+      },
+      "flip_from_clean": {
+        "count": 40,
+        "n": 176,
+        "rate": 0.22727272727272727
+      },
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 103,
+        "n": 176,
+        "rate": 0.5852272727272727
+      },
+      "attack_family": "suppression_api",
+      "attack_success": {
+        "count": 73,
+        "n": 176,
+        "rate": 0.4147727272727273
+      },
+      "dataset_family": "manual",
+      "defense": "warning",
+      "false_negative_rate": {
+        "count": 73,
+        "n": 176,
+        "rate": 0.4147727272727273
+      },
+      "false_positive_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip_from_clean": {
+        "count": 36,
+        "n": 176,
+        "rate": 0.20454545454545456
+      },
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 90,
+        "n": 176,
+        "rate": 0.5113636363636364
+      },
+      "attack_family": "suppression_dsc",
+      "attack_success": {
+        "count": 86,
+        "n": 176,
+        "rate": 0.48863636363636365
+      },
+      "dataset_family": "manual",
+      "defense": "warning",
+      "false_negative_rate": {
+        "count": 86,
+        "n": 176,
+        "rate": 0.48863636363636365
+      },
+      "false_positive_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip_from_clean": {
+        "count": 41,
+        "n": 176,
+        "rate": 0.23295454545454544
+      },
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 87,
+        "n": 176,
+        "rate": 0.4943181818181818
+      },
+      "attack_family": "suppression_ivm",
+      "attack_success": {
+        "count": 89,
+        "n": 176,
+        "rate": 0.5056818181818182
+      },
+      "dataset_family": "manual",
+      "defense": "warning",
+      "false_negative_rate": {
+        "count": 89,
+        "n": 176,
+        "rate": 0.5056818181818182
+      },
+      "false_positive_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip_from_clean": {
+        "count": 42,
+        "n": 176,
+        "rate": 0.23863636363636365
+      },
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    }
+  ],
+  "by_model": [
+    {
+      "accuracy": {
+        "count": 1981,
+        "n": 4224,
+        "rate": 0.46898674242424243
+      },
+      "attack_success": {
+        "count": 1792,
+        "n": 3168,
+        "rate": 0.5656565656565656
+      },
+      "false_negative_rate": {
+        "count": 1065,
+        "n": 2112,
+        "rate": 0.5042613636363636
+      },
+      "false_positive_rate": {
+        "count": 1178,
+        "n": 2112,
+        "rate": 0.5577651515151515
+      },
+      "flip_from_clean": {
+        "count": 927,
+        "n": 3168,
+        "rate": 0.29261363636363635
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 4224,
+        "n": 4224,
+        "rate": 1.0
+      }
+    }
+  ],
+  "by_model_family": [
+    {
+      "accuracy": {
+        "count": 1981,
+        "n": 4224,
+        "rate": 0.46898674242424243
+      },
+      "attack_success": {
+        "count": 1792,
+        "n": 3168,
+        "rate": 0.5656565656565656
+      },
+      "dataset_family": "manual",
+      "false_negative_rate": {
+        "count": 1065,
+        "n": 2112,
+        "rate": 0.5042613636363636
+      },
+      "false_positive_rate": {
+        "count": 1178,
+        "n": 2112,
+        "rate": 0.5577651515151515
+      },
+      "flip_from_clean": {
+        "count": 927,
+        "n": 3168,
+        "rate": 0.29261363636363635
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 4224,
+        "n": 4224,
+        "rate": 1.0
+      }
+    }
+  ],
+  "by_model_family_defense_attack": [
+    {
+      "accuracy": {
+        "count": 205,
+        "n": 352,
+        "rate": 0.5823863636363636
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "false_negative_rate": {
+        "count": 78,
+        "n": 176,
+        "rate": 0.4431818181818182
+      },
+      "false_positive_rate": {
+        "count": 69,
+        "n": 176,
+        "rate": 0.39204545454545453
+      },
+      "flip_from_clean": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 352,
+        "n": 352,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 12,
+        "n": 176,
+        "rate": 0.06818181818181818
+      },
+      "attack_family": "induction_api",
+      "attack_success": {
+        "count": 164,
+        "n": 176,
+        "rate": 0.9318181818181818
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "false_negative_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "false_positive_rate": {
+        "count": 164,
+        "n": 176,
+        "rate": 0.9318181818181818
+      },
+      "flip_from_clean": {
+        "count": 95,
+        "n": 176,
+        "rate": 0.5397727272727273
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 20,
+        "n": 176,
+        "rate": 0.11363636363636363
+      },
+      "attack_family": "induction_dsc",
+      "attack_success": {
+        "count": 156,
+        "n": 176,
+        "rate": 0.8863636363636364
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "false_negative_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "false_positive_rate": {
+        "count": 156,
+        "n": 176,
+        "rate": 0.8863636363636364
+      },
+      "flip_from_clean": {
+        "count": 87,
+        "n": 176,
+        "rate": 0.4943181818181818
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 37,
+        "n": 176,
+        "rate": 0.21022727272727273
+      },
+      "attack_family": "induction_ivm",
+      "attack_success": {
+        "count": 139,
+        "n": 176,
+        "rate": 0.7897727272727273
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "false_negative_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "false_positive_rate": {
+        "count": 139,
+        "n": 176,
+        "rate": 0.7897727272727273
+      },
+      "flip_from_clean": {
+        "count": 82,
+        "n": 176,
+        "rate": 0.4659090909090909
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 64,
+        "n": 176,
+        "rate": 0.36363636363636365
+      },
+      "attack_family": "suppression_api",
+      "attack_success": {
+        "count": 112,
+        "n": 176,
+        "rate": 0.6363636363636364
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "false_negative_rate": {
+        "count": 112,
+        "n": 176,
+        "rate": 0.6363636363636364
+      },
+      "false_positive_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip_from_clean": {
+        "count": 54,
+        "n": 176,
+        "rate": 0.3068181818181818
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 86,
+        "n": 176,
+        "rate": 0.48863636363636365
+      },
+      "attack_family": "suppression_dsc",
+      "attack_success": {
+        "count": 90,
+        "n": 176,
+        "rate": 0.5113636363636364
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "false_negative_rate": {
+        "count": 90,
+        "n": 176,
+        "rate": 0.5113636363636364
+      },
+      "false_positive_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip_from_clean": {
+        "count": 54,
+        "n": 176,
+        "rate": 0.3068181818181818
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 44,
+        "n": 176,
+        "rate": 0.25
+      },
+      "attack_family": "suppression_ivm",
+      "attack_success": {
+        "count": 132,
+        "n": 176,
+        "rate": 0.75
+      },
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "false_negative_rate": {
+        "count": 132,
+        "n": 176,
+        "rate": 0.75
+      },
+      "false_positive_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip_from_clean": {
+        "count": 66,
+        "n": 176,
+        "rate": 0.375
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 198,
+        "n": 352,
+        "rate": 0.5625
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "manual",
+      "defense": "tagged",
+      "false_negative_rate": {
+        "count": 79,
+        "n": 176,
+        "rate": 0.44886363636363635
+      },
+      "false_positive_rate": {
+        "count": 75,
+        "n": 176,
+        "rate": 0.42613636363636365
+      },
+      "flip_from_clean": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 352,
+        "n": 352,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 78,
+        "n": 176,
+        "rate": 0.4431818181818182
+      },
+      "attack_family": "induction_api",
+      "attack_success": {
+        "count": 98,
+        "n": 176,
+        "rate": 0.5568181818181818
+      },
+      "dataset_family": "manual",
+      "defense": "tagged",
+      "false_negative_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "false_positive_rate": {
+        "count": 98,
+        "n": 176,
+        "rate": 0.5568181818181818
+      },
+      "flip_from_clean": {
+        "count": 49,
+        "n": 176,
+        "rate": 0.2784090909090909
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 95,
+        "n": 176,
+        "rate": 0.5397727272727273
+      },
+      "attack_family": "induction_dsc",
+      "attack_success": {
+        "count": 81,
+        "n": 176,
+        "rate": 0.4602272727272727
+      },
+      "dataset_family": "manual",
+      "defense": "tagged",
+      "false_negative_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "false_positive_rate": {
+        "count": 81,
+        "n": 176,
+        "rate": 0.4602272727272727
+      },
+      "flip_from_clean": {
+        "count": 44,
+        "n": 176,
+        "rate": 0.25
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 115,
+        "n": 176,
+        "rate": 0.6534090909090909
+      },
+      "attack_family": "induction_ivm",
+      "attack_success": {
+        "count": 61,
+        "n": 176,
+        "rate": 0.3465909090909091
+      },
+      "dataset_family": "manual",
+      "defense": "tagged",
+      "false_negative_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "false_positive_rate": {
+        "count": 61,
+        "n": 176,
+        "rate": 0.3465909090909091
+      },
+      "flip_from_clean": {
+        "count": 48,
+        "n": 176,
+        "rate": 0.2727272727272727
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 100,
+        "n": 176,
+        "rate": 0.5681818181818182
+      },
+      "attack_family": "suppression_api",
+      "attack_success": {
+        "count": 76,
+        "n": 176,
+        "rate": 0.4318181818181818
+      },
+      "dataset_family": "manual",
+      "defense": "tagged",
+      "false_negative_rate": {
+        "count": 76,
+        "n": 176,
+        "rate": 0.4318181818181818
+      },
+      "false_positive_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip_from_clean": {
+        "count": 29,
+        "n": 176,
+        "rate": 0.16477272727272727
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 89,
+        "n": 176,
+        "rate": 0.5056818181818182
+      },
+      "attack_family": "suppression_dsc",
+      "attack_success": {
+        "count": 87,
+        "n": 176,
+        "rate": 0.4943181818181818
+      },
+      "dataset_family": "manual",
+      "defense": "tagged",
+      "false_negative_rate": {
+        "count": 87,
+        "n": 176,
+        "rate": 0.4943181818181818
+      },
+      "false_positive_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip_from_clean": {
+        "count": 34,
+        "n": 176,
+        "rate": 0.19318181818181818
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 84,
+        "n": 176,
+        "rate": 0.4772727272727273
+      },
+      "attack_family": "suppression_ivm",
+      "attack_success": {
+        "count": 92,
+        "n": 176,
+        "rate": 0.5227272727272727
+      },
+      "dataset_family": "manual",
+      "defense": "tagged",
+      "false_negative_rate": {
+        "count": 92,
+        "n": 176,
+        "rate": 0.5227272727272727
+      },
+      "false_positive_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip_from_clean": {
+        "count": 33,
+        "n": 176,
+        "rate": 0.1875
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 202,
+        "n": 352,
+        "rate": 0.5738636363636364
+      },
+      "attack_family": "clean",
+      "attack_success": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "dataset_family": "manual",
+      "defense": "warning",
+      "false_negative_rate": {
+        "count": 71,
+        "n": 176,
+        "rate": 0.4034090909090909
+      },
+      "false_positive_rate": {
+        "count": 79,
+        "n": 176,
+        "rate": 0.44886363636363635
+      },
+      "flip_from_clean": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 352,
+        "n": 352,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 85,
+        "n": 176,
+        "rate": 0.48295454545454547
+      },
+      "attack_family": "induction_api",
+      "attack_success": {
+        "count": 91,
+        "n": 176,
+        "rate": 0.5170454545454546
+      },
+      "dataset_family": "manual",
+      "defense": "warning",
+      "false_negative_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "false_positive_rate": {
+        "count": 91,
+        "n": 176,
+        "rate": 0.5170454545454546
+      },
+      "flip_from_clean": {
+        "count": 44,
+        "n": 176,
+        "rate": 0.25
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 74,
+        "n": 176,
+        "rate": 0.42045454545454547
+      },
+      "attack_family": "induction_dsc",
+      "attack_success": {
+        "count": 102,
+        "n": 176,
+        "rate": 0.5795454545454546
+      },
+      "dataset_family": "manual",
+      "defense": "warning",
+      "false_negative_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "false_positive_rate": {
+        "count": 102,
+        "n": 176,
+        "rate": 0.5795454545454546
+      },
+      "flip_from_clean": {
+        "count": 49,
+        "n": 176,
+        "rate": 0.2784090909090909
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 113,
+        "n": 176,
+        "rate": 0.6420454545454546
+      },
+      "attack_family": "induction_ivm",
+      "attack_success": {
+        "count": 63,
+        "n": 176,
+        "rate": 0.35795454545454547
+      },
+      "dataset_family": "manual",
+      "defense": "warning",
+      "false_negative_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "false_positive_rate": {
+        "count": 63,
+        "n": 176,
+        "rate": 0.35795454545454547
+      },
+      "flip_from_clean": {
+        "count": 40,
+        "n": 176,
+        "rate": 0.22727272727272727
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 103,
+        "n": 176,
+        "rate": 0.5852272727272727
+      },
+      "attack_family": "suppression_api",
+      "attack_success": {
+        "count": 73,
+        "n": 176,
+        "rate": 0.4147727272727273
+      },
+      "dataset_family": "manual",
+      "defense": "warning",
+      "false_negative_rate": {
+        "count": 73,
+        "n": 176,
+        "rate": 0.4147727272727273
+      },
+      "false_positive_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip_from_clean": {
+        "count": 36,
+        "n": 176,
+        "rate": 0.20454545454545456
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 90,
+        "n": 176,
+        "rate": 0.5113636363636364
+      },
+      "attack_family": "suppression_dsc",
+      "attack_success": {
+        "count": 86,
+        "n": 176,
+        "rate": 0.48863636363636365
+      },
+      "dataset_family": "manual",
+      "defense": "warning",
+      "false_negative_rate": {
+        "count": 86,
+        "n": 176,
+        "rate": 0.48863636363636365
+      },
+      "false_positive_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip_from_clean": {
+        "count": 41,
+        "n": 176,
+        "rate": 0.23295454545454544
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    },
+    {
+      "accuracy": {
+        "count": 87,
+        "n": 176,
+        "rate": 0.4943181818181818
+      },
+      "attack_family": "suppression_ivm",
+      "attack_success": {
+        "count": 89,
+        "n": 176,
+        "rate": 0.5056818181818182
+      },
+      "dataset_family": "manual",
+      "defense": "warning",
+      "false_negative_rate": {
+        "count": 89,
+        "n": 176,
+        "rate": 0.5056818181818182
+      },
+      "false_positive_rate": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip_from_clean": {
+        "count": 42,
+        "n": 176,
+        "rate": 0.23863636363636365
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "parse_success": {
+        "count": 176,
+        "n": 176,
+        "rate": 1.0
+      }
+    }
+  ],
+  "pairwise_clean_accuracy": [
+    {
+      "count": 81,
+      "dataset_family": "manual",
+      "defense": "neutral",
+      "model": "deepseek/deepseek-v4-pro",
+      "n": 176,
+      "rate": 0.4602272727272727
+    },
+    {
+      "count": 93,
+      "dataset_family": "manual",
+      "defense": "tagged",
+      "model": "deepseek/deepseek-v4-pro",
+      "n": 176,
+      "rate": 0.5284090909090909
+    },
+    {
+      "count": 84,
+      "dataset_family": "manual",
+      "defense": "warning",
+      "model": "deepseek/deepseek-v4-pro",
+      "n": 176,
+      "rate": 0.4772727272727273
+    }
+  ],
+  "repeat_stability": [],
+  "totals": {
+    "completed_responses": 4224,
+    "deduped_responses": 4262,
+    "non_strict_json_responses": 0,
+    "parsed_responses": 4224,
+    "primary_responses": 4224,
+    "raw_responses": 4288,
+    "requests": 4224,
+    "truncated_responses": 0,
+    "unparseable_verdicts": 0
+  }
+}
