@@ -1,0 +1,3827 @@
+{
+  "analysis": "margin_bins",
+  "bin_edges": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5
+  ],
+  "by_model_bin": [
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 593,
+        "n": 1967,
+        "rate": 0.3014743263853584
+      },
+      "flip": {
+        "count": 1014,
+        "n": 3198,
+        "rate": 0.3170731707317073
+      },
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2",
+        "v3"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full",
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 115,
+        "n": 799,
+        "rate": 0.1439299123904881
+      },
+      "flip": {
+        "count": 184,
+        "n": 1255,
+        "rate": 0.14661354581673305
+      },
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2",
+        "v3"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full",
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 21,
+        "n": 128,
+        "rate": 0.1640625
+      },
+      "flip": {
+        "count": 39,
+        "n": 208,
+        "rate": 0.1875
+      },
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2",
+        "v3"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full",
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 239,
+        "n": 3326,
+        "rate": 0.07185808779314491
+      },
+      "flip": {
+        "count": 396,
+        "n": 4654,
+        "rate": 0.08508809626128062
+      },
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2",
+        "v3"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full",
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 27,
+        "n": 1301,
+        "rate": 0.0207532667179093
+      },
+      "flip": {
+        "count": 29,
+        "n": 1930,
+        "rate": 0.015025906735751295
+      },
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2",
+        "v3"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full",
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 6,
+        "n": 8,
+        "rate": 0.75
+      },
+      "flip": {
+        "count": 6,
+        "n": 8,
+        "rate": 0.75
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 96,
+        "n": 112,
+        "rate": 0.8571428571428571
+      },
+      "flip": {
+        "count": 106,
+        "n": 192,
+        "rate": 0.5520833333333334
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2",
+        "v3"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full",
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 3356,
+        "n": 5840,
+        "rate": 0.5746575342465754
+      },
+      "flip": {
+        "count": 3606,
+        "n": 11064,
+        "rate": 0.3259219088937093
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2",
+        "v3"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full",
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 1,
+        "n": 8,
+        "rate": 0.125
+      },
+      "flip": {
+        "count": 1,
+        "n": 8,
+        "rate": 0.125
+      },
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 40,
+        "n": 104,
+        "rate": 0.38461538461538464
+      },
+      "flip": {
+        "count": 60,
+        "n": 136,
+        "rate": 0.4411764705882353
+      },
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2",
+        "v3"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full",
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "flip": {
+        "count": 7,
+        "n": 16,
+        "rate": 0.4375
+      },
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 370,
+        "n": 2002,
+        "rate": 0.1848151848151848
+      },
+      "flip": {
+        "count": 959,
+        "n": 3349,
+        "rate": 0.2863541355628546
+      },
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2",
+        "v3"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full",
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 393,
+        "n": 4996,
+        "rate": 0.07866293034427542
+      },
+      "flip": {
+        "count": 925,
+        "n": 7594,
+        "rate": 0.12180668949170398
+      },
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2",
+        "v3"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full",
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 28,
+        "n": 328,
+        "rate": 0.08536585365853659
+      },
+      "flip": {
+        "count": 78,
+        "n": 472,
+        "rate": 0.1652542372881356
+      },
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2",
+        "v3"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full",
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 9,
+        "n": 224,
+        "rate": 0.04017857142857143
+      },
+      "flip": {
+        "count": 67,
+        "n": 392,
+        "rate": 0.17091836734693877
+      },
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2",
+        "v3"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full",
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 35,
+        "n": 552,
+        "rate": 0.06340579710144928
+      },
+      "flip": {
+        "count": 160,
+        "n": 840,
+        "rate": 0.19047619047619047
+      },
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2",
+        "v3"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full",
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 81,
+        "n": 2088,
+        "rate": 0.03879310344827586
+      },
+      "flip": {
+        "count": 350,
+        "n": 2928,
+        "rate": 0.11953551912568305
+      },
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2",
+        "v3"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full",
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 24,
+        "n": 4696,
+        "rate": 0.005110732538330494
+      },
+      "flip": {
+        "count": 117,
+        "n": 6632,
+        "rate": 0.01764173703256936
+      },
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2",
+        "v3"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full",
+        "runs/revision-placebo/full"
+      ]
+    }
+  ],
+  "by_model_defense_goal_bin": [
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 92,
+        "n": 304,
+        "rate": 0.3026315789473684
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 177,
+        "n": 464,
+        "rate": 0.38146551724137934
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 21,
+        "n": 175,
+        "rate": 0.12
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 42,
+        "n": 231,
+        "rate": 0.18181818181818182
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 2,
+        "n": 16,
+        "rate": 0.125
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 2,
+        "n": 24,
+        "rate": 0.08333333333333333
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 52,
+        "n": 463,
+        "rate": 0.11231101511879049
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 82,
+        "n": 567,
+        "rate": 0.14462081128747795
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 4,
+        "n": 120,
+        "rate": 0.03333333333333333
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 4,
+        "n": 120,
+        "rate": 0.03333333333333333
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 137,
+        "n": 288,
+        "rate": 0.4756944444444444
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 157,
+        "n": 480,
+        "rate": 0.32708333333333334
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 17,
+        "n": 72,
+        "rate": 0.2361111111111111
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 22,
+        "n": 136,
+        "rate": 0.16176470588235295
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 8,
+        "rate": 0.0
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 0,
+        "n": 8,
+        "rate": 0.0
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 43,
+        "n": 280,
+        "rate": 0.15357142857142858
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 47,
+        "n": 488,
+        "rate": 0.09631147540983606
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 6,
+        "n": 175,
+        "rate": 0.03428571428571429
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 7,
+        "n": 295,
+        "rate": 0.023728813559322035
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 37,
+        "n": 151,
+        "rate": 0.24503311258278146
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 67,
+        "n": 207,
+        "rate": 0.32367149758454106
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 28,
+        "n": 136,
+        "rate": 0.20588235294117646
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 48,
+        "n": 184,
+        "rate": 0.2608695652173913
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 8,
+        "rate": 0.0
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 17,
+        "n": 56,
+        "rate": 0.30357142857142855
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 34,
+        "n": 704,
+        "rate": 0.048295454545454544
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 49,
+        "n": 736,
+        "rate": 0.06657608695652174
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 3,
+        "n": 215,
+        "rate": 0.013953488372093023
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 4,
+        "n": 223,
+        "rate": 0.017937219730941704
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 108,
+        "n": 184,
+        "rate": 0.5869565217391305
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 119,
+        "n": 240,
+        "rate": 0.49583333333333335
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 16,
+        "n": 56,
+        "rate": 0.2857142857142857
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 21,
+        "n": 160,
+        "rate": 0.13125
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 10,
+        "n": 56,
+        "rate": 0.17857142857142858
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 11,
+        "n": 80,
+        "rate": 0.1375
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 31,
+        "n": 224,
+        "rate": 0.13839285714285715
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 50,
+        "n": 520,
+        "rate": 0.09615384615384616
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 6,
+        "n": 224,
+        "rate": 0.026785714285714284
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 6,
+        "n": 407,
+        "rate": 0.014742014742014743
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 18,
+        "n": 312,
+        "rate": 0.057692307692307696
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 128,
+        "n": 480,
+        "rate": 0.26666666666666666
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 2,
+        "n": 136,
+        "rate": 0.014705882352941176
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 4,
+        "n": 152,
+        "rate": 0.02631578947368421
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 8,
+        "rate": 0.0
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 0,
+        "n": 8,
+        "rate": 0.0
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 18,
+        "n": 592,
+        "rate": 0.030405405405405407
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 35,
+        "n": 664,
+        "rate": 0.05271084337349398
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 0,
+        "n": 88,
+        "rate": 0.0
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 0,
+        "n": 96,
+        "rate": 0.0
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 94,
+        "n": 224,
+        "rate": 0.41964285714285715
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 129,
+        "n": 456,
+        "rate": 0.28289473684210525
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 9,
+        "n": 48,
+        "rate": 0.1875
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 21,
+        "n": 144,
+        "rate": 0.14583333333333334
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 25,
+        "n": 240,
+        "rate": 0.10416666666666667
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 55,
+        "n": 488,
+        "rate": 0.11270491803278689
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 3,
+        "n": 176,
+        "rate": 0.017045454545454544
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 3,
+        "n": 319,
+        "rate": 0.009404388714733543
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 22,
+        "n": 280,
+        "rate": 0.07857142857142857
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 116,
+        "n": 423,
+        "rate": 0.27423167848699764
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 7,
+        "n": 144,
+        "rate": 0.04861111111111111
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 11,
+        "n": 176,
+        "rate": 0.0625
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 2,
+        "n": 24,
+        "rate": 0.08333333333333333
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 2,
+        "n": 24,
+        "rate": 0.08333333333333333
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 20,
+        "n": 543,
+        "rate": 0.03683241252302026
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 35,
+        "n": 623,
+        "rate": 0.056179775280898875
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 0,
+        "n": 135,
+        "rate": 0.0
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 0,
+        "n": 159,
+        "rate": 0.0
+      },
+      "goal": "induction",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 85,
+        "n": 224,
+        "rate": 0.3794642857142857
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 121,
+        "n": 448,
+        "rate": 0.2700892857142857
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 15,
+        "n": 32,
+        "rate": 0.46875
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 15,
+        "n": 72,
+        "rate": 0.20833333333333334
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 7,
+        "n": 8,
+        "rate": 0.875
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 7,
+        "n": 8,
+        "rate": 0.875
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 16,
+        "n": 280,
+        "rate": 0.05714285714285714
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 43,
+        "n": 568,
+        "rate": 0.07570422535211267
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 5,
+        "n": 168,
+        "rate": 0.02976190476190476
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 5,
+        "n": 311,
+        "rate": 0.01607717041800643
+      },
+      "goal": "suppression",
+      "model": "anthropic/claude-sonnet-5.5",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 0,
+        "n": 8,
+        "rate": 0.0
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 911,
+        "n": 1088,
+        "rate": 0.8373161764705882
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 914,
+        "n": 1400,
+        "rate": 0.6528571428571428
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 18,
+        "n": 24,
+        "rate": 0.75
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 18,
+        "n": 24,
+        "rate": 0.75
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 227,
+        "n": 416,
+        "rate": 0.5456730769230769
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 248,
+        "n": 1384,
+        "rate": 0.1791907514450867
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 22,
+        "n": 24,
+        "rate": 0.9166666666666666
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 22,
+        "n": 24,
+        "rate": 0.9166666666666666
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 872,
+        "n": 1008,
+        "rate": 0.8650793650793651
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 879,
+        "n": 1384,
+        "rate": 0.6351156069364162
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 27,
+        "n": 32,
+        "rate": 0.84375
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 31,
+        "n": 64,
+        "rate": 0.484375
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 215,
+        "n": 416,
+        "rate": 0.5168269230769231
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 243,
+        "n": 1344,
+        "rate": 0.18080357142857142
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 6,
+        "n": 8,
+        "rate": 0.75
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 6,
+        "n": 8,
+        "rate": 0.75
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 393,
+        "n": 1096,
+        "rate": 0.3585766423357664
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 431,
+        "n": 1400,
+        "rate": 0.3078571428571429
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 21,
+        "n": 24,
+        "rate": 0.875
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 21,
+        "n": 32,
+        "rate": 0.65625
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 95,
+        "n": 376,
+        "rate": 0.2526595744680851
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 172,
+        "n": 1376,
+        "rate": 0.125
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 8,
+        "n": 8,
+        "rate": 1.0
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 11,
+        "n": 32,
+        "rate": 0.34375
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 547,
+        "n": 1136,
+        "rate": 0.48151408450704225
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 559,
+        "n": 1376,
+        "rate": 0.40625
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 3,
+        "n": 8,
+        "rate": 0.375
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 96,
+        "n": 304,
+        "rate": 0.3157894736842105
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 160,
+        "n": 1400,
+        "rate": 0.11428571428571428
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 27,
+        "n": 48,
+        "rate": 0.5625
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 27,
+        "n": 48,
+        "rate": 0.5625
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 117,
+        "n": 341,
+        "rate": 0.34310850439882695
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 171,
+        "n": 485,
+        "rate": 0.3525773195876289
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 97,
+        "n": 663,
+        "rate": 0.14630467571644043
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 149,
+        "n": 853,
+        "rate": 0.1746776084407972
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 7,
+        "n": 16,
+        "rate": 0.4375
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 52,
+        "n": 231,
+        "rate": 0.22510822510822512
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 147,
+        "n": 447,
+        "rate": 0.3288590604026846
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 37,
+        "n": 520,
+        "rate": 0.07115384615384615
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 98,
+        "n": 912,
+        "rate": 0.1074561403508772
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 9,
+        "n": 16,
+        "rate": 0.5625
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 9,
+        "n": 16,
+        "rate": 0.5625
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 82,
+        "n": 248,
+        "rate": 0.33064516129032256
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 144,
+        "n": 376,
+        "rate": 0.3829787234042553
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 112,
+        "n": 756,
+        "rate": 0.14814814814814814
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 170,
+        "n": 1011,
+        "rate": 0.1681503461918892
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 17,
+        "n": 157,
+        "rate": 0.10828025477707007
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 120,
+        "n": 389,
+        "rate": 0.30848329048843187
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 43,
+        "n": 520,
+        "rate": 0.08269230769230769
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 130,
+        "n": 1008,
+        "rate": 0.12896825396825398
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 1,
+        "n": 8,
+        "rate": 0.125
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 1,
+        "n": 8,
+        "rate": 0.125
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 3,
+        "n": 16,
+        "rate": 0.1875
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 3,
+        "n": 16,
+        "rate": 0.1875
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 16,
+        "n": 343,
+        "rate": 0.04664723032069971
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 87,
+        "n": 439,
+        "rate": 0.19817767653758542
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 21,
+        "n": 711,
+        "rate": 0.029535864978902954
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 121,
+        "n": 926,
+        "rate": 0.1306695464362851
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 16,
+        "n": 24,
+        "rate": 0.6666666666666666
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 55,
+        "n": 207,
+        "rate": 0.26570048309178745
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 109,
+        "n": 421,
+        "rate": 0.2589073634204275
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 27,
+        "n": 511,
+        "rate": 0.05283757338551859
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 69,
+        "n": 933,
+        "rate": 0.07395498392282958
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 8,
+        "rate": 0.0
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 0,
+        "n": 8,
+        "rate": 0.0
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 12,
+        "n": 317,
+        "rate": 0.03785488958990536
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 72,
+        "n": 413,
+        "rate": 0.17433414043583534
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 20,
+        "n": 784,
+        "rate": 0.025510204081632654
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 85,
+        "n": 965,
+        "rate": 0.08808290155440414
+      },
+      "goal": "induction",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 1,
+        "n": 16,
+        "rate": 0.0625
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 5,
+        "n": 24,
+        "rate": 0.20833333333333334
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 19,
+        "n": 158,
+        "rate": 0.12025316455696203
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 109,
+        "n": 379,
+        "rate": 0.287598944591029
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 36,
+        "n": 531,
+        "rate": 0.06779661016949153
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 103,
+        "n": 986,
+        "rate": 0.10446247464503043
+      },
+      "goal": "suppression",
+      "model": "google/gemini-3.8-flash",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 80,
+        "rate": 0.0
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 0,
+        "n": 80,
+        "rate": 0.0
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 4,
+        "n": 80,
+        "rate": 0.05
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 12,
+        "n": 88,
+        "rate": 0.13636363636363635
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 9,
+        "n": 120,
+        "rate": 0.075
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 20,
+        "n": 136,
+        "rate": 0.14705882352941177
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 7,
+        "n": 296,
+        "rate": 0.02364864864864865
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 61,
+        "n": 408,
+        "rate": 0.14950980392156862
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 0,
+        "n": 464,
+        "rate": 0.0
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 24,
+        "n": 696,
+        "rate": 0.034482758620689655
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 19,
+        "n": 48,
+        "rate": 0.3958333333333333
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 8,
+        "n": 24,
+        "rate": 0.3333333333333333
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 19,
+        "n": 64,
+        "rate": 0.296875
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 8,
+        "n": 200,
+        "rate": 0.04
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 19,
+        "n": 304,
+        "rate": 0.0625
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 11,
+        "n": 720,
+        "rate": 0.015277777777777777
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 14,
+        "n": 968,
+        "rate": 0.014462809917355372
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 4,
+        "n": 72,
+        "rate": 0.05555555555555555
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 4,
+        "n": 72,
+        "rate": 0.05555555555555555
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 16,
+        "rate": 0.0
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 0,
+        "n": 16,
+        "rate": 0.0
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 5,
+        "n": 112,
+        "rate": 0.044642857142857144
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 13,
+        "n": 120,
+        "rate": 0.10833333333333334
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 2,
+        "n": 368,
+        "rate": 0.005434782608695652
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 42,
+        "n": 464,
+        "rate": 0.09051724137931035
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 2,
+        "n": 496,
+        "rate": 0.004032258064516129
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 24,
+        "n": 736,
+        "rate": 0.03260869565217391
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 8,
+        "n": 24,
+        "rate": 0.3333333333333333
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 7,
+        "n": 16,
+        "rate": 0.4375
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 3,
+        "n": 8,
+        "rate": 0.375
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 28,
+        "n": 80,
+        "rate": 0.35
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 18,
+        "n": 136,
+        "rate": 0.1323529411764706
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 27,
+        "n": 216,
+        "rate": 0.125
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 4,
+        "n": 808,
+        "rate": 0.0049504950495049506
+      },
+      "defense": "placebo",
+      "flip": {
+        "count": 4,
+        "n": 1072,
+        "rate": 0.0037313432835820895
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 7,
+        "n": 72,
+        "rate": 0.09722222222222222
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 7,
+        "n": 72,
+        "rate": 0.09722222222222222
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 3,
+        "n": 64,
+        "rate": 0.046875
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 31,
+        "n": 96,
+        "rate": 0.3229166666666667
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 8,
+        "n": 136,
+        "rate": 0.058823529411764705
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 33,
+        "n": 176,
+        "rate": 0.1875
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 4,
+        "n": 288,
+        "rate": 0.013888888888888888
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 38,
+        "n": 392,
+        "rate": 0.09693877551020408
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 1,
+        "n": 432,
+        "rate": 0.0023148148148148147
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 12,
+        "n": 672,
+        "rate": 0.017857142857142856
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 13,
+        "n": 40,
+        "rate": 0.325
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 2,
+        "n": 8,
+        "rate": 0.25
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 2,
+        "n": 56,
+        "rate": 0.03571428571428571
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 1,
+        "n": 24,
+        "rate": 0.041666666666666664
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 17,
+        "n": 64,
+        "rate": 0.265625
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 25,
+        "n": 216,
+        "rate": 0.11574074074074074
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 40,
+        "n": 304,
+        "rate": 0.13157894736842105
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 1,
+        "n": 728,
+        "rate": 0.0013736263736263737
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 7,
+        "n": 944,
+        "rate": 0.007415254237288136
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 17,
+        "n": 104,
+        "rate": 0.16346153846153846
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 17,
+        "n": 104,
+        "rate": 0.16346153846153846
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 56,
+        "rate": 0.0
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 0,
+        "n": 56,
+        "rate": 0.0
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 4,
+        "n": 120,
+        "rate": 0.03333333333333333
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 20,
+        "n": 144,
+        "rate": 0.1388888888888889
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 2,
+        "n": 352,
+        "rate": 0.005681818181818182
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 88,
+        "n": 504,
+        "rate": 0.1746031746031746
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 0,
+        "n": 344,
+        "rate": 0.0
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 19,
+        "n": 600,
+        "rate": 0.03166666666666667
+      },
+      "goal": "induction",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 10,
+        "n": 32,
+        "rate": 0.3125
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 7,
+        "n": 40,
+        "rate": 0.175
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 5,
+        "n": 32,
+        "rate": 0.15625
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 10,
+        "n": 56,
+        "rate": 0.17857142857142858
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 15,
+        "n": 232,
+        "rate": 0.06465517241379311
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 35,
+        "n": 336,
+        "rate": 0.10416666666666667
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 5,
+        "n": 704,
+        "rate": 0.007102272727272727
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 13,
+        "n": 944,
+        "rate": 0.013771186440677966
+      },
+      "goal": "suppression",
+      "model": "openai/gpt-6.1-sol",
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    }
+  ],
+  "provenance": {
+    "adaptive_runs": [
+      "runs/revision-adaptive/full"
+    ],
+    "clustering_unit": "vulnerable/fixed pair (paired_item_key; item_id when missing)",
+    "dataset_family": "manual",
+    "join_key": [
+      "model",
+      "item_id",
+      "defense",
+      "attack_family"
+    ],
+    "repeats": "excluded (repeat > 0)",
+    "runs": [
+      {
+        "parsed_rows": 68736,
+        "prompt_versions": [
+          "v2"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 43647,
+        "run_dir": "runs/openrouter-v2/full"
+      },
+      {
+        "parsed_rows": 14080,
+        "prompt_versions": [
+          "v3"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 14078,
+        "run_dir": "runs/revision-placebo/full"
+      }
+    ]
+  }
+}

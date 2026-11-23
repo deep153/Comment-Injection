@@ -1,0 +1,186 @@
+{
+  "analysis": "provider_drift",
+  "bootstrap": {
+    "interval": "percentile 95%",
+    "resamples": 2000,
+    "seed": 20260101,
+    "unit": "vulnerable/fixed pair"
+  },
+  "by_model_defense_condition": [
+    {
+      "accuracy_change": {
+        "ci_high": 0.028409090909090908,
+        "ci_low": -0.017045454545454544,
+        "estimate": 0.005681818181818182,
+        "n": 352
+      },
+      "agreement": {
+        "count": 336,
+        "n": 352,
+        "rate": 0.9545454545454546
+      },
+      "base_accuracy": {
+        "count": 238,
+        "n": 352,
+        "rate": 0.6761363636363636
+      },
+      "condition": "clean",
+      "defense": "neutral",
+      "matched": 352,
+      "model": "anthropic/claude-sonnet-5.5",
+      "reanchor_accuracy": {
+        "count": 240,
+        "n": 352,
+        "rate": 0.6818181818181818
+      },
+      "score_change": {
+        "ci_high": 0.0128984375,
+        "ci_low": -0.005256392045454547,
+        "estimate": 0.003948863636363639,
+        "n": 352
+      }
+    },
+    {
+      "accuracy_change": {
+        "ci_high": 0.02556818181818182,
+        "ci_low": -0.028409090909090908,
+        "estimate": 0.0,
+        "n": 352
+      },
+      "agreement": {
+        "count": 324,
+        "n": 352,
+        "rate": 0.9204545454545454
+      },
+      "base_accuracy": {
+        "count": 191,
+        "n": 352,
+        "rate": 0.5426136363636364
+      },
+      "condition": "clean",
+      "defense": "neutral",
+      "matched": 352,
+      "model": "deepseek/deepseek-v4-pro",
+      "reanchor_accuracy": {
+        "count": 191,
+        "n": 352,
+        "rate": 0.5426136363636364
+      },
+      "score_change": {
+        "ci_high": 0.020170454545454547,
+        "ci_low": -0.028703835227272705,
+        "estimate": -0.005539772727272726,
+        "n": 352
+      }
+    },
+    {
+      "accuracy_change": {
+        "ci_high": 0.014204545454545454,
+        "ci_low": -0.056818181818181816,
+        "estimate": -0.019886363636363636,
+        "n": 352
+      },
+      "agreement": {
+        "count": 308,
+        "n": 347,
+        "rate": 0.8876080691642652
+      },
+      "base_accuracy": {
+        "count": 227,
+        "n": 352,
+        "rate": 0.6448863636363636
+      },
+      "condition": "clean",
+      "defense": "neutral",
+      "matched": 352,
+      "model": "google/gemini-3.8-flash",
+      "reanchor_accuracy": {
+        "count": 220,
+        "n": 352,
+        "rate": 0.625
+      },
+      "score_change": {
+        "ci_high": 0.03272182080924853,
+        "ci_low": -0.025046623991211388,
+        "estimate": 0.004005763688760807,
+        "n": 347
+      }
+    },
+    {
+      "accuracy_change": {
+        "ci_high": 0.03977272727272727,
+        "ci_low": -0.017045454545454544,
+        "estimate": 0.011363636363636364,
+        "n": 352
+      },
+      "agreement": {
+        "count": 330,
+        "n": 352,
+        "rate": 0.9375
+      },
+      "base_accuracy": {
+        "count": 245,
+        "n": 352,
+        "rate": 0.6960227272727273
+      },
+      "condition": "clean",
+      "defense": "neutral",
+      "matched": 352,
+      "model": "openai/gpt-6.1-sol",
+      "reanchor_accuracy": {
+        "count": 249,
+        "n": 352,
+        "rate": 0.7073863636363636
+      },
+      "score_change": {
+        "ci_high": 0.027387073863636355,
+        "ci_low": -0.005171875,
+        "estimate": 0.010937499999999996,
+        "n": 352
+      }
+    }
+  ],
+  "provenance": {
+    "adaptive_runs": [
+      "runs/revision-adaptive/full"
+    ],
+    "clustering_unit": "vulnerable/fixed pair (paired_item_key; item_id when missing)",
+    "dataset_family": "manual",
+    "join_key": [
+      "model",
+      "item_id",
+      "defense",
+      "attack_family"
+    ],
+    "repeats": "excluded (repeat > 0)",
+    "runs": [
+      {
+        "parsed_rows": 68736,
+        "prompt_versions": [
+          "v2"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 43647,
+        "run_dir": "runs/openrouter-v2/full"
+      },
+      {
+        "parsed_rows": 14080,
+        "prompt_versions": [
+          "v3"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 14078,
+        "run_dir": "runs/revision-placebo/full"
+      }
+    ]
+  },
+  "reanchor_run": {
+    "parsed_rows": 1408,
+    "prompt_versions": [
+      "v3"
+    ],
+    "rows_replaced_by_later_runs": 0,
+    "rows_used": 1408,
+    "run_dir": "runs/revision-neutral-reanchor/full"
+  }
+}

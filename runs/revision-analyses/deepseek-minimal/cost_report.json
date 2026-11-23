@@ -1,0 +1,56 @@
+{
+  "analysis": "cost_report",
+  "byok_upstream_usd": 0.0,
+  "lower_bound": true,
+  "openrouter_usd": 10.873891958300971,
+  "provenance": {
+    "clustering_unit": "vulnerable/fixed pair (paired_item_key; item_id when missing)",
+    "dataset_family": "manual",
+    "join_key": [
+      "model",
+      "item_id",
+      "defense",
+      "attack_family"
+    ],
+    "repeats": "excluded (repeat > 0)",
+    "runs": [
+      {
+        "parsed_rows": 4224,
+        "prompt_versions": [
+          "v3"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 4224,
+        "run_dir": "runs/revision-deepseek-minimal/full"
+      }
+    ]
+  },
+  "runs": [
+    {
+      "by_model": [
+        {
+          "byok_rows": 0,
+          "byok_upstream_usd": 0.0,
+          "failed_rows": 62,
+          "model": "deepseek/deepseek-v4-pro",
+          "ok_rows": 4226,
+          "openrouter_usd": 10.873891958300971,
+          "role": "detector",
+          "rows": 4288,
+          "total_usd": 10.873891958300971
+        }
+      ],
+      "byok_rows": 0,
+      "byok_upstream_usd": 0.0,
+      "failed_rows": 62,
+      "log": "responses.jsonl",
+      "lower_bound": true,
+      "ok_rows": 4226,
+      "openrouter_usd": 10.873891958300971,
+      "rows": 4288,
+      "run_dir": "runs/revision-deepseek-minimal/full",
+      "total_usd": 10.873891958300971
+    }
+  ],
+  "total_usd": 10.873891958300971
+}

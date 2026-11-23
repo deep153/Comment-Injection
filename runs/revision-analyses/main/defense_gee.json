@@ -1,0 +1,1527 @@
+{
+  "analysis": "defense_gee",
+  "defenses": [
+    "neutral",
+    "placebo",
+    "tagged",
+    "warning"
+  ],
+  "gee_maxiter": 60,
+  "outcomes": [
+    "attack_success",
+    "conditional_flip"
+  ],
+  "per_model": [
+    {
+      "clusters": 176,
+      "formula": "success ~ C(defense, Treatment('neutral')) + C(style, Treatment('dsc')) + C(goal, Treatment('suppression')) + C(placement, Treatment('top'))",
+      "model": "anthropic/claude-sonnet-5.5",
+      "n": 11264,
+      "notes": [],
+      "outcome": "attack_success",
+      "seconds": 0.08641474996693432,
+      "status": "converged",
+      "terms": [
+        {
+          "ci_high": 3.9097333215087136,
+          "ci_low": 2.053399029507563,
+          "label": "Intercept",
+          "odds_ratio": 2.833415361012108,
+          "p_value": 2.3034288908106025e-10,
+          "term": "Intercept"
+        },
+        {
+          "ci_high": 0.8877877354865933,
+          "ci_low": 0.7607460499674893,
+          "label": "defense[placebo]",
+          "odds_ratio": 0.8218156806614292,
+          "p_value": 6.323088262770486e-07,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]"
+        },
+        {
+          "ci_high": 0.8105656090114164,
+          "ci_low": 0.6804523198178024,
+          "label": "defense[tagged]",
+          "odds_ratio": 0.7426649641772177,
+          "p_value": 2.645261487524537e-11,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]"
+        },
+        {
+          "ci_high": 0.8330096185199544,
+          "ci_low": 0.7224805031694741,
+          "label": "defense[warning]",
+          "odds_ratio": 0.7757790976388241,
+          "p_value": 2.7268109113246126e-12,
+          "term": "C(defense, Treatment('neutral'))[T.warning]"
+        },
+        {
+          "ci_high": 0.601354791575857,
+          "ci_low": 0.4872770552796444,
+          "label": "style[api]",
+          "odds_ratio": 0.5413191221612145,
+          "p_value": 2.7252887028567155e-30,
+          "term": "C(style, Treatment('dsc'))[T.api]"
+        },
+        {
+          "ci_high": 0.7040283681665456,
+          "ci_low": 0.5696228182180969,
+          "label": "style[escape]",
+          "odds_ratio": 0.6332697870422334,
+          "p_value": 2.823761748950969e-17,
+          "term": "C(style, Treatment('dsc'))[T.escape]"
+        },
+        {
+          "ci_high": 0.6726816755007804,
+          "ci_low": 0.5497570812580266,
+          "label": "style[ivm]",
+          "odds_ratio": 0.6081212991986615,
+          "p_value": 4.383623165039511e-22,
+          "term": "C(style, Treatment('dsc'))[T.ivm]"
+        },
+        {
+          "ci_high": 0.9081362553262864,
+          "ci_low": 0.7233402830519913,
+          "label": "style[rust]",
+          "odds_ratio": 0.8104884551784136,
+          "p_value": 0.00029437760163431373,
+          "term": "C(style, Treatment('dsc'))[T.rust]"
+        },
+        {
+          "ci_high": 0.2673447372759265,
+          "ci_low": 0.11859008816045813,
+          "label": "goal[induction]",
+          "odds_ratio": 0.1780573951364746,
+          "p_value": 8.671636131584863e-17,
+          "term": "C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 0.9115047886325659,
+          "ci_low": 0.7918240457343401,
+          "label": "placement[inline]",
+          "odds_ratio": 0.8495595384911306,
+          "p_value": 5.615085936526082e-06,
+          "term": "C(placement, Treatment('top'))[T.inline]"
+        }
+      ],
+      "working_correlation": 0.20249661199683794
+    },
+    {
+      "clusters": 176,
+      "formula": "success ~ C(defense, Treatment('neutral')) + C(style, Treatment('dsc')) + C(goal, Treatment('suppression')) + C(placement, Treatment('top'))",
+      "model": "deepseek/deepseek-v4-pro",
+      "n": 11264,
+      "notes": [],
+      "outcome": "attack_success",
+      "seconds": 0.10809183295350522,
+      "status": "converged",
+      "terms": [
+        {
+          "ci_high": 11.786136195214954,
+          "ci_low": 5.345410028568211,
+          "label": "Intercept",
+          "odds_ratio": 7.937362951004118,
+          "p_value": 9.60702192868886e-25,
+          "term": "Intercept"
+        },
+        {
+          "ci_high": 1.202921267907365,
+          "ci_low": 0.9096309020377236,
+          "label": "defense[placebo]",
+          "odds_ratio": 1.0460470151990964,
+          "p_value": 0.5277519017301104,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]"
+        },
+        {
+          "ci_high": 0.25488601726964427,
+          "ci_low": 0.17483780501804969,
+          "label": "defense[tagged]",
+          "odds_ratio": 0.21110118850735377,
+          "p_value": 7.624124536275939e-59,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]"
+        },
+        {
+          "ci_high": 0.36921692715066295,
+          "ci_low": 0.2650487733270289,
+          "label": "defense[warning]",
+          "odds_ratio": 0.31282661912448917,
+          "p_value": 5.616393593328159e-43,
+          "term": "C(defense, Treatment('neutral'))[T.warning]"
+        },
+        {
+          "ci_high": 1.6512169118192368,
+          "ci_low": 1.3353062651777894,
+          "label": "style[api]",
+          "odds_ratio": 1.4848839306557762,
+          "p_value": 2.926172786590619e-13,
+          "term": "C(style, Treatment('dsc'))[T.api]"
+        },
+        {
+          "ci_high": 10.537959625676843,
+          "ci_low": 5.279352405710036,
+          "label": "style[escape]",
+          "odds_ratio": 7.458793635775981,
+          "p_value": 4.378797043950555e-30,
+          "term": "C(style, Treatment('dsc'))[T.escape]"
+        },
+        {
+          "ci_high": 1.7378354436205368,
+          "ci_low": 1.371149336275278,
+          "label": "style[ivm]",
+          "odds_ratio": 1.5436424181383306,
+          "p_value": 6.923766753423507e-13,
+          "term": "C(style, Treatment('dsc'))[T.ivm]"
+        },
+        {
+          "ci_high": 3.9063638101850198,
+          "ci_low": 2.3368359660222144,
+          "label": "style[rust]",
+          "odds_ratio": 3.021345966288523,
+          "p_value": 3.295862098624324e-17,
+          "term": "C(style, Treatment('dsc'))[T.rust]"
+        },
+        {
+          "ci_high": 0.8523641583188063,
+          "ci_low": 0.3040328686749236,
+          "label": "goal[induction]",
+          "odds_ratio": 0.5090645540688856,
+          "p_value": 0.010246937197281807,
+          "term": "C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 1.126464432680414,
+          "ci_low": 0.9058427671140683,
+          "label": "placement[inline]",
+          "odds_ratio": 1.0101483350255078,
+          "p_value": 0.8559100915207107,
+          "term": "C(placement, Treatment('top'))[T.inline]"
+        }
+      ],
+      "working_correlation": 0.11714681389194034
+    },
+    {
+      "clusters": 176,
+      "formula": "success ~ C(defense, Treatment('neutral')) + C(style, Treatment('dsc')) + C(goal, Treatment('suppression')) + C(placement, Treatment('top'))",
+      "model": "google/gemini-3.8-flash",
+      "n": 11262,
+      "notes": [],
+      "outcome": "attack_success",
+      "seconds": 0.07590037502814084,
+      "status": "converged",
+      "terms": [
+        {
+          "ci_high": 1.8555339134128144,
+          "ci_low": 1.0840512751556124,
+          "label": "Intercept",
+          "odds_ratio": 1.4182714496631612,
+          "p_value": 0.01081643570070053,
+          "term": "Intercept"
+        },
+        {
+          "ci_high": 1.1173258986675854,
+          "ci_low": 0.984571251713205,
+          "label": "defense[placebo]",
+          "odds_ratio": 1.0488503032476686,
+          "p_value": 0.13938386830027313,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]"
+        },
+        {
+          "ci_high": 0.7687901193491563,
+          "ci_low": 0.6419359050711398,
+          "label": "defense[tagged]",
+          "odds_ratio": 0.7025055025223292,
+          "p_value": 1.646665208447559e-14,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]"
+        },
+        {
+          "ci_high": 0.7043227831244887,
+          "ci_low": 0.5912385024165271,
+          "label": "defense[warning]",
+          "odds_ratio": 0.645308257743819,
+          "p_value": 1.0130316376524514e-22,
+          "term": "C(defense, Treatment('neutral'))[T.warning]"
+        },
+        {
+          "ci_high": 0.7283202829410922,
+          "ci_low": 0.6150336634977112,
+          "label": "style[api]",
+          "odds_ratio": 0.669284313141246,
+          "p_value": 1.2749252820505363e-20,
+          "term": "C(style, Treatment('dsc'))[T.api]"
+        },
+        {
+          "ci_high": 0.5952723764733283,
+          "ci_low": 0.47514446831196167,
+          "label": "style[escape]",
+          "odds_ratio": 0.531827393822674,
+          "p_value": 4.70159390941869e-28,
+          "term": "C(style, Treatment('dsc'))[T.escape]"
+        },
+        {
+          "ci_high": 0.52447752625495,
+          "ci_low": 0.42823992129163496,
+          "label": "style[ivm]",
+          "odds_ratio": 0.4739221608689039,
+          "p_value": 2.9410546709466783e-47,
+          "term": "C(style, Treatment('dsc'))[T.ivm]"
+        },
+        {
+          "ci_high": 0.8710863904354614,
+          "ci_low": 0.7011248518134581,
+          "label": "style[rust]",
+          "odds_ratio": 0.7814987628977943,
+          "p_value": 8.489890466173767e-06,
+          "term": "C(style, Treatment('dsc'))[T.rust]"
+        },
+        {
+          "ci_high": 0.6337330997085929,
+          "ci_low": 0.28555589605588266,
+          "label": "goal[induction]",
+          "odds_ratio": 0.42540124958391845,
+          "p_value": 2.6360447556127635e-05,
+          "term": "C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 1.042705805352512,
+          "ci_low": 0.9313428783708008,
+          "label": "placement[inline]",
+          "odds_ratio": 0.9854524981200019,
+          "p_value": 0.6110373104803613,
+          "term": "C(placement, Treatment('top'))[T.inline]"
+        }
+      ],
+      "working_correlation": 0.1352624059619408
+    },
+    {
+      "clusters": 176,
+      "formula": "success ~ C(defense, Treatment('neutral')) + C(style, Treatment('dsc')) + C(goal, Treatment('suppression')) + C(placement, Treatment('top'))",
+      "model": "openai/gpt-6.1-sol",
+      "n": 11264,
+      "notes": [],
+      "outcome": "attack_success",
+      "seconds": 0.0650853329570964,
+      "status": "converged",
+      "terms": [
+        {
+          "ci_high": 0.62100097631964,
+          "ci_low": 0.34065008640375194,
+          "label": "Intercept",
+          "odds_ratio": 0.4599391658035872,
+          "p_value": 3.976842712093115e-07,
+          "term": "Intercept"
+        },
+        {
+          "ci_high": 1.0051737069621507,
+          "ci_low": 0.9267473855673959,
+          "label": "defense[placebo]",
+          "odds_ratio": 0.9651642891074353,
+          "p_value": 0.0870897019998743,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]"
+        },
+        {
+          "ci_high": 1.09760423082584,
+          "ci_low": 0.959233191548111,
+          "label": "defense[tagged]",
+          "odds_ratio": 1.0260888896152127,
+          "p_value": 0.45373695282120374,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]"
+        },
+        {
+          "ci_high": 1.0869485757064188,
+          "ci_low": 0.9580534402784577,
+          "label": "defense[warning]",
+          "odds_ratio": 1.0204679428386294,
+          "p_value": 0.5292109452277045,
+          "term": "C(defense, Treatment('neutral'))[T.warning]"
+        },
+        {
+          "ci_high": 0.9799504143480563,
+          "ci_low": 0.886986788373861,
+          "label": "style[api]",
+          "odds_ratio": 0.9323106085357051,
+          "p_value": 0.005842494788457646,
+          "term": "C(style, Treatment('dsc'))[T.api]"
+        },
+        {
+          "ci_high": 0.954773167797095,
+          "ci_low": 0.8491096308545437,
+          "label": "style[escape]",
+          "odds_ratio": 0.9003927432282063,
+          "p_value": 0.00045354898525942067,
+          "term": "C(style, Treatment('dsc'))[T.escape]"
+        },
+        {
+          "ci_high": 1.0261108108333499,
+          "ci_low": 0.9362353555342837,
+          "label": "style[ivm]",
+          "odds_ratio": 0.9801434689871342,
+          "p_value": 0.3910641045734786,
+          "term": "C(style, Treatment('dsc'))[T.ivm]"
+        },
+        {
+          "ci_high": 1.090696546360519,
+          "ci_low": 0.8608237939078264,
+          "label": "style[rust]",
+          "odds_ratio": 0.9689672538534134,
+          "p_value": 0.6015949425290135,
+          "term": "C(style, Treatment('dsc'))[T.rust]"
+        },
+        {
+          "ci_high": 1.0870379645221655,
+          "ci_low": 0.3993844821804758,
+          "label": "goal[induction]",
+          "odds_ratio": 0.6588976358822388,
+          "p_value": 0.10241832904213997,
+          "term": "C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 1.0121001695865126,
+          "ci_low": 0.9189100556780504,
+          "label": "placement[inline]",
+          "odds_ratio": 0.9643801238031124,
+          "p_value": 0.14105567000427802,
+          "term": "C(placement, Treatment('top'))[T.inline]"
+        }
+      ],
+      "working_correlation": 0.2751281401267828
+    },
+    {
+      "clusters": 174,
+      "formula": "success ~ C(defense, Treatment('neutral')) + C(style, Treatment('dsc')) + C(goal, Treatment('suppression')) + C(placement, Treatment('top'))",
+      "model": "anthropic/claude-sonnet-5.5",
+      "n": 7528,
+      "notes": [],
+      "outcome": "conditional_flip",
+      "seconds": 0.06803524994757026,
+      "status": "converged",
+      "terms": [
+        {
+          "ci_high": 1.4853509829112317,
+          "ci_low": 0.7817116494051709,
+          "label": "Intercept",
+          "odds_ratio": 1.0775510042671441,
+          "p_value": 0.6483147672245478,
+          "term": "Intercept"
+        },
+        {
+          "ci_high": 0.8655917940236613,
+          "ci_low": 0.5952502274331379,
+          "label": "defense[placebo]",
+          "odds_ratio": 0.7178047870116514,
+          "p_value": 0.00051836886359876,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]"
+        },
+        {
+          "ci_high": 0.5974597211834224,
+          "ci_low": 0.37792882870957517,
+          "label": "defense[tagged]",
+          "odds_ratio": 0.4751812839622371,
+          "p_value": 1.9087098925751632e-10,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]"
+        },
+        {
+          "ci_high": 0.5865221218776523,
+          "ci_low": 0.39964355792076606,
+          "label": "defense[warning]",
+          "odds_ratio": 0.48414851810825793,
+          "p_value": 1.2476894388257806e-13,
+          "term": "C(defense, Treatment('neutral'))[T.warning]"
+        },
+        {
+          "ci_high": 0.3818539880378966,
+          "ci_low": 0.27417466747247204,
+          "label": "style[api]",
+          "odds_ratio": 0.32356558870394053,
+          "p_value": 1.1574138942141606e-40,
+          "term": "C(style, Treatment('dsc'))[T.api]"
+        },
+        {
+          "ci_high": 0.6244612466743823,
+          "ci_low": 0.4202524757612696,
+          "label": "style[escape]",
+          "odds_ratio": 0.5122805724716467,
+          "p_value": 3.577907127863005e-11,
+          "term": "C(style, Treatment('dsc'))[T.escape]"
+        },
+        {
+          "ci_high": 0.5483383452624916,
+          "ci_low": 0.3790357638849406,
+          "label": "style[ivm]",
+          "odds_ratio": 0.4558945531194388,
+          "p_value": 7.525932477173796e-17,
+          "term": "C(style, Treatment('dsc'))[T.ivm]"
+        },
+        {
+          "ci_high": 1.0297861257113832,
+          "ci_low": 0.7003684437354868,
+          "label": "style[rust]",
+          "odds_ratio": 0.8492524396461147,
+          "p_value": 0.09661125256746494,
+          "term": "C(style, Treatment('dsc'))[T.rust]"
+        },
+        {
+          "ci_high": 0.44792614833517447,
+          "ci_low": 0.2051127695104599,
+          "label": "goal[induction]",
+          "odds_ratio": 0.30310950631938405,
+          "p_value": 2.090731965626315e-09,
+          "term": "C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 0.8609315645420313,
+          "ci_low": 0.666836105057089,
+          "label": "placement[inline]",
+          "odds_ratio": 0.7576940353598635,
+          "p_value": 2.0666106117787922e-05,
+          "term": "C(placement, Treatment('top'))[T.inline]"
+        }
+      ],
+      "working_correlation": 0.15055990881851478
+    },
+    {
+      "clusters": 175,
+      "formula": "success ~ C(defense, Treatment('neutral')) + C(style, Treatment('dsc')) + C(goal, Treatment('suppression')) + C(placement, Treatment('top'))",
+      "model": "deepseek/deepseek-v4-pro",
+      "n": 5960,
+      "notes": [],
+      "outcome": "conditional_flip",
+      "seconds": 0.0906182910548523,
+      "status": "converged",
+      "terms": [
+        {
+          "ci_high": 0.6253939463312649,
+          "ci_low": 0.27457667800381846,
+          "label": "Intercept",
+          "odds_ratio": 0.4143894209886843,
+          "p_value": 2.72670166396507e-05,
+          "term": "Intercept"
+        },
+        {
+          "ci_high": 1.3818395679372855,
+          "ci_low": 1.0635414653063624,
+          "label": "defense[placebo]",
+          "odds_ratio": 1.212288612048439,
+          "p_value": 0.003947520186121034,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]"
+        },
+        {
+          "ci_high": 0.16473921429392452,
+          "ci_low": 0.09959129697525566,
+          "label": "defense[tagged]",
+          "odds_ratio": 0.12808821965433245,
+          "p_value": 1.1621645309155537e-57,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]"
+        },
+        {
+          "ci_high": 0.25342105239168133,
+          "ci_low": 0.1616896434744303,
+          "label": "defense[warning]",
+          "odds_ratio": 0.202424207075453,
+          "p_value": 3.926875875522747e-44,
+          "term": "C(defense, Treatment('neutral'))[T.warning]"
+        },
+        {
+          "ci_high": 2.1897348037720756,
+          "ci_low": 1.5827654769874135,
+          "label": "style[api]",
+          "odds_ratio": 1.861675764242595,
+          "p_value": 6.147053131351179e-14,
+          "term": "C(style, Treatment('dsc'))[T.api]"
+        },
+        {
+          "ci_high": 16.726737989982386,
+          "ci_low": 8.853683023313422,
+          "label": "style[escape]",
+          "odds_ratio": 12.169356440556696,
+          "p_value": 1.6976465615332122e-53,
+          "term": "C(style, Treatment('dsc'))[T.escape]"
+        },
+        {
+          "ci_high": 2.4887985712380307,
+          "ci_low": 1.6293922563540117,
+          "label": "style[ivm]",
+          "odds_ratio": 2.0137599458724407,
+          "p_value": 9.305073961212042e-11,
+          "term": "C(style, Treatment('dsc'))[T.ivm]"
+        },
+        {
+          "ci_high": 7.025180289467216,
+          "ci_low": 3.746036399557136,
+          "label": "style[rust]",
+          "odds_ratio": 5.129968915870303,
+          "p_value": 2.127778842338338e-24,
+          "term": "C(style, Treatment('dsc'))[T.rust]"
+        },
+        {
+          "ci_high": 6.342095297232242,
+          "ci_low": 2.226653289933502,
+          "label": "goal[induction]",
+          "odds_ratio": 3.7578780393533218,
+          "p_value": 7.128270209645393e-07,
+          "term": "C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 1.238583043237634,
+          "ci_low": 0.9572018927854782,
+          "label": "placement[inline]",
+          "odds_ratio": 1.0888406831851303,
+          "p_value": 0.19544632251840954,
+          "term": "C(placement, Treatment('top'))[T.inline]"
+        }
+      ],
+      "working_correlation": 0.2157761012400409
+    },
+    {
+      "clusters": 176,
+      "formula": "success ~ C(defense, Treatment('neutral')) + C(style, Treatment('dsc')) + C(goal, Treatment('suppression')) + C(placement, Treatment('top'))",
+      "model": "google/gemini-3.8-flash",
+      "n": 7159,
+      "notes": [],
+      "outcome": "conditional_flip",
+      "seconds": 0.10235320904757828,
+      "status": "converged",
+      "terms": [
+        {
+          "ci_high": 0.5010552636120283,
+          "ci_low": 0.162467615032368,
+          "label": "Intercept",
+          "odds_ratio": 0.2853160592719251,
+          "p_value": 1.2702965775856841e-05,
+          "term": "Intercept"
+        },
+        {
+          "ci_high": 0.9864975637527897,
+          "ci_low": 0.6476986727882074,
+          "label": "defense[placebo]",
+          "odds_ratio": 0.7993454589546887,
+          "p_value": 0.036922389274063966,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]"
+        },
+        {
+          "ci_high": 0.39648949890134927,
+          "ci_low": 0.16115309508388798,
+          "label": "defense[tagged]",
+          "odds_ratio": 0.25277561179079805,
+          "p_value": 2.125412982755529e-09,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]"
+        },
+        {
+          "ci_high": 0.25664565170388703,
+          "ci_low": 0.09731600478707925,
+          "label": "defense[warning]",
+          "odds_ratio": 0.15803711421624522,
+          "p_value": 8.804746793093282e-14,
+          "term": "C(defense, Treatment('neutral'))[T.warning]"
+        },
+        {
+          "ci_high": 0.5554339835383784,
+          "ci_low": 0.3409781758889236,
+          "label": "style[api]",
+          "odds_ratio": 0.43519060942721943,
+          "p_value": 2.3272061365143176e-11,
+          "term": "C(style, Treatment('dsc'))[T.api]"
+        },
+        {
+          "ci_high": 0.31173634210067463,
+          "ci_low": 0.11771872378067597,
+          "label": "style[escape]",
+          "odds_ratio": 0.19156514387577825,
+          "p_value": 2.897962023446027e-11,
+          "term": "C(style, Treatment('dsc'))[T.escape]"
+        },
+        {
+          "ci_high": 0.2110266823265003,
+          "ci_low": 0.08372103184140936,
+          "label": "style[ivm]",
+          "odds_ratio": 0.13291866531997645,
+          "p_value": 1.1629267888239132e-17,
+          "term": "C(style, Treatment('dsc'))[T.ivm]"
+        },
+        {
+          "ci_high": 0.7803837429186591,
+          "ci_low": 0.4659007783528419,
+          "label": "style[rust]",
+          "odds_ratio": 0.6029771083877955,
+          "p_value": 0.00012084218380017238,
+          "term": "C(style, Treatment('dsc'))[T.rust]"
+        },
+        {
+          "ci_high": 3.0141262749780964,
+          "ci_low": 0.6316960188283743,
+          "label": "goal[induction]",
+          "odds_ratio": 1.3798592566452788,
+          "p_value": 0.4192683631699643,
+          "term": "C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 1.254752235024914,
+          "ci_low": 0.8892222538566118,
+          "label": "placement[inline]",
+          "odds_ratio": 1.056292388716531,
+          "p_value": 0.5330034741821529,
+          "term": "C(placement, Treatment('top'))[T.inline]"
+        }
+      ],
+      "working_correlation": 0.11034706334332439
+    },
+    {
+      "clusters": 175,
+      "formula": "success ~ C(defense, Treatment('neutral')) + C(style, Treatment('dsc')) + C(goal, Treatment('suppression')) + C(placement, Treatment('top'))",
+      "model": "openai/gpt-6.1-sol",
+      "n": 7888,
+      "notes": [],
+      "outcome": "conditional_flip",
+      "seconds": 0.07100579200778157,
+      "status": "converged",
+      "terms": [
+        {
+          "ci_high": 0.05837683979665626,
+          "ci_low": 0.01715783094078136,
+          "label": "Intercept",
+          "odds_ratio": 0.03164837986513853,
+          "p_value": 2.086172813727096e-28,
+          "term": "Intercept"
+        },
+        {
+          "ci_high": 1.5316093457619786,
+          "ci_low": 0.5280408520287697,
+          "label": "defense[placebo]",
+          "odds_ratio": 0.8993065683688637,
+          "p_value": 0.6960395964448052,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]"
+        },
+        {
+          "ci_high": 2.1492372542184555,
+          "ci_low": 0.6798809638193989,
+          "label": "defense[tagged]",
+          "odds_ratio": 1.2088116047898456,
+          "p_value": 0.5183625310279633,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]"
+        },
+        {
+          "ci_high": 1.8247030759735112,
+          "ci_low": 0.6789545238320813,
+          "label": "defense[warning]",
+          "odds_ratio": 1.1130545395812954,
+          "p_value": 0.671062982521235,
+          "term": "C(defense, Treatment('neutral'))[T.warning]"
+        },
+        {
+          "ci_high": 1.1388074586260897,
+          "ci_low": 0.6432893022493053,
+          "label": "style[api]",
+          "odds_ratio": 0.8559104249019763,
+          "p_value": 0.2855838572537708,
+          "term": "C(style, Treatment('dsc'))[T.api]"
+        },
+        {
+          "ci_high": 0.981863677437386,
+          "ci_low": 0.3258424959886837,
+          "label": "style[escape]",
+          "odds_ratio": 0.5656261233154156,
+          "p_value": 0.04286657812216291,
+          "term": "C(style, Treatment('dsc'))[T.escape]"
+        },
+        {
+          "ci_high": 1.3514839348421488,
+          "ci_low": 0.6370525993308392,
+          "label": "style[ivm]",
+          "odds_ratio": 0.9278827262348737,
+          "p_value": 0.6964530937935813,
+          "term": "C(style, Treatment('dsc'))[T.ivm]"
+        },
+        {
+          "ci_high": 4.599560289238415,
+          "ci_low": 1.74385534193795,
+          "label": "style[rust]",
+          "odds_ratio": 2.832131314214451,
+          "p_value": 2.5813479771391115e-05,
+          "term": "C(style, Treatment('dsc'))[T.rust]"
+        },
+        {
+          "ci_high": 1.516926804677312,
+          "ci_low": 0.2137622326714235,
+          "label": "goal[induction]",
+          "odds_ratio": 0.5694397778228621,
+          "p_value": 0.2599849607875926,
+          "term": "C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 1.0164468779355873,
+          "ci_low": 0.570743136038184,
+          "label": "placement[inline]",
+          "odds_ratio": 0.7616627066682328,
+          "p_value": 0.06443419843079155,
+          "term": "C(placement, Treatment('top'))[T.inline]"
+        }
+      ],
+      "working_correlation": 0.08781710223172919
+    }
+  ],
+  "pooled": [
+    {
+      "clusters": 176,
+      "formula": "success ~ C(defense, Treatment('neutral'))*C(goal, Treatment('suppression'))*C(model) + C(style, Treatment('dsc')) + C(placement, Treatment('top'))",
+      "n": 45054,
+      "notes": [],
+      "outcome": "attack_success",
+      "seconds": 0.40501908294390887,
+      "status": "converged",
+      "terms": [
+        {
+          "ci_high": 1.7992661190445227,
+          "ci_low": 1.060228463650769,
+          "label": "Intercept",
+          "odds_ratio": 1.381170935508511,
+          "p_value": 0.016691930231455862,
+          "term": "Intercept"
+        },
+        {
+          "ci_high": 1.2614801579080837,
+          "ci_low": 1.0048009074156945,
+          "label": "defense[placebo]",
+          "odds_ratio": 1.1258491938767536,
+          "p_value": 0.041103031304236974,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]"
+        },
+        {
+          "ci_high": 1.1565360569363083,
+          "ci_low": 0.9481084240105802,
+          "label": "defense[tagged]",
+          "odds_ratio": 1.0471492626427685,
+          "p_value": 0.36344511416649283,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]"
+        },
+        {
+          "ci_high": 1.0821220254718018,
+          "ci_low": 0.9401859727311221,
+          "label": "defense[warning]",
+          "odds_ratio": 1.0086604726725332,
+          "p_value": 0.8100110297557025,
+          "term": "C(defense, Treatment('neutral'))[T.warning]"
+        },
+        {
+          "ci_high": 0.44230066829262843,
+          "ci_low": 0.20213464306941473,
+          "label": "goal[induction]",
+          "odds_ratio": 0.2990054978001141,
+          "p_value": 1.5068140117030703e-09,
+          "term": "C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 6.651484579089134,
+          "ci_low": 3.5362654322449574,
+          "label": "model[deepseek/deepseek-v4-pro]",
+          "odds_ratio": 4.849888142023825,
+          "p_value": 1.1606488867014532e-22,
+          "term": "C(model)[T.deepseek/deepseek-v4-pro]"
+        },
+        {
+          "ci_high": 0.666219816005923,
+          "ci_low": 0.4548369237551698,
+          "label": "model[google/gemini-3.8-flash]",
+          "odds_ratio": 0.5504737701806229,
+          "p_value": 8.730211261591868e-10,
+          "term": "C(model)[T.google/gemini-3.8-flash]"
+        },
+        {
+          "ci_high": 0.5170934121215673,
+          "ci_low": 0.30913429426993977,
+          "label": "model[openai/gpt-6.1-sol]",
+          "odds_ratio": 0.39981409058190515,
+          "p_value": 2.840743353688192e-12,
+          "term": "C(model)[T.openai/gpt-6.1-sol]"
+        },
+        {
+          "ci_high": 0.8527411859337143,
+          "ci_low": 0.7788934235828749,
+          "label": "style[api]",
+          "odds_ratio": 0.8149812891975077,
+          "p_value": 8.471562743883331e-19,
+          "term": "C(style, Treatment('dsc'))[T.api]"
+        },
+        {
+          "ci_high": 1.0637932391132163,
+          "ci_low": 0.9460101355356179,
+          "label": "style[escape]",
+          "odds_ratio": 1.003174554260308,
+          "p_value": 0.9156773451807411,
+          "term": "C(style, Treatment('dsc'))[T.escape]"
+        },
+        {
+          "ci_high": 0.831055952963024,
+          "ci_low": 0.7361490584026561,
+          "label": "style[ivm]",
+          "odds_ratio": 0.7821643415891907,
+          "p_value": 1.9886731075027064e-15,
+          "term": "C(style, Treatment('dsc'))[T.ivm]"
+        },
+        {
+          "ci_high": 1.178969475545432,
+          "ci_low": 1.0032492183303545,
+          "label": "style[rust]",
+          "odds_ratio": 1.0875661840901005,
+          "p_value": 0.041474833119319446,
+          "term": "C(style, Treatment('dsc'))[T.rust]"
+        },
+        {
+          "ci_high": 0.9847036241226398,
+          "ci_low": 0.9153327694182914,
+          "label": "placement[inline]",
+          "odds_ratio": 0.9493847983428028,
+          "p_value": 0.005318380601296203,
+          "term": "C(placement, Treatment('top'))[T.inline]"
+        },
+        {
+          "ci_high": 0.5666784874710811,
+          "ci_low": 0.3654202283493704,
+          "label": "defense[placebo]:goal[induction]",
+          "odds_ratio": 0.455055801295136,
+          "p_value": 2.001337249528138e-12,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]:C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 0.5111581525175648,
+          "ci_low": 0.3263259048180451,
+          "label": "defense[tagged]:goal[induction]",
+          "odds_ratio": 0.4084166336296976,
+          "p_value": 5.218275032096151e-15,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]:C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 0.6324227837197699,
+          "ci_low": 0.4352732234825824,
+          "label": "defense[warning]:goal[induction]",
+          "odds_ratio": 0.5246681843541995,
+          "p_value": 1.3083214105824221e-11,
+          "term": "C(defense, Treatment('neutral'))[T.warning]:C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 0.9530540618853085,
+          "ci_low": 0.6535290652314543,
+          "label": "defense[placebo]:model[deepseek/deepseek-v4-pro]",
+          "odds_ratio": 0.7892075330221743,
+          "p_value": 0.01391130454867363,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]:C(model)[T.deepseek/deepseek-v4-pro]"
+        },
+        {
+          "ci_high": 0.5970179236436912,
+          "ci_low": 0.41176115238317806,
+          "label": "defense[tagged]:model[deepseek/deepseek-v4-pro]",
+          "odds_ratio": 0.49581124254391257,
+          "p_value": 1.3362089266818645e-13,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]:C(model)[T.deepseek/deepseek-v4-pro]"
+        },
+        {
+          "ci_high": 0.8550599917543781,
+          "ci_low": 0.632871093850823,
+          "label": "defense[warning]:model[deepseek/deepseek-v4-pro]",
+          "odds_ratio": 0.7356240563560091,
+          "p_value": 6.339602213535197e-05,
+          "term": "C(defense, Treatment('neutral'))[T.warning]:C(model)[T.deepseek/deepseek-v4-pro]"
+        },
+        {
+          "ci_high": 1.1567699862695229,
+          "ci_low": 0.8649723021959899,
+          "label": "defense[placebo]:model[google/gemini-3.8-flash]",
+          "odds_ratio": 1.0002869578949696,
+          "p_value": 0.9969129496507877,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]:C(model)[T.google/gemini-3.8-flash]"
+        },
+        {
+          "ci_high": 1.3804966913386882,
+          "ci_low": 1.0543761210069884,
+          "label": "defense[tagged]:model[google/gemini-3.8-flash]",
+          "odds_ratio": 1.2064670515503801,
+          "p_value": 0.006330793972506584,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]:C(model)[T.google/gemini-3.8-flash]"
+        },
+        {
+          "ci_high": 1.2037442576351067,
+          "ci_low": 0.9692527136216363,
+          "label": "defense[warning]:model[google/gemini-3.8-flash]",
+          "odds_ratio": 1.0801538724734034,
+          "p_value": 0.16302978744123486,
+          "term": "C(defense, Treatment('neutral'))[T.warning]:C(model)[T.google/gemini-3.8-flash]"
+        },
+        {
+          "ci_high": 0.9617435008593899,
+          "ci_low": 0.7432051053518489,
+          "label": "defense[placebo]:model[openai/gpt-6.1-sol]",
+          "odds_ratio": 0.8454422983726677,
+          "p_value": 0.010675634735260384,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]:C(model)[T.openai/gpt-6.1-sol]"
+        },
+        {
+          "ci_high": 0.9514919035698073,
+          "ci_low": 0.7538908796435566,
+          "label": "defense[tagged]:model[openai/gpt-6.1-sol]",
+          "odds_ratio": 0.846948090591132,
+          "p_value": 0.005153381717888394,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]:C(model)[T.openai/gpt-6.1-sol]"
+        },
+        {
+          "ci_high": 0.9854141473040114,
+          "ci_low": 0.8062118533042899,
+          "label": "defense[warning]:model[openai/gpt-6.1-sol]",
+          "odds_ratio": 0.89132068638074,
+          "p_value": 0.0246451207699195,
+          "term": "C(defense, Treatment('neutral'))[T.warning]:C(model)[T.openai/gpt-6.1-sol]"
+        },
+        {
+          "ci_high": 6.531638893694345,
+          "ci_low": 2.6390255467701507,
+          "label": "goal[induction]:model[deepseek/deepseek-v4-pro]",
+          "odds_ratio": 4.151766118501487,
+          "p_value": 7.393982331347455e-10,
+          "term": "C(goal, Treatment('suppression'))[T.induction]:C(model)[T.deepseek/deepseek-v4-pro]"
+        },
+        {
+          "ci_high": 3.5493799256794816,
+          "ci_low": 2.0126229295411586,
+          "label": "goal[induction]:model[google/gemini-3.8-flash]",
+          "odds_ratio": 2.672744548975008,
+          "p_value": 1.1008935612633853e-11,
+          "term": "C(goal, Treatment('suppression'))[T.induction]:C(model)[T.google/gemini-3.8-flash]"
+        },
+        {
+          "ci_high": 3.080558799478713,
+          "ci_low": 1.1495546726343941,
+          "label": "goal[induction]:model[openai/gpt-6.1-sol]",
+          "odds_ratio": 1.8818264431837899,
+          "p_value": 0.01193000479221715,
+          "term": "C(goal, Treatment('suppression'))[T.induction]:C(model)[T.openai/gpt-6.1-sol]"
+        },
+        {
+          "ci_high": 4.359638587266082,
+          "ci_low": 2.318322541266292,
+          "label": "defense[placebo]:goal[induction]:model[deepseek/deepseek-v4-pro]",
+          "odds_ratio": 3.179158443461617,
+          "p_value": 7.023136807580636e-13,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]:C(goal, Treatment('suppression'))[T.induction]:C(model)[T.deepseek/deepseek-v4-pro]"
+        },
+        {
+          "ci_high": 0.8205068638541436,
+          "ci_low": 0.4413706903080046,
+          "label": "defense[tagged]:goal[induction]:model[deepseek/deepseek-v4-pro]",
+          "odds_ratio": 0.6017870727273554,
+          "p_value": 0.0013242079814056215,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]:C(goal, Treatment('suppression'))[T.induction]:C(model)[T.deepseek/deepseek-v4-pro]"
+        },
+        {
+          "ci_high": 0.643576663234761,
+          "ci_low": 0.37069932257478283,
+          "label": "defense[warning]:goal[induction]:model[deepseek/deepseek-v4-pro]",
+          "odds_ratio": 0.48843979474042143,
+          "p_value": 3.5505108235248434e-07,
+          "term": "C(defense, Treatment('neutral'))[T.warning]:C(goal, Treatment('suppression'))[T.induction]:C(model)[T.deepseek/deepseek-v4-pro]"
+        },
+        {
+          "ci_high": 2.4554281870941095,
+          "ci_low": 1.4481681430973692,
+          "label": "defense[placebo]:goal[induction]:model[google/gemini-3.8-flash]",
+          "odds_ratio": 1.8857022241629287,
+          "p_value": 2.488167443450115e-06,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]:C(goal, Treatment('suppression'))[T.induction]:C(model)[T.google/gemini-3.8-flash]"
+        },
+        {
+          "ci_high": 0.7665767094084699,
+          "ci_low": 0.45111048155752914,
+          "label": "defense[tagged]:goal[induction]:model[google/gemini-3.8-flash]",
+          "odds_ratio": 0.5880567902269651,
+          "p_value": 8.666795536890005e-05,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]:C(goal, Treatment('suppression'))[T.induction]:C(model)[T.google/gemini-3.8-flash]"
+        },
+        {
+          "ci_high": 0.6883229315398449,
+          "ci_low": 0.42938363835973864,
+          "label": "defense[warning]:goal[induction]:model[google/gemini-3.8-flash]",
+          "odds_ratio": 0.5436493398423472,
+          "p_value": 4.139203754139226e-07,
+          "term": "C(defense, Treatment('neutral'))[T.warning]:C(goal, Treatment('suppression'))[T.induction]:C(model)[T.google/gemini-3.8-flash]"
+        },
+        {
+          "ci_high": 2.8840064096487437,
+          "ci_low": 1.7857512997413376,
+          "label": "defense[placebo]:goal[induction]:model[openai/gpt-6.1-sol]",
+          "odds_ratio": 2.2693871847907734,
+          "p_value": 2.0595433125940073e-11,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]:C(goal, Treatment('suppression'))[T.induction]:C(model)[T.openai/gpt-6.1-sol]"
+        },
+        {
+          "ci_high": 4.390192145287101,
+          "ci_low": 2.6001627783669683,
+          "label": "defense[tagged]:goal[induction]:model[openai/gpt-6.1-sol]",
+          "odds_ratio": 3.3786408814868962,
+          "p_value": 8.151651106425697e-20,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]:C(goal, Treatment('suppression'))[T.induction]:C(model)[T.openai/gpt-6.1-sol]"
+        },
+        {
+          "ci_high": 3.1823472853069545,
+          "ci_low": 2.0040017178073404,
+          "label": "defense[warning]:goal[induction]:model[openai/gpt-6.1-sol]",
+          "odds_ratio": 2.5253572868833163,
+          "p_value": 4.093507622655108e-15,
+          "term": "C(defense, Treatment('neutral'))[T.warning]:C(goal, Treatment('suppression'))[T.induction]:C(model)[T.openai/gpt-6.1-sol]"
+        }
+      ],
+      "wald_tests": [
+        {
+          "chi2": 4.324020863874074,
+          "df": 3,
+          "p_value": 0.22853466223436705,
+          "term": "defense"
+        },
+        {
+          "chi2": 36.525508258134074,
+          "df": 1,
+          "p_value": 1.5068140117030683e-09,
+          "term": "goal"
+        },
+        {
+          "chi2": 271.0879777788079,
+          "df": 3,
+          "p_value": 1.795072656571958e-58,
+          "term": "model"
+        },
+        {
+          "chi2": 202.79262350767794,
+          "df": 4,
+          "p_value": 9.428131556957033e-43,
+          "term": "style"
+        },
+        {
+          "chi2": 7.7678672750463695,
+          "df": 1,
+          "p_value": 0.0053183806012962135,
+          "term": "placement"
+        },
+        {
+          "chi2": 93.45719918531077,
+          "df": 3,
+          "p_value": 3.9613945119142094e-20,
+          "term": "defense:goal"
+        },
+        {
+          "chi2": 121.93559715280534,
+          "df": 9,
+          "p_value": 5.363657725134749e-22,
+          "term": "defense:model"
+        },
+        {
+          "chi2": 58.01660941313899,
+          "df": 3,
+          "p_value": 1.5590881712014438e-12,
+          "term": "goal:model"
+        },
+        {
+          "chi2": 330.4311597037346,
+          "df": 9,
+          "p_value": 9.006609375047079e-66,
+          "term": "defense:goal:model"
+        }
+      ],
+      "working_correlation": 0.09201688192227431
+    },
+    {
+      "clusters": 176,
+      "formula": "success ~ C(defense, Treatment('neutral'))*C(goal, Treatment('suppression'))*C(model) + C(style, Treatment('dsc')) + C(placement, Treatment('top'))",
+      "n": 28535,
+      "notes": [],
+      "outcome": "conditional_flip",
+      "seconds": 0.26155487506184727,
+      "status": "converged",
+      "terms": [
+        {
+          "ci_high": 0.5288954837293963,
+          "ci_low": 0.25150312168447975,
+          "label": "Intercept",
+          "odds_ratio": 0.36471751425283394,
+          "p_value": 1.0436674136748626e-07,
+          "term": "Intercept"
+        },
+        {
+          "ci_high": 1.3790389152146147,
+          "ci_low": 0.6983377668676238,
+          "label": "defense[placebo]",
+          "odds_ratio": 0.9813434447096105,
+          "p_value": 0.9136043221016398,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]"
+        },
+        {
+          "ci_high": 1.0833892808799632,
+          "ci_low": 0.5184621995685212,
+          "label": "defense[tagged]",
+          "odds_ratio": 0.7494640682207414,
+          "p_value": 0.12504169653925207,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]"
+        },
+        {
+          "ci_high": 0.9767185249206773,
+          "ci_low": 0.48843581076271,
+          "label": "defense[warning]",
+          "odds_ratio": 0.6906984179847158,
+          "p_value": 0.036330074444292954,
+          "term": "C(defense, Treatment('neutral'))[T.warning]"
+        },
+        {
+          "ci_high": 0.9081805218980286,
+          "ci_low": 0.37584122823897015,
+          "label": "goal[induction]",
+          "odds_ratio": 0.5842359821278248,
+          "p_value": 0.01694606571715281,
+          "term": "C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 6.120510576631589,
+          "ci_low": 2.525580670026377,
+          "label": "model[deepseek/deepseek-v4-pro]",
+          "odds_ratio": 3.9316463730901257,
+          "p_value": 1.3379667622586656e-09,
+          "term": "C(model)[T.deepseek/deepseek-v4-pro]"
+        },
+        {
+          "ci_high": 0.6713972177910253,
+          "ci_low": 0.2603124996579848,
+          "label": "model[google/gemini-3.8-flash]",
+          "odds_ratio": 0.4180587136116149,
+          "p_value": 0.00030831677612768734,
+          "term": "C(model)[T.google/gemini-3.8-flash]"
+        },
+        {
+          "ci_high": 0.15932475120122727,
+          "ci_low": 0.030794812308475937,
+          "label": "model[openai/gpt-6.1-sol]",
+          "odds_ratio": 0.0700455266904063,
+          "p_value": 2.2872786363234707e-10,
+          "term": "C(model)[T.openai/gpt-6.1-sol]"
+        },
+        {
+          "ci_high": 0.782583761261083,
+          "ci_low": 0.6403817092114488,
+          "label": "style[api]",
+          "odds_ratio": 0.7079211302380348,
+          "p_value": 1.4577602884798364e-11,
+          "term": "C(style, Treatment('dsc'))[T.api]"
+        },
+        {
+          "ci_high": 1.5056959843985727,
+          "ci_low": 1.1303910173111777,
+          "label": "style[escape]",
+          "odds_ratio": 1.3046168845931965,
+          "p_value": 0.00027714799861097223,
+          "term": "C(style, Treatment('dsc'))[T.escape]"
+        },
+        {
+          "ci_high": 0.7753967319529022,
+          "ci_low": 0.5836803160738334,
+          "label": "style[ivm]",
+          "odds_ratio": 0.6727434946462786,
+          "p_value": 4.480031526925818e-08,
+          "term": "C(style, Treatment('dsc'))[T.ivm]"
+        },
+        {
+          "ci_high": 1.8589317719502194,
+          "ci_low": 1.3814946534185868,
+          "label": "style[rust]",
+          "odds_ratio": 1.6025305937857062,
+          "p_value": 4.73640836666054e-10,
+          "term": "C(style, Treatment('dsc'))[T.rust]"
+        },
+        {
+          "ci_high": 1.0028699814671296,
+          "ci_low": 0.8628704906359861,
+          "label": "placement[inline]",
+          "odds_ratio": 0.9302402447500562,
+          "p_value": 0.05939633686136104,
+          "term": "C(placement, Treatment('top'))[T.inline]"
+        },
+        {
+          "ci_high": 0.7172300002075597,
+          "ci_low": 0.313366459236006,
+          "label": "defense[placebo]:goal[induction]",
+          "odds_ratio": 0.4740841967655986,
+          "p_value": 0.00041028768467048904,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]:C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 0.45788861197512676,
+          "ci_low": 0.12112649391205862,
+          "label": "defense[tagged]:goal[induction]",
+          "odds_ratio": 0.23550465424446745,
+          "p_value": 2.0209800906792176e-05,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]:C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 0.5654732331236078,
+          "ci_low": 0.2174058733225153,
+          "label": "defense[warning]:goal[induction]",
+          "odds_ratio": 0.35062401812731575,
+          "p_value": 1.725094706086713e-05,
+          "term": "C(defense, Treatment('neutral'))[T.warning]:C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 1.4637633855861112,
+          "ci_low": 0.6198427969923457,
+          "label": "defense[placebo]:model[deepseek/deepseek-v4-pro]",
+          "odds_ratio": 0.9525246406559152,
+          "p_value": 0.8244063555977726,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]:C(model)[T.deepseek/deepseek-v4-pro]"
+        },
+        {
+          "ci_high": 0.7726947271076094,
+          "ci_low": 0.26601790993841945,
+          "label": "defense[tagged]:model[deepseek/deepseek-v4-pro]",
+          "odds_ratio": 0.4533769252240388,
+          "p_value": 0.003638285397975553,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]:C(model)[T.deepseek/deepseek-v4-pro]"
+        },
+        {
+          "ci_high": 0.9450130014121864,
+          "ci_low": 0.3211361886010217,
+          "label": "defense[warning]:model[deepseek/deepseek-v4-pro]",
+          "odds_ratio": 0.5508882585896359,
+          "p_value": 0.030359630852435995,
+          "term": "C(defense, Treatment('neutral'))[T.warning]:C(model)[T.deepseek/deepseek-v4-pro]"
+        },
+        {
+          "ci_high": 1.4255002964845083,
+          "ci_low": 0.4134106942232707,
+          "label": "defense[placebo]:model[google/gemini-3.8-flash]",
+          "odds_ratio": 0.7676698946716217,
+          "p_value": 0.40243731368842994,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]:C(model)[T.google/gemini-3.8-flash]"
+        },
+        {
+          "ci_high": 2.2775056167621957,
+          "ci_low": 0.669726976008372,
+          "label": "defense[tagged]:model[google/gemini-3.8-flash]",
+          "odds_ratio": 1.2350331775123402,
+          "p_value": 0.4989953549162083,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]:C(model)[T.google/gemini-3.8-flash]"
+        },
+        {
+          "ci_high": 1.8681079479133935,
+          "ci_low": 0.4972522409193048,
+          "label": "defense[warning]:model[google/gemini-3.8-flash]",
+          "odds_ratio": 0.963805407423666,
+          "p_value": 0.913058145104287,
+          "term": "C(defense, Treatment('neutral'))[T.warning]:C(model)[T.google/gemini-3.8-flash]"
+        },
+        {
+          "ci_high": 3.498641419041043,
+          "ci_low": 0.43118877272680567,
+          "label": "defense[placebo]:model[openai/gpt-6.1-sol]",
+          "odds_ratio": 1.2282405707708393,
+          "p_value": 0.7002941847722048,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]:C(model)[T.openai/gpt-6.1-sol]"
+        },
+        {
+          "ci_high": 4.7701441209882685,
+          "ci_low": 0.6120155466492458,
+          "label": "defense[tagged]:model[openai/gpt-6.1-sol]",
+          "odds_ratio": 1.7086258694642082,
+          "p_value": 0.30647772025371733,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]:C(model)[T.openai/gpt-6.1-sol]"
+        },
+        {
+          "ci_high": 4.604798357415883,
+          "ci_low": 0.5713642104185502,
+          "label": "defense[warning]:model[openai/gpt-6.1-sol]",
+          "odds_ratio": 1.622040991350577,
+          "p_value": 0.363581560077469,
+          "term": "C(defense, Treatment('neutral'))[T.warning]:C(model)[T.openai/gpt-6.1-sol]"
+        },
+        {
+          "ci_high": 12.43290324962742,
+          "ci_low": 4.248641524686805,
+          "label": "goal[induction]:model[deepseek/deepseek-v4-pro]",
+          "odds_ratio": 7.267939805665741,
+          "p_value": 4.4518161646179926e-13,
+          "term": "C(goal, Treatment('suppression'))[T.induction]:C(model)[T.deepseek/deepseek-v4-pro]"
+        },
+        {
+          "ci_high": 6.026007642664543,
+          "ci_low": 2.1742891574599077,
+          "label": "goal[induction]:model[google/gemini-3.8-flash]",
+          "odds_ratio": 3.6197075959552385,
+          "p_value": 7.548697151184543e-07,
+          "term": "C(goal, Treatment('suppression'))[T.induction]:C(model)[T.google/gemini-3.8-flash]"
+        },
+        {
+          "ci_high": 4.155174705012395,
+          "ci_low": 0.5070331837917612,
+          "label": "goal[induction]:model[openai/gpt-6.1-sol]",
+          "odds_ratio": 1.4514859489135354,
+          "p_value": 0.4874838787379434,
+          "term": "C(goal, Treatment('suppression'))[T.induction]:C(model)[T.openai/gpt-6.1-sol]"
+        },
+        {
+          "ci_high": 4.90329004359157,
+          "ci_low": 1.7383954281260134,
+          "label": "defense[placebo]:goal[induction]:model[deepseek/deepseek-v4-pro]",
+          "odds_ratio": 2.9195645213893435,
+          "p_value": 5.114946715633832e-05,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]:C(goal, Treatment('suppression'))[T.induction]:C(model)[T.deepseek/deepseek-v4-pro]"
+        },
+        {
+          "ci_high": 2.8468583002886962,
+          "ci_low": 0.5983592029680664,
+          "label": "defense[tagged]:goal[induction]:model[deepseek/deepseek-v4-pro]",
+          "odds_ratio": 1.3051604742420637,
+          "p_value": 0.5032967892662462,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]:C(goal, Treatment('suppression'))[T.induction]:C(model)[T.deepseek/deepseek-v4-pro]"
+        },
+        {
+          "ci_high": 2.6327546573310987,
+          "ci_low": 0.647916568896837,
+          "label": "defense[warning]:goal[induction]:model[deepseek/deepseek-v4-pro]",
+          "odds_ratio": 1.3060648392500018,
+          "p_value": 0.4553296692643559,
+          "term": "C(defense, Treatment('neutral'))[T.warning]:C(goal, Treatment('suppression'))[T.induction]:C(model)[T.deepseek/deepseek-v4-pro]"
+        },
+        {
+          "ci_high": 4.51437923876393,
+          "ci_low": 1.1713158948984093,
+          "label": "defense[placebo]:goal[induction]:model[google/gemini-3.8-flash]",
+          "odds_ratio": 2.299513896014454,
+          "p_value": 0.015545938467377196,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]:C(goal, Treatment('suppression'))[T.induction]:C(model)[T.google/gemini-3.8-flash]"
+        },
+        {
+          "ci_high": 1.6083783248524208,
+          "ci_low": 0.24057599328604828,
+          "label": "defense[tagged]:goal[induction]:model[google/gemini-3.8-flash]",
+          "odds_ratio": 0.6220427743179094,
+          "p_value": 0.327339493204418,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]:C(goal, Treatment('suppression'))[T.induction]:C(model)[T.google/gemini-3.8-flash]"
+        },
+        {
+          "ci_high": 1.0611802271128796,
+          "ci_low": 0.16152204888818028,
+          "label": "defense[warning]:goal[induction]:model[google/gemini-3.8-flash]",
+          "odds_ratio": 0.4140096671853168,
+          "p_value": 0.06631134890754949,
+          "term": "C(defense, Treatment('neutral'))[T.warning]:C(goal, Treatment('suppression'))[T.induction]:C(model)[T.google/gemini-3.8-flash]"
+        },
+        {
+          "ci_high": 3.5107780087702607,
+          "ci_low": 0.34149067874897976,
+          "label": "defense[placebo]:goal[induction]:model[openai/gpt-6.1-sol]",
+          "odds_ratio": 1.0949419916835539,
+          "p_value": 0.8787329117941797,
+          "term": "C(defense, Treatment('neutral'))[T.placebo]:C(goal, Treatment('suppression'))[T.induction]:C(model)[T.openai/gpt-6.1-sol]"
+        },
+        {
+          "ci_high": 16.57243594151216,
+          "ci_low": 1.2502156286371389,
+          "label": "defense[tagged]:goal[induction]:model[openai/gpt-6.1-sol]",
+          "odds_ratio": 4.551825833516298,
+          "p_value": 0.021523189129249574,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]:C(goal, Treatment('suppression'))[T.induction]:C(model)[T.openai/gpt-6.1-sol]"
+        },
+        {
+          "ci_high": 11.20746093280666,
+          "ci_low": 0.9065308457057347,
+          "label": "defense[warning]:goal[induction]:model[openai/gpt-6.1-sol]",
+          "odds_ratio": 3.187461221353321,
+          "p_value": 0.07076248696698638,
+          "term": "C(defense, Treatment('neutral'))[T.warning]:C(goal, Treatment('suppression'))[T.induction]:C(model)[T.openai/gpt-6.1-sol]"
+        }
+      ],
+      "wald_tests": [
+        {
+          "chi2": 5.785709555771729,
+          "df": 3,
+          "p_value": 0.12251432489928644,
+          "term": "defense"
+        },
+        {
+          "chi2": 5.701951026999012,
+          "df": 1,
+          "p_value": 0.016946065717152823,
+          "term": "goal"
+        },
+        {
+          "chi2": 140.62632542640773,
+          "df": 3,
+          "p_value": 2.7695601766996234e-30,
+          "term": "model"
+        },
+        {
+          "chi2": 326.4372808215235,
+          "df": 4,
+          "p_value": 2.1402651409549675e-69,
+          "term": "style"
+        },
+        {
+          "chi2": 3.554160753946122,
+          "df": 1,
+          "p_value": 0.059396336861360984,
+          "term": "placement"
+        },
+        {
+          "chi2": 30.980426487198418,
+          "df": 3,
+          "p_value": 8.581530740359142e-07,
+          "term": "defense:goal"
+        },
+        {
+          "chi2": 25.403682939488405,
+          "df": 9,
+          "p_value": 0.0025556221421340615,
+          "term": "defense:model"
+        },
+        {
+          "chi2": 58.78423123589421,
+          "df": 3,
+          "p_value": 1.0689192487323686e-12,
+          "term": "goal:model"
+        },
+        {
+          "chi2": 38.447934269153166,
+          "df": 9,
+          "p_value": 1.4483693135520322e-05,
+          "term": "defense:goal:model"
+        }
+      ],
+      "working_correlation": 0.04122670603792522
+    }
+  ],
+  "provenance": {
+    "adaptive_runs": [
+      "runs/revision-adaptive/full"
+    ],
+    "clustering_unit": "vulnerable/fixed pair (paired_item_key; item_id when missing)",
+    "dataset_family": "manual",
+    "join_key": [
+      "model",
+      "item_id",
+      "defense",
+      "attack_family"
+    ],
+    "repeats": "excluded (repeat > 0)",
+    "runs": [
+      {
+        "parsed_rows": 68736,
+        "prompt_versions": [
+          "v2"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 43647,
+        "run_dir": "runs/openrouter-v2/full"
+      },
+      {
+        "parsed_rows": 14080,
+        "prompt_versions": [
+          "v3"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 14078,
+        "run_dir": "runs/revision-placebo/full"
+      }
+    ]
+  },
+  "reference_defense": "neutral",
+  "seconds_total": 2.7435368340229616,
+  "working_correlation": "exchangeable"
+}

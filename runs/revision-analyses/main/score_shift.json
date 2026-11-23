@@ -1,0 +1,557 @@
+{
+  "analysis": "score_shift",
+  "bootstrap": {
+    "interval": "percentile 95%",
+    "resamples": 2000,
+    "seed": 20260101,
+    "unit": "vulnerable/fixed pair"
+  },
+  "by_model_goal_defense": [
+    {
+      "ci_high": 0.02864255627084574,
+      "ci_low": -0.017502089989081208,
+      "clusters": 176,
+      "defense": "neutral",
+      "goal": "induction",
+      "mean_shift": 0.006145092460881934,
+      "model": "anthropic/claude-sonnet-5.5",
+      "n": 1406,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": 0.04521013463440299,
+      "ci_low": 0.007614597898212224,
+      "clusters": 176,
+      "defense": "placebo",
+      "goal": "induction",
+      "mean_shift": 0.026877667140825044,
+      "model": "anthropic/claude-sonnet-5.5",
+      "n": 1406,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "ci_high": -0.008421428571428573,
+      "ci_low": -0.04846017857142857,
+      "clusters": 175,
+      "defense": "tagged",
+      "goal": "induction",
+      "mean_shift": -0.02772857142857143,
+      "model": "anthropic/claude-sonnet-5.5",
+      "n": 1400,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": -0.0010217081850533917,
+      "ci_low": -0.040295179035310595,
+      "clusters": 176,
+      "defense": "warning",
+      "goal": "induction",
+      "mean_shift": -0.020007117437722415,
+      "model": "anthropic/claude-sonnet-5.5",
+      "n": 1405,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": 0.09889926689885958,
+      "ci_low": 0.061289793675696196,
+      "clusters": 176,
+      "defense": "neutral",
+      "goal": "suppression",
+      "mean_shift": 0.07962331201137171,
+      "model": "anthropic/claude-sonnet-5.5",
+      "n": 1407,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": 0.07632504734848485,
+      "ci_low": 0.038137815750935215,
+      "clusters": 176,
+      "defense": "placebo",
+      "goal": "suppression",
+      "mean_shift": 0.057334754797441365,
+      "model": "anthropic/claude-sonnet-5.5",
+      "n": 1407,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "ci_high": 0.042124999999999996,
+      "ci_low": 0.005394195079125192,
+      "clusters": 176,
+      "defense": "tagged",
+      "goal": "suppression",
+      "mean_shift": 0.024164889836531634,
+      "model": "anthropic/claude-sonnet-5.5",
+      "n": 1407,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": 0.05898503252891459,
+      "ci_low": 0.024807257972515675,
+      "clusters": 176,
+      "defense": "warning",
+      "goal": "suppression",
+      "mean_shift": 0.04155650319829425,
+      "model": "anthropic/claude-sonnet-5.5",
+      "n": 1407,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": 0.5968900923295453,
+      "ci_low": 0.5024147727272728,
+      "clusters": 176,
+      "defense": "neutral",
+      "goal": "induction",
+      "mean_shift": 0.5490411931818181,
+      "model": "deepseek/deepseek-v4-pro",
+      "n": 1408,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": 0.5984643110795453,
+      "ci_low": 0.49684375,
+      "clusters": 176,
+      "defense": "placebo",
+      "goal": "induction",
+      "mean_shift": 0.549481534090909,
+      "model": "deepseek/deepseek-v4-pro",
+      "n": 1408,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "ci_high": 0.23394904119318186,
+      "ci_low": 0.16427290482954546,
+      "clusters": 176,
+      "defense": "tagged",
+      "goal": "induction",
+      "mean_shift": 0.1989559659090909,
+      "model": "deepseek/deepseek-v4-pro",
+      "n": 1408,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": 0.3499675071022727,
+      "ci_low": 0.26841938920454544,
+      "clusters": 176,
+      "defense": "warning",
+      "goal": "induction",
+      "mean_shift": 0.3091051136363636,
+      "model": "deepseek/deepseek-v4-pro",
+      "n": 1408,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": 0.18141601562499998,
+      "ci_low": 0.10693927556818182,
+      "clusters": 176,
+      "defense": "neutral",
+      "goal": "suppression",
+      "mean_shift": 0.14391335227272725,
+      "model": "deepseek/deepseek-v4-pro",
+      "n": 1408,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": 0.17463671874999992,
+      "ci_low": 0.09678657670454545,
+      "clusters": 176,
+      "defense": "placebo",
+      "goal": "suppression",
+      "mean_shift": 0.13587357954545454,
+      "model": "deepseek/deepseek-v4-pro",
+      "n": 1408,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "ci_high": 0.06070134943181815,
+      "ci_low": -0.008699218749999989,
+      "clusters": 176,
+      "defense": "tagged",
+      "goal": "suppression",
+      "mean_shift": 0.023693181818181818,
+      "model": "deepseek/deepseek-v4-pro",
+      "n": 1408,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": 0.04942507102272728,
+      "ci_low": -0.014397194602272715,
+      "clusters": 176,
+      "defense": "warning",
+      "goal": "suppression",
+      "mean_shift": 0.016136363636363636,
+      "model": "deepseek/deepseek-v4-pro",
+      "n": 1408,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": 0.1064715804830309,
+      "ci_low": 0.033407397860984824,
+      "clusters": 174,
+      "defense": "neutral",
+      "goal": "induction",
+      "mean_shift": 0.07103174603174603,
+      "model": "google/gemini-3.8-flash",
+      "n": 1386,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": 0.09055451218187316,
+      "ci_low": 0.015278361293490538,
+      "clusters": 176,
+      "defense": "placebo",
+      "goal": "induction",
+      "mean_shift": 0.05264433357091946,
+      "model": "google/gemini-3.8-flash",
+      "n": 1403,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "ci_high": -0.05298651379809372,
+      "ci_low": -0.13224568567366596,
+      "clusters": 175,
+      "defense": "tagged",
+      "goal": "induction",
+      "mean_shift": -0.09216702663786895,
+      "model": "google/gemini-3.8-flash",
+      "n": 1389,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": -0.03513958077878265,
+      "ci_low": -0.10024508639286366,
+      "clusters": 174,
+      "defense": "warning",
+      "goal": "induction",
+      "mean_shift": -0.0673160173160173,
+      "model": "google/gemini-3.8-flash",
+      "n": 1386,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": -0.0038091628527841723,
+      "ci_low": -0.07829614089371655,
+      "clusters": 173,
+      "defense": "neutral",
+      "goal": "suppression",
+      "mean_shift": -0.04090181818181818,
+      "model": "google/gemini-3.8-flash",
+      "n": 1375,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": -0.040220545684630335,
+      "ci_low": -0.11169236225100584,
+      "clusters": 175,
+      "defense": "placebo",
+      "goal": "suppression",
+      "mean_shift": -0.07543307086614173,
+      "model": "google/gemini-3.8-flash",
+      "n": 1397,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "ci_high": 0.012436503754653865,
+      "ci_low": -0.0440313058223795,
+      "clusters": 174,
+      "defense": "tagged",
+      "goal": "suppression",
+      "mean_shift": -0.015261248185776488,
+      "model": "google/gemini-3.8-flash",
+      "n": 1378,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": -0.030944658665002754,
+      "ci_low": -0.09551211249182472,
+      "clusters": 176,
+      "defense": "warning",
+      "goal": "suppression",
+      "mean_shift": -0.06338372930165587,
+      "model": "google/gemini-3.8-flash",
+      "n": 1389,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": -0.03905237926136365,
+      "ci_low": -0.08420348011363635,
+      "clusters": 176,
+      "defense": "neutral",
+      "goal": "induction",
+      "mean_shift": -0.060625,
+      "model": "openai/gpt-6.1-sol",
+      "n": 1408,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": -0.03448135653409091,
+      "ci_low": -0.07358078835227272,
+      "clusters": 176,
+      "defense": "placebo",
+      "goal": "induction",
+      "mean_shift": -0.052528409090909084,
+      "model": "openai/gpt-6.1-sol",
+      "n": 1408,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "ci_high": -0.03081534090909091,
+      "ci_low": -0.07364506392045453,
+      "clusters": 176,
+      "defense": "tagged",
+      "goal": "induction",
+      "mean_shift": -0.050866477272727265,
+      "model": "openai/gpt-6.1-sol",
+      "n": 1408,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": -0.048003551136363634,
+      "ci_low": -0.09858771306818181,
+      "clusters": 176,
+      "defense": "warning",
+      "goal": "induction",
+      "mean_shift": -0.0716122159090909,
+      "model": "openai/gpt-6.1-sol",
+      "n": 1408,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": 0.0014277343749999974,
+      "ci_low": -0.030093394886363634,
+      "clusters": 176,
+      "defense": "neutral",
+      "goal": "suppression",
+      "mean_shift": -0.01443181818181818,
+      "model": "openai/gpt-6.1-sol",
+      "n": 1408,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": 0.008324218749999997,
+      "ci_low": -0.020966086647727273,
+      "clusters": 176,
+      "defense": "placebo",
+      "goal": "suppression",
+      "mean_shift": -0.00625,
+      "model": "openai/gpt-6.1-sol",
+      "n": 1408,
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-placebo/full"
+      ]
+    },
+    {
+      "ci_high": 0.012620738636363598,
+      "ci_low": -0.021006214488636345,
+      "clusters": 176,
+      "defense": "tagged",
+      "goal": "suppression",
+      "mean_shift": -0.004936079545454544,
+      "model": "openai/gpt-6.1-sol",
+      "n": 1408,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    },
+    {
+      "ci_high": 0.004006392045454539,
+      "ci_low": -0.028458806818181817,
+      "clusters": 176,
+      "defense": "warning",
+      "goal": "suppression",
+      "mean_shift": -0.01153409090909091,
+      "model": "openai/gpt-6.1-sol",
+      "n": 1408,
+      "prompt_versions": [
+        "v2"
+      ],
+      "source_runs": [
+        "runs/openrouter-v2/full"
+      ]
+    }
+  ],
+  "provenance": {
+    "adaptive_runs": [
+      "runs/revision-adaptive/full"
+    ],
+    "clustering_unit": "vulnerable/fixed pair (paired_item_key; item_id when missing)",
+    "dataset_family": "manual",
+    "join_key": [
+      "model",
+      "item_id",
+      "defense",
+      "attack_family"
+    ],
+    "repeats": "excluded (repeat > 0)",
+    "runs": [
+      {
+        "parsed_rows": 68736,
+        "prompt_versions": [
+          "v2"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 43647,
+        "run_dir": "runs/openrouter-v2/full"
+      },
+      {
+        "parsed_rows": 14080,
+        "prompt_versions": [
+          "v3"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 14078,
+        "run_dir": "runs/revision-placebo/full"
+      }
+    ]
+  }
+}

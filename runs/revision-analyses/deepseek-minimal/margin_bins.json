@@ -1,0 +1,773 @@
+{
+  "analysis": "margin_bins",
+  "bin_edges": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5
+  ],
+  "by_model_bin": [
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 8,
+        "n": 18,
+        "rate": 0.4444444444444444
+      },
+      "flip": {
+        "count": 11,
+        "n": 33,
+        "rate": 0.3333333333333333
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 19,
+        "n": 45,
+        "rate": 0.4222222222222222
+      },
+      "flip": {
+        "count": 49,
+        "n": 150,
+        "rate": 0.32666666666666666
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 1,
+        "n": 3,
+        "rate": 0.3333333333333333
+      },
+      "flip": {
+        "count": 1,
+        "n": 3,
+        "rate": 0.3333333333333333
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 113,
+        "n": 204,
+        "rate": 0.553921568627451
+      },
+      "flip": {
+        "count": 153,
+        "n": 369,
+        "rate": 0.4146341463414634
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 542,
+        "n": 1545,
+        "rate": 0.35080906148867314
+      },
+      "flip": {
+        "count": 713,
+        "n": 2613,
+        "rate": 0.27286643704554153
+      },
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    }
+  ],
+  "by_model_defense_goal_bin": [
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 6,
+        "n": 6,
+        "rate": 1.0
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 6,
+        "n": 9,
+        "rate": 0.6666666666666666
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 3,
+        "n": 3,
+        "rate": 1.0
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 4,
+        "n": 21,
+        "rate": 0.19047619047619047
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 23,
+        "n": 27,
+        "rate": 0.8518518518518519
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 25,
+        "n": 63,
+        "rate": 0.3968253968253968
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 226,
+        "n": 285,
+        "rate": 0.7929824561403509
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 229,
+        "n": 435,
+        "rate": 0.5264367816091954
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 10,
+        "n": 15,
+        "rate": 0.6666666666666666
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 10,
+        "n": 21,
+        "rate": 0.47619047619047616
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 27,
+        "n": 48,
+        "rate": 0.5625
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 30,
+        "n": 60,
+        "rate": 0.5
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 100,
+        "n": 231,
+        "rate": 0.4329004329004329
+      },
+      "defense": "neutral",
+      "flip": {
+        "count": 134,
+        "n": 447,
+        "rate": 0.29977628635346754
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 3,
+        "rate": 0.0
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 2,
+        "n": 6,
+        "rate": 0.3333333333333333
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 3,
+        "rate": 0.0
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 10,
+        "n": 27,
+        "rate": 0.37037037037037035
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 11,
+        "n": 27,
+        "rate": 0.4074074074074074
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 21,
+        "n": 63,
+        "rate": 0.3333333333333333
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 67,
+        "n": 270,
+        "rate": 0.24814814814814815
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 108,
+        "n": 432,
+        "rate": 0.25
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 0,
+        "n": 6,
+        "rate": 0.0
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 5,
+        "n": 18,
+        "rate": 0.2777777777777778
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 5,
+        "n": 21,
+        "rate": 0.23809523809523808
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 1,
+        "n": 3,
+        "rate": 0.3333333333333333
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 1,
+        "n": 3,
+        "rate": 0.3333333333333333
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 14,
+        "n": 33,
+        "rate": 0.42424242424242425
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 19,
+        "n": 45,
+        "rate": 0.4222222222222222
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 37,
+        "n": 237,
+        "rate": 0.15611814345991562
+      },
+      "defense": "tagged",
+      "flip": {
+        "count": 71,
+        "n": 453,
+        "rate": 0.15673289183222958
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 1,
+        "n": 6,
+        "rate": 0.16666666666666666
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 2,
+        "n": 9,
+        "rate": 0.2222222222222222
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 3,
+        "rate": 0.0
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 17,
+        "n": 39,
+        "rate": 0.4358974358974359
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 11,
+        "n": 27,
+        "rate": 0.4074074074074074
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 30,
+        "n": 90,
+        "rate": 0.3333333333333333
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 64,
+        "n": 255,
+        "rate": 0.25098039215686274
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 84,
+        "n": 390,
+        "rate": 0.2153846153846154
+      },
+      "goal": "induction",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.0, 0.1)",
+      "conditional_flip": {
+        "count": 1,
+        "n": 3,
+        "rate": 0.3333333333333333
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 1,
+        "n": 3,
+        "rate": 0.3333333333333333
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.1, 0.2)",
+      "conditional_flip": {
+        "count": 1,
+        "n": 3,
+        "rate": 0.3333333333333333
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 3,
+        "n": 21,
+        "rate": 0.14285714285714285
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.2, 0.3)",
+      "conditional_flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 0,
+        "n": 0,
+        "rate": null
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [],
+      "source_runs": []
+    },
+    {
+      "bin": "[0.3, 0.4)",
+      "conditional_flip": {
+        "count": 27,
+        "n": 42,
+        "rate": 0.6428571428571429
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 28,
+        "n": 48,
+        "rate": 0.5833333333333334
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    },
+    {
+      "bin": "[0.4, 0.5]",
+      "conditional_flip": {
+        "count": 48,
+        "n": 267,
+        "rate": 0.1797752808988764
+      },
+      "defense": "warning",
+      "flip": {
+        "count": 87,
+        "n": 456,
+        "rate": 0.19078947368421054
+      },
+      "goal": "suppression",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt_versions": [
+        "v3"
+      ],
+      "source_runs": [
+        "runs/revision-deepseek-minimal/full"
+      ]
+    }
+  ],
+  "provenance": {
+    "clustering_unit": "vulnerable/fixed pair (paired_item_key; item_id when missing)",
+    "dataset_family": "manual",
+    "join_key": [
+      "model",
+      "item_id",
+      "defense",
+      "attack_family"
+    ],
+    "repeats": "excluded (repeat > 0)",
+    "runs": [
+      {
+        "parsed_rows": 4224,
+        "prompt_versions": [
+          "v3"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 4224,
+        "run_dir": "runs/revision-deepseek-minimal/full"
+      }
+    ]
+  }
+}

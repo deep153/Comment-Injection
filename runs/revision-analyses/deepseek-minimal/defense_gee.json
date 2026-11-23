@@ -1,0 +1,368 @@
+{
+  "analysis": "defense_gee",
+  "defenses": [
+    "neutral",
+    "tagged",
+    "warning"
+  ],
+  "gee_maxiter": 60,
+  "outcomes": [
+    "attack_success",
+    "conditional_flip"
+  ],
+  "per_model": [
+    {
+      "clusters": 176,
+      "formula": "success ~ C(defense, Treatment('neutral')) + C(style, Treatment('dsc')) + C(goal, Treatment('suppression'))",
+      "model": "deepseek/deepseek-v4-pro",
+      "n": 3168,
+      "notes": [],
+      "outcome": "attack_success",
+      "seconds": 0.027412333991378546,
+      "status": "converged",
+      "terms": [
+        {
+          "ci_high": 3.4311512585676924,
+          "ci_low": 1.934600378289163,
+          "label": "Intercept",
+          "odds_ratio": 2.5764134999631554,
+          "p_value": 9.517406158819822e-11,
+          "term": "Intercept"
+        },
+        {
+          "ci_high": 0.33687248447347645,
+          "ci_low": 0.25116542866769415,
+          "label": "defense[tagged]",
+          "odds_ratio": 0.2908792223056364,
+          "p_value": 4.5372039081606616e-61,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]"
+        },
+        {
+          "ci_high": 0.3438332993844538,
+          "ci_low": 0.263645237950522,
+          "label": "defense[warning]",
+          "odds_ratio": 0.30108140432701486,
+          "p_value": 2.98054059350986e-70,
+          "term": "C(defense, Treatment('neutral'))[T.warning]"
+        },
+        {
+          "ci_high": 1.1943002520175157,
+          "ci_low": 0.9257821495786246,
+          "label": "style[api]",
+          "odds_ratio": 1.0515045670633432,
+          "p_value": 0.4395184230865342,
+          "term": "C(style, Treatment('dsc'))[T.api]"
+        },
+        {
+          "ci_high": 1.0105909046775259,
+          "ci_low": 0.7972752639160593,
+          "label": "style[ivm]",
+          "odds_ratio": 0.8976185883981813,
+          "p_value": 0.07413482605879362,
+          "term": "C(style, Treatment('dsc'))[T.ivm]"
+        },
+        {
+          "ci_high": 1.9565086625674963,
+          "ci_low": 0.9827075109698687,
+          "label": "goal[induction]",
+          "odds_ratio": 1.3866058408872692,
+          "p_value": 0.06279158850396802,
+          "term": "C(goal, Treatment('suppression'))[T.induction]"
+        }
+      ],
+      "working_correlation": 0.13561187824697138
+    },
+    {
+      "clusters": 170,
+      "formula": "success ~ C(defense, Treatment('neutral')) + C(style, Treatment('dsc')) + C(goal, Treatment('suppression'))",
+      "model": "deepseek/deepseek-v4-pro",
+      "n": 1815,
+      "notes": [],
+      "outcome": "conditional_flip",
+      "seconds": 0.029004415962845087,
+      "status": "converged",
+      "terms": [
+        {
+          "ci_high": 1.897258361491993,
+          "ci_low": 0.9807357800004675,
+          "label": "Intercept",
+          "odds_ratio": 1.364078135232824,
+          "p_value": 0.0651237430674695,
+          "term": "Intercept"
+        },
+        {
+          "ci_high": 0.20612032372341563,
+          "ci_low": 0.12009838456544478,
+          "label": "defense[tagged]",
+          "odds_ratio": 0.15733632099832748,
+          "p_value": 4.548612126541431e-41,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]"
+        },
+        {
+          "ci_high": 0.22840655771024337,
+          "ci_low": 0.13833984914071623,
+          "label": "defense[warning]",
+          "odds_ratio": 0.1777574998034833,
+          "p_value": 1.4836753209978944e-41,
+          "term": "C(defense, Treatment('neutral'))[T.warning]"
+        },
+        {
+          "ci_high": 1.2711218741408046,
+          "ci_low": 0.8562647160201973,
+          "label": "style[api]",
+          "odds_ratio": 1.0432721651554961,
+          "p_value": 0.674255102359763,
+          "term": "C(style, Treatment('dsc'))[T.api]"
+        },
+        {
+          "ci_high": 1.1012403759188558,
+          "ci_low": 0.7388068709239728,
+          "label": "style[ivm]",
+          "odds_ratio": 0.9019999757581756,
+          "p_value": 0.31110858611238557,
+          "term": "C(style, Treatment('dsc'))[T.ivm]"
+        },
+        {
+          "ci_high": 2.7790493847583293,
+          "ci_low": 1.2658850858897719,
+          "label": "goal[induction]",
+          "odds_ratio": 1.8756218086588554,
+          "p_value": 0.0017168078282456688,
+          "term": "C(goal, Treatment('suppression'))[T.induction]"
+        }
+      ],
+      "working_correlation": 0.16233908526438035
+    }
+  ],
+  "pooled": [
+    {
+      "clusters": 176,
+      "formula": "success ~ C(defense, Treatment('neutral'))*C(goal, Treatment('suppression')) + C(style, Treatment('dsc'))",
+      "n": 3168,
+      "notes": [],
+      "outcome": "attack_success",
+      "seconds": 0.027578250039368868,
+      "status": "converged",
+      "terms": [
+        {
+          "ci_high": 2.241307299410928,
+          "ci_low": 1.371294878273008,
+          "label": "Intercept",
+          "odds_ratio": 1.7531381064588474,
+          "p_value": 7.490309374797631e-06,
+          "term": "Intercept"
+        },
+        {
+          "ci_high": 0.6517132357074003,
+          "ci_low": 0.4511134862380938,
+          "label": "defense[tagged]",
+          "odds_ratio": 0.5422145606560874,
+          "p_value": 6.93611382659608e-11,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]"
+        },
+        {
+          "ci_high": 0.6115705017137602,
+          "ci_low": 0.432189379841085,
+          "label": "defense[warning]",
+          "odds_ratio": 0.5141150414690969,
+          "p_value": 5.817117706895811e-14,
+          "term": "C(defense, Treatment('neutral'))[T.warning]"
+        },
+        {
+          "ci_high": 5.566124765033172,
+          "ci_low": 2.6831521089127675,
+          "label": "goal[induction]",
+          "odds_ratio": 3.8645516430461035,
+          "p_value": 3.8138205285036767e-13,
+          "term": "C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 1.1976284288118968,
+          "ci_low": 0.9245875642027436,
+          "label": "style[api]",
+          "odds_ratio": 1.0522891008725457,
+          "p_value": 0.4400347248111365,
+          "term": "C(style, Treatment('dsc'))[T.api]"
+        },
+        {
+          "ci_high": 1.0108725184184546,
+          "ci_low": 0.7941602467437436,
+          "label": "style[ivm]",
+          "odds_ratio": 0.8959881520721518,
+          "p_value": 0.07437801382816599,
+          "term": "C(style, Treatment('dsc'))[T.ivm]"
+        },
+        {
+          "ci_high": 0.32838478366637136,
+          "ci_low": 0.1622497625288563,
+          "label": "defense[tagged]:goal[induction]",
+          "odds_ratio": 0.23082537375245082,
+          "p_value": 3.6039186802253874e-16,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]:C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 0.3829636110430837,
+          "ci_low": 0.19745160063076117,
+          "label": "defense[warning]:goal[induction]",
+          "odds_ratio": 0.2749850504732814,
+          "p_value": 2.1802034298488813e-14,
+          "term": "C(defense, Treatment('neutral'))[T.warning]:C(goal, Treatment('suppression'))[T.induction]"
+        }
+      ],
+      "wald_tests": [
+        {
+          "chi2": 58.98230008582328,
+          "df": 2,
+          "p_value": 1.5565256125916634e-13,
+          "term": "defense"
+        },
+        {
+          "chi2": 52.73677864788956,
+          "df": 1,
+          "p_value": 3.8138205285036575e-13,
+          "term": "goal"
+        },
+        {
+          "chi2": 7.3887908691999815,
+          "df": 2,
+          "p_value": 0.024862480115031577,
+          "term": "style"
+        },
+        {
+          "chi2": 69.0751118150863,
+          "df": 2,
+          "p_value": 1.001221232465338e-15,
+          "term": "defense:goal"
+        }
+      ],
+      "working_correlation": 0.13710120774433313
+    },
+    {
+      "clusters": 170,
+      "formula": "success ~ C(defense, Treatment('neutral'))*C(goal, Treatment('suppression')) + C(style, Treatment('dsc'))",
+      "n": 1815,
+      "notes": [],
+      "outcome": "conditional_flip",
+      "seconds": 0.0288217089837417,
+      "status": "converged",
+      "terms": [
+        {
+          "ci_high": 1.3052554531971627,
+          "ci_low": 0.6981017292472824,
+          "label": "Intercept",
+          "odds_ratio": 0.9545685355103555,
+          "p_value": 0.7708610793379553,
+          "term": "Intercept"
+        },
+        {
+          "ci_high": 0.4156416394109428,
+          "ci_low": 0.21241228491415862,
+          "label": "defense[tagged]",
+          "odds_ratio": 0.29713194095005196,
+          "p_value": 1.3752395159099659e-12,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]"
+        },
+        {
+          "ci_high": 0.5093941293406301,
+          "ci_low": 0.25905247756087746,
+          "label": "defense[warning]",
+          "odds_ratio": 0.36326273034906337,
+          "p_value": 4.350607804738591e-09,
+          "term": "C(defense, Treatment('neutral'))[T.warning]"
+        },
+        {
+          "ci_high": 7.001208821603335,
+          "ci_low": 2.865692659598487,
+          "label": "goal[induction]",
+          "odds_ratio": 4.479208940023322,
+          "p_value": 4.704925684827917e-11,
+          "term": "C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 1.27543296541195,
+          "ci_low": 0.8547013060431953,
+          "label": "style[api]",
+          "odds_ratio": 1.0440853515437036,
+          "p_value": 0.6726810927743919,
+          "term": "C(style, Treatment('dsc'))[T.api]"
+        },
+        {
+          "ci_high": 1.102431401866602,
+          "ci_low": 0.7345567765981189,
+          "label": "style[ivm]",
+          "odds_ratio": 0.8998880246873366,
+          "p_value": 0.3084682888012762,
+          "term": "C(style, Treatment('dsc'))[T.ivm]"
+        },
+        {
+          "ci_high": 0.45903678787578867,
+          "ci_low": 0.16813182441575725,
+          "label": "defense[tagged]:goal[induction]",
+          "odds_ratio": 0.2778105336726908,
+          "p_value": 5.768778826428258e-07,
+          "term": "C(defense, Treatment('neutral'))[T.tagged]:C(goal, Treatment('suppression'))[T.induction]"
+        },
+        {
+          "ci_high": 0.36943189735108556,
+          "ci_low": 0.14317717369531222,
+          "label": "defense[warning]:goal[induction]",
+          "odds_ratio": 0.22998742342925,
+          "p_value": 1.216892066043086e-09,
+          "term": "C(defense, Treatment('neutral'))[T.warning]:C(goal, Treatment('suppression'))[T.induction]"
+        }
+      ],
+      "wald_tests": [
+        {
+          "chi2": 56.172029457177885,
+          "df": 2,
+          "p_value": 6.344520203958038e-13,
+          "term": "defense"
+        },
+        {
+          "chi2": 43.29621575785171,
+          "df": 1,
+          "p_value": 4.704925684827915e-11,
+          "term": "goal"
+        },
+        {
+          "chi2": 2.3435824516201245,
+          "df": 2,
+          "p_value": 0.3098115015971453,
+          "term": "style"
+        },
+        {
+          "chi2": 40.642579241530605,
+          "df": 2,
+          "p_value": 1.4947757807768118e-09,
+          "term": "defense:goal"
+        }
+      ],
+      "working_correlation": 0.1640124383430222
+    }
+  ],
+  "provenance": {
+    "clustering_unit": "vulnerable/fixed pair (paired_item_key; item_id when missing)",
+    "dataset_family": "manual",
+    "join_key": [
+      "model",
+      "item_id",
+      "defense",
+      "attack_family"
+    ],
+    "repeats": "excluded (repeat > 0)",
+    "runs": [
+      {
+        "parsed_rows": 4224,
+        "prompt_versions": [
+          "v3"
+        ],
+        "rows_replaced_by_later_runs": 0,
+        "rows_used": 4224,
+        "run_dir": "runs/revision-deepseek-minimal/full"
+      }
+    ]
+  },
+  "reference_defense": "neutral",
+  "seconds_total": 0.7637270420091227,
+  "working_correlation": "exchangeable"
+}
