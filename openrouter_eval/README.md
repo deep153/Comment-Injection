@@ -244,9 +244,10 @@ python3 -m openrouter_eval.revision \
   --run-dir runs/openrouter-v2/full \
   [--run-dir runs/<new-run> ...] \
   [--adaptive-run-dir runs/<adaptive-run> ...] \
+  [--reanchor-run-dir runs/<re-anchor-run>] \
   --out-dir runs/revision-analyses \
   [--family manual] [--analyses score_shift,cost_report,...] [--seed 20260101] [--bootstrap 2000] \
-  [--tost-margin 0.05] [--gee-maxiter 60]
+  [--tost-margin 0.05] [--gee-maxiter 60] [--allow-replace]
 ```
 
 - Rows are restricted to completed, non-repeat answers of one dataset family (`--family all` keeps every family), as in the scorer.
@@ -261,9 +262,10 @@ python3 -m openrouter_eval.revision \
 | `calibration` | Clean-prompt accuracy, mean confidence, ECE, Brier score and reliability bins per model and defense |
 | `margin_bins` | Flip rate and conditional flip rate (clean verdict correct) by bins of clean margin \|clean vulnerability score - 0.5\| |
 | `adaptive_summary` | Adaptive runs: success within the query budget on eligible tasks (clean verdict correct), 95% cluster-bootstrap interval, queries-to-first-success counts, cumulative success by query, rejected candidates, per detector model, defense, attacker mode, feedback mode, attacker model and budget; tasks with steps but no outcome are counted |
-| `cost_report` | USD per run directory, role and model from every recorded response row (`responses.jsonl` of runner directories, `steps.jsonl` of adaptive directories), failed attempts and retries included. OpenRouter-billed `cost` and BYOK `upstream_inference_cost` (billed to the user's own provider key) are reported separately. Archived logs such as `responses.before-*.jsonl` are not read |
+| `cost_report` | USD per run directory, role and model from every recorded response row (`responses.jsonl` of runner directories, `steps.jsonl` of adaptive directories), failed attempts and retries included. OpenRouter-billed `cost` and BYOK `upstream_inference_cost` (billed to the user's own provider key) are reported separately. A runner log whose successful rows lack `attempt` predates logging of retried attempts, so its total is marked as a lower bound. Archived logs such as `responses.before-*.jsonl` are not read |
+| `provider_drift` | With `--reanchor-run-dir`: each re-anchor row against the `--run-dir` row with the same model, item, defense and condition; per model, defense and condition, accuracy in both runs and its change, verdict agreement, and vulnerability-score change, with 95% cluster-bootstrap intervals. The re-anchor rows are not joined into the other analyses |
 | `rationales` | Share of parsed answers whose rationale mentions the comment, per model, defense and goal (clean rows as a false-positive baseline); writes `rationale_coding_sample.csv` for manual coding and reads it back with `--coding-file` |
-| `memorization` | Memorization-cue rates in clean rationales, item-level flags (any model) and clean accuracy, conditional flip rate and benign flip rate per model and defense, full set vs. flagged items excluded |
+| `memorization` | Memorization-cue rates in clean rationales, item-level flags (any model, any condition) and clean accuracy, conditional flip rate and benign flip rate per model and defense, full set vs. flagged items excluded |
 | `defense_rates` | Per model (and pooled), defense and goal: clean accuracy, raw ASR, conditional flip rate, benign-comment baseline and their difference, with 95% cluster-bootstrap intervals; the placebo appears beside the v2 defenses when its run is supplied |
 | `defense_contrasts` | Paired contrasts (warning, tagged, placebo minus neutral; warning, tagged minus placebo) on conditional flip rate and raw ASR, matched on model, item and attack family: cluster-bootstrap interval of the difference, exact McNemar, Holm over per-model tests. Contrasts whose defenses are absent are listed as skipped |
 | `defense_gee` | Logistic GEE (exchangeable, clustered by pair) per model, and pooled with a defense x goal x model interaction plus joint Wald tests, for raw attack success and for the conditional-flip subset. Each fit reports its status (`converged`, `unstable` for separation, `not converged`, `failed`) and time |
@@ -277,7 +279,7 @@ Each analysis is one module in `openrouter_eval/revision/analyses/`, found autom
 
 ## Revision runs
 
-Four paid runs were added for the paper revision, all with prompt version `v3`, the v2 manifest and, except the DeepSeek rerun, the v2 models file (`runs/openrouter-v2/models.json`). The v2 run itself is unchanged. Costs are the recorded usage of every response row, failed attempts and retries included (`runs/revision-analyses/cost-new-runs/cost_report.md`); "BYOK" is the upstream cost billed to the bring-your-own-key provider accounts for Claude and Gemini.
+Four paid runs were added for the paper revision, all with prompt version `v3`, the v2 manifest and, except the DeepSeek rerun, the v2 models file (`runs/openrouter-v2/models.json`). The v2 run itself is unchanged. Costs are the recorded usage of every response row (`runs/revision-analyses/cost-new-runs/cost_report.md`). For the three runner runs they are lower bounds: the runner then wrote only the last attempt of each request, so a billed attempt that failed (for example a Gemini content-filter stop) and was retried is missing. The adaptive run logs every attempt. "BYOK" is the upstream cost billed to the bring-your-own-key provider accounts for Claude and Gemini.
 
 | Run directory | Condition | Requests | Completed | Logged calls | Cost (OpenRouter + BYOK) |
 |---|---|---:|---:|---:|---:|
@@ -285,7 +287,7 @@ Four paid runs were added for the paper revision, all with prompt version `v3`, 
 | `runs/revision-neutral-reanchor/full` | `neutral` clean prompts again, all four models, to measure drift since v2 | 1,408 | 1,408 | 1,447 | $3.66 ($0.52 + $3.15) |
 | `runs/revision-deepseek-minimal/full` | DeepSeek V4 Pro at reasoning effort `minimal`, core design (neutral, warning, tagged) | 4,224 | 4,224 | 4,288 | $10.87 ($10.87 + $0) |
 | `runs/revision-adaptive/full` | Adaptive attack, 50-pair subset, four detectors | 800 tasks | 800 tasks | 4,718 (2,320 attacker, 2,398 detector) | $9.76 ($4.38 + $5.38) |
-| **Total** | | | | | **$67.30** ($21.90 + $45.40) |
+| **Total** | | | | | **at least $67.30** ($21.90 + $45.40) |
 
 For planning, that is about $3.05 per 1,000 requests for all four models with the default token limit (placebo run), $2.57 per 1,000 for DeepSeek at `minimal` with `--max-tokens 16384`, and about $0.012 per adaptive task. The v2 run cost $196.55 for 68,736 requests.
 
@@ -338,10 +340,11 @@ The smoke test (`--limit-items 2`, 16 tasks) ran in the same out-dir and its tas
 Revision analyses (no network calls):
 
 ```sh
-# v2 + placebo + adaptive: every analysis.
+# v2 + placebo + adaptive, with drift measured against the neutral re-anchor: every analysis.
 python3 -m openrouter_eval.revision \
   --run-dir runs/openrouter-v2/full --run-dir runs/revision-placebo/full \
   --adaptive-run-dir runs/revision-adaptive/full \
+  --reanchor-run-dir runs/revision-neutral-reanchor/full \
   --out-dir runs/revision-analyses/main
 
 # DeepSeek at minimal on its own (stripping_tost and adaptive_summary are skipped: no stripped or adaptive rows).
@@ -349,12 +352,13 @@ python3 -m openrouter_eval.revision \
   --run-dir runs/revision-deepseek-minimal/full \
   --out-dir runs/revision-analyses/deepseek-minimal
 
-# Cost of the four new runs.
+# Cost of the four new runs. The re-anchor and DeepSeek runs share DeepSeek's neutral clean rows; the cost
+# report reads every response log in full, so letting one replace the other in the joined rows is harmless.
 python3 -m openrouter_eval.revision \
   --run-dir runs/revision-placebo/full --run-dir runs/revision-neutral-reanchor/full \
   --run-dir runs/revision-deepseek-minimal/full \
   --adaptive-run-dir runs/revision-adaptive/full \
-  --analyses cost_report \
+  --analyses cost_report --allow-replace \
   --out-dir runs/revision-analyses/cost-new-runs
 ```
 

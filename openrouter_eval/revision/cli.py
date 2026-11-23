@@ -69,7 +69,7 @@ def main(argv: list[str] | None = None) -> None:
         raise SystemExit(f"unknown analyses: {', '.join(unknown)}; available: {', '.join(units)}")
     if not args.run_dir and not args.adaptive_run_dir:
         raise SystemExit("give at least one --run-dir or --adaptive-run-dir")
-    check_out_dir(args.out_dir, args.run_dir + args.adaptive_run_dir)
+    check_out_dir(args.out_dir, args.run_dir + args.adaptive_run_dir + [d for d in [args.reanchor_run_dir] if d])
 
     started = time.perf_counter()
     data = load_runs(args.run_dir, None if args.family == "all" else args.family, args.allow_replace)
